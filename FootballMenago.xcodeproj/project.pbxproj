@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75358A3E2514DF9F008C3934 /* Zawodnik.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75358A3D2514DF9F008C3934 /* Zawodnik.swift */; };
+		75358A422514E0D7008C3934 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75358A412514E0D7008C3934 /* Data.swift */; };
+		75358A482514E1CB008C3934 /* zawodnikDane.json in Resources */ = {isa = PBXBuildFile; fileRef = 75358A472514E1CB008C3934 /* zawodnikDane.json */; };
+		75E9A0C3251416EB005E414D /* ZawodnikDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9A0C2251416EB005E414D /* ZawodnikDetails.swift */; };
 		8000940925124A9200E4A3B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000940825124A9200E4A3B9 /* AppDelegate.swift */; };
 		8000940B25124A9200E4A3B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000940A25124A9200E4A3B9 /* SceneDelegate.swift */; };
 		8000940D25124A9200E4A3B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000940C25124A9200E4A3B9 /* ContentView.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75358A3D2514DF9F008C3934 /* Zawodnik.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zawodnik.swift; sourceTree = "<group>"; };
+		75358A412514E0D7008C3934 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		75358A472514E1CB008C3934 /* zawodnikDane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zawodnikDane.json; sourceTree = "<group>"; };
+		75E9A0C2251416EB005E414D /* ZawodnikDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZawodnikDetails.swift; sourceTree = "<group>"; };
 		8000940525124A9200E4A3B9 /* FootballMenago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballMenago.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8000940825124A9200E4A3B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8000940A25124A9200E4A3B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +49,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75358A3C2514DF8C008C3934 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75358A3D2514DF9F008C3934 /* Zawodnik.swift */,
+				75358A412514E0D7008C3934 /* Data.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75358A442514E0EC008C3934 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75358A472514E1CB008C3934 /* zawodnikDane.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		800093FC25124A9200E4A3B9 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +85,8 @@
 		8000940725124A9200E4A3B9 /* FootballMenago */ = {
 			isa = PBXGroup;
 			children = (
+				75358A442514E0EC008C3934 /* Resources */,
+				75358A3C2514DF8C008C3934 /* Models */,
 				8000940825124A9200E4A3B9 /* AppDelegate.swift */,
 				8000940A25124A9200E4A3B9 /* SceneDelegate.swift */,
 				8000940C25124A9200E4A3B9 /* ContentView.swift */,
@@ -69,6 +96,7 @@
 				8000941025124A9300E4A3B9 /* Preview Content */,
 				8000941C2512521500E4A3B9 /* ZawodnikRow.swift */,
 				8000941E2512543600E4A3B9 /* ZawodnikList.swift */,
+				75E9A0C2251416EB005E414D /* ZawodnikDetails.swift */,
 			);
 			path = FootballMenago;
 			sourceTree = "<group>";
@@ -108,7 +136,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Artur Kardas ";
 				TargetAttributes = {
 					8000940425124A9200E4A3B9 = {
@@ -139,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75358A482514E1CB008C3934 /* zawodnikDane.json in Resources */,
 				8000941525124A9300E4A3B9 /* LaunchScreen.storyboard in Resources */,
 				8000941225124A9300E4A3B9 /* Preview Assets.xcassets in Resources */,
 				8000940F25124A9300E4A3B9 /* Assets.xcassets in Resources */,
@@ -153,10 +182,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8000941F2512543600E4A3B9 /* ZawodnikList.swift in Sources */,
+				75358A3E2514DF9F008C3934 /* Zawodnik.swift in Sources */,
 				8000940925124A9200E4A3B9 /* AppDelegate.swift in Sources */,
+				75E9A0C3251416EB005E414D /* ZawodnikDetails.swift in Sources */,
 				8000940B25124A9200E4A3B9 /* SceneDelegate.swift in Sources */,
 				8000940D25124A9200E4A3B9 /* ContentView.swift in Sources */,
 				8000941D2512521500E4A3B9 /* ZawodnikRow.swift in Sources */,
+				75358A422514E0D7008C3934 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +232,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -260,6 +293,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
