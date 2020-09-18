@@ -11,11 +11,15 @@ import SwiftUI
 struct ZawodnikList: View {
     var body: some View {
         NavigationView{
-            List{
-                ZawodnikRow()
-            }.navigationBarTitle(Text("Zawodnicy"))
+            List(zawodnikDane){ zawodnik in
+                NavigationLink(destination: ZawodnikDetails(zawodnik: zawodnik)){
+                    ZawodnikRow(zawodnik: zawodnik)
+                }
+            }
+            .navigationBarTitle(Text("Zawodnicy"))
             
         }
+        
     }
 }
 

@@ -9,17 +9,28 @@
 import SwiftUI
 
 struct ZawodnikRow: View {
+    var zawodnik: Zawodnik
+    
     var body: some View {
         HStack {
-            Text("Domi Dominika")
+            Text(zawodnik.name).font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
+            Text(zawodnik.surname)
+                .font(.headline)
+                .fontWeight(.bold)
             Spacer()
-            Text("Napastnik")
+            Text(zawodnik.position)
+                .font(.headline)
+                .fontWeight(.heavy)
+                .foregroundColor(Color.blue)
         }
     }
 }
 
 struct ZawodnikRow_Previews: PreviewProvider {
     static var previews: some View {
-        ZawodnikRow()
+        Group {
+            ZawodnikRow(zawodnik: zawodnikDane[0]
+        )
+        }
     }
 }
