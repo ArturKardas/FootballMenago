@@ -15,6 +15,7 @@ struct Zawodnik: Hashable, Codable, Identifiable {
     var name: String
     var surname: String
     var position: String
+    var goals: Int
 
 }
 

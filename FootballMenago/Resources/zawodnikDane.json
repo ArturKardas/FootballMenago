@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Domi",
+        "surname": "Dominika",
+        "position": "Napastnik",
+        "goals": 3
+    },
+    {
+        "id": 2,
+        "name": "Domi",
+        "surname": "Dwa",
+        "position": "Bramkarz",
+        "goals": 0
+    }
+    ,
+    {
+        "id": 3,
+        "name": "Domi",
+        "surname": "Trzy",
+        "position": "Obrońca",
+        "goals": 0
+    }
+]

@@ -10,18 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            ZawodnikList()
-        }.border(Color.black)
-        .edgesIgnoringSafeArea(.all)
+        ZawodnikList()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView()
-                .previewDevice("iPhone 11 Pro")
-        }
+        ContentView()
+        
     }
 }

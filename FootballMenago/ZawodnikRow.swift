@@ -12,25 +12,28 @@ struct ZawodnikRow: View {
     var zawodnik: Zawodnik
     
     var body: some View {
+        
+            
         HStack {
             Text(zawodnik.name).font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
             Text(zawodnik.surname)
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.callout)
+                .fontWeight(.black)
             Spacer()
             Text(zawodnik.position)
                 .font(.headline)
                 .fontWeight(.heavy)
-                .foregroundColor(Color.blue)
-        }
+                .foregroundColor(Color.white)
+        }.padding(.leading)
+            
+        
     }
 }
 
 struct ZawodnikRow_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ZawodnikRow(zawodnik: zawodnikDane[0]
-        )
-        }
+        
+        ZawodnikRow(zawodnik: zawodnikDane[0]).previewLayout(.sizeThatFits)
+        
     }
 }

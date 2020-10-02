@@ -13,24 +13,42 @@ struct ZawodnikDetails: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text(zawodnik.name)
-                    .font(.title)
+            ZStack{
+                HStack(alignment: .center) {
                     
+                    Text(zawodnik.name)
+                        .font(.title)
+                        
+                    
+                    Text(zawodnik.surname)
+                        .font(.title)
+                        .fontWeight(.heavy)
+                    Spacer()
+                    
+                }
+                .padding(.leading)
+                .foregroundColor(.black)
+                .background(Color.blue)
                 
-                Text(zawodnik.surname)
-                    .font(.title)
-                    .fontWeight(.heavy)
-                Spacer()
                 
             }
-            .padding(.leading)
             
-            Text(zawodnik.position)
+            HStack{
+                Text("Pozycja:").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Spacer()
+                Text(zawodnik.position).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }.padding(5)
+            
+            HStack{
+                Text("Bramki:").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Spacer()
+                Text(String(zawodnik.goals)).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }.padding(5)
+                
+            
             Spacer()
 
-        }
-        .padding(.top, -18)
+        }.background(Color.white)
     }
 }
 
