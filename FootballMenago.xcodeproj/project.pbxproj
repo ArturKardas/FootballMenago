@@ -35,7 +35,7 @@
 		8000941425124A9300E4A3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8000941625124A9300E4A3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8000941C2512521500E4A3B9 /* ZawodnikRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZawodnikRow.swift; sourceTree = "<group>"; };
-		8000941E2512543600E4A3B9 /* ZawodnikList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZawodnikList.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
+		8000941E2512543600E4A3B9 /* ZawodnikList.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ZawodnikList.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
