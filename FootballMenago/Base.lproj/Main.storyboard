@@ -1,24 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="Gq9-f9-TnS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIJ-IJ-xqc">
+                                <rect key="frame" x="37.666666666666657" y="381" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="a3j-4A-ZdR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="vrc-8G-WtH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                <state key="normal" title="HISTORIA">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pnl-3P-kXb" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="AjG-ha-f8U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAZ-1F-ev3">
+                                <rect key="frame" x="37.666666666666657" y="291" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mcY-3Y-kad"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="s1w-eS-50d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                <state key="normal" title="NOWY MECZ">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pKb-Kb-Nfh" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="Uaj-OL-drt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-Yb-obg">
+                                <rect key="frame" x="37.666666666666657" y="471" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="LVm-Hb-ubI"/>
+                                    <constraint firstAttribute="height" constant="50" id="mJ0-ZQ-ogM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                <state key="normal" title="ZESPÓŁ">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VkQ-u2-8q9" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="pbK-HK-k7m"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.15833521147976268" green="0.35673228708015481" blue="0.22211707166718372" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="TTS-Yb-obg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FzP-oc-wcM"/>
+                            <constraint firstAttribute="trailing" secondItem="Gq9-f9-TnS" secondAttribute="trailing" id="MRF-wG-STQ"/>
+                            <constraint firstItem="Gq9-f9-TnS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OJF-e4-cfx"/>
+                            <constraint firstAttribute="bottom" secondItem="Gq9-f9-TnS" secondAttribute="bottom" id="OMv-z6-2mj"/>
+                            <constraint firstItem="NIJ-IJ-xqc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R7H-95-AMU"/>
+                            <constraint firstItem="Gq9-f9-TnS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g2e-VQ-jeF"/>
+                            <constraint firstItem="HAZ-1F-ev3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="thN-y9-X3f"/>
+                            <constraint firstItem="NIJ-IJ-xqc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u5N-zL-2nA"/>
+                            <constraint firstItem="NIJ-IJ-xqc" firstAttribute="top" secondItem="HAZ-1F-ev3" secondAttribute="bottom" constant="40" id="yoU-jw-fXX"/>
+                            <constraint firstItem="TTS-Yb-obg" firstAttribute="top" secondItem="NIJ-IJ-xqc" secondAttribute="bottom" constant="40" id="ywl-gp-tsm"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="Mva-hj-Nya">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4R8-U2-Nhf"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
+        </scene>
+        <!--Match View Controller-->
+        <scene sceneID="2Us-p3-kQY">
+            <objects>
+                <viewController id="pKb-Kb-Nfh" customClass="MatchViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHZ-ra-RHh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="8sJ-Az-MYX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4i-Wh-eF8">
+                                <rect key="frame" x="18" y="18" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="UsJ-Zb-Lxo"/>
+                                    <constraint firstAttribute="height" constant="30" id="zod-pa-tES"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="WRÓĆ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="hnS-QE-YIZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eYe-KO-1b9"/>
+                        <color key="backgroundColor" red="0.15833521149999999" green="0.35673228709999999" blue="0.2221170717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8sJ-Az-MYX" firstAttribute="leading" secondItem="JHZ-ra-RHh" secondAttribute="leading" id="0eC-Al-ADp"/>
+                            <constraint firstItem="8sJ-Az-MYX" firstAttribute="trailing" secondItem="JHZ-ra-RHh" secondAttribute="trailing" id="8TJ-oF-4oc"/>
+                            <constraint firstItem="V4i-Wh-eF8" firstAttribute="top" secondItem="JHZ-ra-RHh" secondAttribute="top" constant="18" id="Dfe-fV-Fpf"/>
+                            <constraint firstItem="eYe-KO-1b9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V4i-Wh-eF8" secondAttribute="trailing" symbolic="YES" id="RZp-A3-weo"/>
+                            <constraint firstItem="V4i-Wh-eF8" firstAttribute="leading" secondItem="JHZ-ra-RHh" secondAttribute="leading" constant="18" id="k3P-8s-57F"/>
+                            <constraint firstItem="8sJ-Az-MYX" firstAttribute="top" secondItem="JHZ-ra-RHh" secondAttribute="top" id="nlG-Nr-5yu"/>
+                            <constraint firstAttribute="bottom" secondItem="8sJ-Az-MYX" secondAttribute="bottom" id="qL0-Md-Yib"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XKA-zf-Hqu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzz-cU-fj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="-654"/>
+        </scene>
+        <!--Team View Controller-->
+        <scene sceneID="7Lm-JM-oXi">
+            <objects>
+                <viewController id="VkQ-u2-8q9" customClass="TeamViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K85-1s-b3X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="ggP-Pr-GbA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7fP-Nw-lLs">
+                                <rect key="frame" x="0.0" y="60" width="375" height="718"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkA-vw-aFy">
+                                <rect key="frame" x="18" y="18" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hCN-1x-5Fr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="o6Y-S1-ZTW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="WRÓĆ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="sOP-Hw-LkR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lkB-fU-QOi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ggP-Pr-GbA" secondAttribute="bottom" id="Adn-X1-GWf"/>
+                            <constraint firstItem="vkA-vw-aFy" firstAttribute="top" secondItem="K85-1s-b3X" secondAttribute="top" constant="18" id="EUd-dV-Y5S"/>
+                            <constraint firstItem="vkA-vw-aFy" firstAttribute="leading" secondItem="K85-1s-b3X" secondAttribute="leading" constant="18" id="PxS-sB-zbc"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vkA-vw-aFy" secondAttribute="trailing" constant="20" symbolic="YES" id="WAu-MF-rjG"/>
+                            <constraint firstItem="7fP-Nw-lLs" firstAttribute="bottom" secondItem="lkB-fU-QOi" secondAttribute="bottom" id="Z4p-xa-QBH"/>
+                            <constraint firstItem="7fP-Nw-lLs" firstAttribute="trailing" secondItem="ggP-Pr-GbA" secondAttribute="trailing" id="bQ5-En-52r"/>
+                            <constraint firstItem="7fP-Nw-lLs" firstAttribute="leading" secondItem="ggP-Pr-GbA" secondAttribute="leading" id="ebo-OM-f9q"/>
+                            <constraint firstItem="ggP-Pr-GbA" firstAttribute="leading" secondItem="K85-1s-b3X" secondAttribute="leading" id="fHF-Xx-il1"/>
+                            <constraint firstItem="ggP-Pr-GbA" firstAttribute="top" secondItem="K85-1s-b3X" secondAttribute="top" id="nNp-02-5yq"/>
+                            <constraint firstItem="7fP-Nw-lLs" firstAttribute="top" secondItem="K85-1s-b3X" secondAttribute="top" constant="60" id="rZe-8j-RSV"/>
+                            <constraint firstItem="ggP-Pr-GbA" firstAttribute="trailing" secondItem="K85-1s-b3X" secondAttribute="trailing" id="vcF-yg-Qxf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97M-3t-Cd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="857"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="2k9-p0-cZL">
+            <objects>
+                <viewController id="Pnl-3P-kXb" customClass="HistoryViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jDd-MU-BsK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="8ds-Zq-gTy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIm-j5-AAL">
+                                <rect key="frame" x="18" y="18" width="60" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SZr-qv-zDV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="WwR-ws-guW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="WRÓĆ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="oIn-tx-19e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kRv-9u-KPi"/>
+                        <color key="backgroundColor" red="0.15833521149999999" green="0.35673228709999999" blue="0.2221170717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8ds-Zq-gTy" firstAttribute="trailing" secondItem="jDd-MU-BsK" secondAttribute="trailing" id="1a2-NT-yoQ"/>
+                            <constraint firstItem="8ds-Zq-gTy" firstAttribute="leading" secondItem="jDd-MU-BsK" secondAttribute="leading" id="BwX-Hh-9zO"/>
+                            <constraint firstItem="8ds-Zq-gTy" firstAttribute="top" secondItem="jDd-MU-BsK" secondAttribute="top" id="RVG-dr-j7B"/>
+                            <constraint firstItem="tIm-j5-AAL" firstAttribute="leading" secondItem="jDd-MU-BsK" secondAttribute="leading" constant="18" id="aDj-oI-tmG"/>
+                            <constraint firstItem="kRv-9u-KPi" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tIm-j5-AAL" secondAttribute="trailing" symbolic="YES" id="bA3-IZ-44h"/>
+                            <constraint firstAttribute="bottom" secondItem="8ds-Zq-gTy" secondAttribute="bottom" id="cnk-Ww-ze2"/>
+                            <constraint firstItem="tIm-j5-AAL" firstAttribute="top" secondItem="jDd-MU-BsK" secondAttribute="top" constant="18" id="ddd-Jw-Uqy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="B8N-rK-pWe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zZ-q7-fRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="88"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sOP-Hw-LkR"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="FootbalPitch1" width="666" height="969"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

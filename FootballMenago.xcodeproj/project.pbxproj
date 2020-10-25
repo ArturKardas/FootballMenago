@@ -13,6 +13,9 @@
 		7591B3D125360E2F00443790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3CF25360E2F00443790 /* Main.storyboard */; };
 		7591B3D325360E2F00443790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D225360E2F00443790 /* Assets.xcassets */; };
 		7591B3D625360E2F00443790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D425360E2F00443790 /* LaunchScreen.storyboard */; };
+		7591B3E82539F18600443790 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3E72539F18600443790 /* MatchViewController.swift */; };
+		7591B3ED253A21E200443790 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3EC253A21E200443790 /* TeamViewController.swift */; };
+		7591B3F12545798900443790 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3F02545798900443790 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		7591B3D225360E2F00443790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7591B3D525360E2F00443790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7591B3D725360E2F00443790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7591B3E72539F18600443790 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		7591B3EC253A21E200443790 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		7591B3F02545798900443790 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +65,11 @@
 				7591B3C925360E2F00443790 /* AppDelegate.swift */,
 				7591B3CB25360E2F00443790 /* SceneDelegate.swift */,
 				7591B3CD25360E2F00443790 /* ViewController.swift */,
-				7591B3CF25360E2F00443790 /* Main.storyboard */,
+				7591B3E72539F18600443790 /* MatchViewController.swift */,
+				7591B3F02545798900443790 /* HistoryViewController.swift */,
+				7591B3EC253A21E200443790 /* TeamViewController.swift */,
 				7591B3D225360E2F00443790 /* Assets.xcassets */,
+				7591B3CF25360E2F00443790 /* Main.storyboard */,
 				7591B3D425360E2F00443790 /* LaunchScreen.storyboard */,
 				7591B3D725360E2F00443790 /* Info.plist */,
 			);
@@ -137,9 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7591B3E82539F18600443790 /* MatchViewController.swift in Sources */,
 				7591B3CE25360E2F00443790 /* ViewController.swift in Sources */,
 				7591B3CA25360E2F00443790 /* AppDelegate.swift in Sources */,
+				7591B3F12545798900443790 /* HistoryViewController.swift in Sources */,
 				7591B3CC25360E2F00443790 /* SceneDelegate.swift in Sources */,
+				7591B3ED253A21E200443790 /* TeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
 				INFOPLIST_FILE = FootballMenago/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
 				INFOPLIST_FILE = FootballMenago/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
