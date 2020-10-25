@@ -153,6 +153,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VkQ-u2-8q9" id="f2P-NC-yD4"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkA-vw-aFy">
                                 <rect key="frame" x="18" y="18" width="60" height="30"/>
