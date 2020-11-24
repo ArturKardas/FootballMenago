@@ -1,0 +1,9 @@
+{
+    "teams": [
+        {
+            "title": "druzyna1",
+            "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
+            "numbers": [1,2,3,4]
+        }
+    ]
+}
