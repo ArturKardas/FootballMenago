@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -152,8 +152,11 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="718"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" systemColor="secondaryLabelColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
+                                <sections/>
                                 <connections>
+                                    <outlet property="dataSource" destination="VkQ-u2-8q9" id="zdV-on-Jzt"/>
                                     <outlet property="delegate" destination="VkQ-u2-8q9" id="f2P-NC-yD4"/>
                                 </connections>
                             </tableView>
@@ -192,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97M-3t-Cd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="857"/>
+            <point key="canvasLocation" x="929" y="831"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="2k9-p0-cZL">
