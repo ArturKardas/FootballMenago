@@ -1,9 +1,14 @@
 {
     "teams": [
         {
-            "title": "druzyna1",
+            "title": "ORŁY",
             "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
             "numbers": [1,2,3,4]
+        },
+        {
+            "title": "KOCURY",
+            "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
+            "numbers": [30,40,3,4]
         }
     ]
 }

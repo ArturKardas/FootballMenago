@@ -16,3 +16,4 @@ struct Team: Codable{
     var names: [String]
     var numbers: [Int]
 }
+

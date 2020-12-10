@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36E8258012070004EFAB /* AddPlayerViewController.swift */; };
+		752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */; };
+		752F36F0258244C40004EFAB /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EF258244C40004EFAB /* Variables.swift */; };
+		752F36F4258245DB0004EFAB /* TeamsChoosenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */; };
+		752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36F9258252F40004EFAB /* PlayerViewController.swift */; };
+		752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36FC25829BED0004EFAB /* AddTeamViewController.swift */; };
 		758D9B6D2565766600C0FAAC /* zawodnicy.json in Resources */ = {isa = PBXBuildFile; fileRef = 758D9B6C2565766600C0FAAC /* zawodnicy.json */; };
 		758D9B7125657D8F00C0FAAC /* zawodnicyMODEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */; };
 		7591B3CA25360E2F00443790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3C925360E2F00443790 /* AppDelegate.swift */; };
@@ -21,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		752F36E8258012070004EFAB /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
+		752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassTeams.swift; sourceTree = "<group>"; };
+		752F36EF258244C40004EFAB /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsChoosenViewController.swift; sourceTree = "<group>"; };
+		752F36F9258252F40004EFAB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		752F36FC25829BED0004EFAB /* AddTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
 		758D9B6C2565766600C0FAAC /* zawodnicy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zawodnicy.json; sourceTree = "<group>"; };
 		758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zawodnicyMODEL.swift; sourceTree = "<group>"; };
 		7591B3C625360E2F00443790 /* FootballMenago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballMenago.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +59,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		752F36F7258252A10004EFAB /* TEAM */ = {
+			isa = PBXGroup;
+			children = (
+				752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */,
+				7591B3EC253A21E200443790 /* TeamViewController.swift */,
+				752F36F9258252F40004EFAB /* PlayerViewController.swift */,
+				752F36E8258012070004EFAB /* AddPlayerViewController.swift */,
+				752F36FC25829BED0004EFAB /* AddTeamViewController.swift */,
+			);
+			path = TEAM;
+			sourceTree = "<group>";
+		};
 		758D9B6B2565741700C0FAAC /* DATA */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */,
+				752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */,
+				752F36EF258244C40004EFAB /* Variables.swift */,
 			);
 			path = MODELS;
 			sourceTree = "<group>";
@@ -84,12 +110,12 @@
 			children = (
 				758D9B6F25657D6F00C0FAAC /* MODELS */,
 				758D9B6B2565741700C0FAAC /* DATA */,
+				752F36F7258252A10004EFAB /* TEAM */,
 				7591B3C925360E2F00443790 /* AppDelegate.swift */,
 				7591B3CB25360E2F00443790 /* SceneDelegate.swift */,
 				7591B3CD25360E2F00443790 /* ViewController.swift */,
 				7591B3E72539F18600443790 /* MatchViewController.swift */,
 				7591B3F02545798900443790 /* HistoryViewController.swift */,
-				7591B3EC253A21E200443790 /* TeamViewController.swift */,
 				7591B3D225360E2F00443790 /* Assets.xcassets */,
 				7591B3CF25360E2F00443790 /* Main.storyboard */,
 				7591B3D425360E2F00443790 /* LaunchScreen.storyboard */,
@@ -169,13 +195,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */,
 				7591B3E82539F18600443790 /* MatchViewController.swift in Sources */,
+				752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */,
 				7591B3CE25360E2F00443790 /* ViewController.swift in Sources */,
+				752F36F4258245DB0004EFAB /* TeamsChoosenViewController.swift in Sources */,
 				758D9B7125657D8F00C0FAAC /* zawodnicyMODEL.swift in Sources */,
+				752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */,
 				7591B3CA25360E2F00443790 /* AppDelegate.swift in Sources */,
 				7591B3F12545798900443790 /* HistoryViewController.swift in Sources */,
+				752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */,
 				7591B3CC25360E2F00443790 /* SceneDelegate.swift in Sources */,
 				7591B3ED253A21E200443790 /* TeamViewController.swift in Sources */,
+				752F36F0258244C40004EFAB /* Variables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
