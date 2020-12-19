@@ -12,7 +12,7 @@ struct Teams: Codable{
 }
 
 struct Team: Codable{
-    let title: String
+    var title: String
     var names: [String]
     var numbers: [Int]
 }

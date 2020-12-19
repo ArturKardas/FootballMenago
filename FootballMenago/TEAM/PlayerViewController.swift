@@ -25,6 +25,6 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func deletePlayer(_ sender: Any) {
         jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].names.remove(at: Variables.tmpPlayer)
         jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].numbers.remove(at: Variables.tmpPlayer)
-        jsonClassTeams?.saveTeam()
+        jsonClassTeams?.saveObjectToJsonFile()
     }
 }

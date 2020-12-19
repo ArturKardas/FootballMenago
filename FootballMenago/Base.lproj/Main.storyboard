@@ -12,7 +12,7 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,6 +373,18 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="8ds-Zq-gTy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zWA-Nf-Cfd">
+                                <rect key="frame" x="0.0" y="124" width="375" height="654"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" systemColor="secondaryLabelColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pnl-3P-kXb" id="QDO-tS-4D7"/>
+                                    <outlet property="delegate" destination="Pnl-3P-kXb" id="wmM-qn-kce"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIm-j5-AAL">
                                 <rect key="frame" x="18" y="18" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -388,24 +400,41 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="oIn-tx-19e"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HISTORIA MECZY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zne-ji-lRf">
+                                <rect key="frame" x="0.0" y="66" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ID8-rA-sZV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kRv-9u-KPi"/>
                         <color key="backgroundColor" red="0.15833521149999999" green="0.35673228709999999" blue="0.2221170717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8ds-Zq-gTy" firstAttribute="trailing" secondItem="jDd-MU-BsK" secondAttribute="trailing" id="1a2-NT-yoQ"/>
+                            <constraint firstItem="zne-ji-lRf" firstAttribute="top" secondItem="tIm-j5-AAL" secondAttribute="bottom" constant="18" id="6Gi-le-o6Y"/>
+                            <constraint firstItem="zWA-Nf-Cfd" firstAttribute="top" secondItem="zne-ji-lRf" secondAttribute="bottom" constant="18" id="6Py-I8-Zu4"/>
+                            <constraint firstItem="zne-ji-lRf" firstAttribute="leading" secondItem="kRv-9u-KPi" secondAttribute="leading" id="6ly-9e-vGr"/>
                             <constraint firstItem="8ds-Zq-gTy" firstAttribute="leading" secondItem="jDd-MU-BsK" secondAttribute="leading" id="BwX-Hh-9zO"/>
+                            <constraint firstItem="kRv-9u-KPi" firstAttribute="bottom" secondItem="zWA-Nf-Cfd" secondAttribute="bottom" id="PES-BH-o5f"/>
                             <constraint firstItem="8ds-Zq-gTy" firstAttribute="top" secondItem="jDd-MU-BsK" secondAttribute="top" id="RVG-dr-j7B"/>
+                            <constraint firstItem="zne-ji-lRf" firstAttribute="trailing" secondItem="kRv-9u-KPi" secondAttribute="trailing" id="XOQ-GB-Ncr"/>
                             <constraint firstItem="tIm-j5-AAL" firstAttribute="leading" secondItem="jDd-MU-BsK" secondAttribute="leading" constant="18" id="aDj-oI-tmG"/>
                             <constraint firstItem="kRv-9u-KPi" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tIm-j5-AAL" secondAttribute="trailing" symbolic="YES" id="bA3-IZ-44h"/>
                             <constraint firstAttribute="bottom" secondItem="8ds-Zq-gTy" secondAttribute="bottom" id="cnk-Ww-ze2"/>
                             <constraint firstItem="tIm-j5-AAL" firstAttribute="top" secondItem="jDd-MU-BsK" secondAttribute="top" constant="18" id="ddd-Jw-Uqy"/>
+                            <constraint firstItem="zWA-Nf-Cfd" firstAttribute="trailing" secondItem="kRv-9u-KPi" secondAttribute="trailing" id="fD0-y4-fzB"/>
+                            <constraint firstItem="zWA-Nf-Cfd" firstAttribute="leading" secondItem="kRv-9u-KPi" secondAttribute="leading" id="xwQ-y6-le0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="B8N-rK-pWe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zZ-q7-fRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="88"/>
+            <point key="canvasLocation" x="928.79999999999995" y="87.931034482758619"/>
         </scene>
         <!--Teams Choosen View Controller-->
         <scene sceneID="1DO-p0-ELs">
@@ -749,8 +778,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xPP-yX-Zhe"/>
-        <segue reference="UH5-nB-FOe"/>
+        <segue reference="88w-oD-okF"/>
+        <segue reference="Dv1-zy-g6x"/>
         <segue reference="w9k-pA-lMn"/>
     </inferredMetricsTieBreakers>
     <resources>

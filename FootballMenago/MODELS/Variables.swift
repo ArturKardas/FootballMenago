@@ -10,4 +10,5 @@ import Foundation
 struct Variables{
     static var tmpTeam = 0
     static var tmpPlayer = 0
+    static var tmpGame = 0
 }

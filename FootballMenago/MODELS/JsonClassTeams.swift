@@ -33,7 +33,7 @@ class JsonClassTeams{
         }
     }
     
-    func saveTeam(){
+    func saveObjectToJsonFile(){
         guard let path = Bundle.main.path(forResource: "zawodnicy", ofType: "json") else {
             print("Nie ma takiego pliku")
             return
@@ -51,6 +51,16 @@ class JsonClassTeams{
         }
     }
     
+    func addTeam(name: String){
+        let names = [String]()
+        let numbers = [Int]()
+        let team = Team(title: name, names: names, numbers: numbers)
+        
+        teamsObject?.teams.append(team)
+        
+        
+    }
+    
     func getName(team: Int, player: Int) -> String{
         return (teamsObject?.teams[team].names[player])!
     }
@@ -58,6 +68,7 @@ class JsonClassTeams{
     func getNumber(team: Int, player: Int) -> String{
         return String((teamsObject?.teams[team].numbers[player])!)
     }
+    
     
     
     

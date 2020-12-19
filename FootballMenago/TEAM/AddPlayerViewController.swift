@@ -45,7 +45,7 @@ class AddPlayerViewController: UIViewController, UITextFieldDelegate {
         jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].names.insert(textName.text! as String, at: index)
         jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].numbers.insert(number, at: index)
         
-        jsonClassTeams?.saveTeam()
+        jsonClassTeams?.saveObjectToJsonFile()
     }
     
 }
