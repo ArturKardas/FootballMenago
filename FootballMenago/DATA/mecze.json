@@ -3,7 +3,8 @@
         {
             "name": "Mecz wysokiej wagi",
             "teamName": "ORŁY",
-            "mainTeamSize": 5
+            "mainTeamSize": 5,
+            "age": 2000
         }
     ]
 }

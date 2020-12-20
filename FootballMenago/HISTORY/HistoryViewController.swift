@@ -28,7 +28,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         Variables.tmpGame = indexPath.row
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainView")
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GameHistoryView")
         self.addChild(nextViewController)
         nextViewController.view.frame = self.view.frame
         self.view.addSubview(nextViewController.view)

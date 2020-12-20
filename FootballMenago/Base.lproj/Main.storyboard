@@ -103,6 +103,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="8sJ-Az-MYX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-y5-cX2">
+                                <rect key="frame" x="10" y="10" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4i-Wh-eF8">
                                 <rect key="frame" x="18" y="18" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,7 +194,7 @@
                                     <segue destination="rbR-TP-nBO" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="YIF-aZ-9RG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZAWODNICY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q4-MF-jsX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    ZAWODNICY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q4-MF-jsX">
                                 <rect key="frame" x="0.0" y="66" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -258,7 +262,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj zawodnika" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHM-PB-rog">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Dodaj zawodnika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHM-PB-rog">
                                 <rect key="frame" x="0.0" y="66" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -400,7 +404,7 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="oIn-tx-19e"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HISTORIA MECZY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zne-ji-lRf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    HISTORIA MECZY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zne-ji-lRf">
                                 <rect key="frame" x="0.0" y="66" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -489,7 +493,7 @@
                                     <segue destination="m1Y-MB-fMT" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="FIa-Ss-XIr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRUŻYNY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDZ-4s-kL4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    DRUŻYNY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDZ-4s-kL4">
                                 <rect key="frame" x="0.0" y="66" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -574,7 +578,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZAWODNIK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kr2-kP-7mn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    ZAWODNIK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kr2-kP-7mn">
                                 <rect key="frame" x="0.0" y="66" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -684,7 +688,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj drużynę" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-w1-Q7y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    Dodaj drużynę" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-w1-Q7y">
                                 <rect key="frame" x="0.0" y="66" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -776,10 +780,116 @@
             </objects>
             <point key="canvasLocation" x="929" y="1535"/>
         </scene>
+        <!--Game History View Controller-->
+        <scene sceneID="T7M-FH-lnu">
+            <objects>
+                <viewController storyboardIdentifier="GameHistoryView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VnQ-Ds-agx" customClass="GameHistoryViewController" customModule="FootballMenago" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SQM-Nh-6lc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="agn-HU-7AY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="          Nawa Meczu:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-3P-ibc">
+                                <rect key="frame" x="0.0" y="106" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a0j-Jd-0yp"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ax5-7r-IL4"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="roj-aR-LvG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.74628103599999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="          Rocznik:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptc-Ba-eR4">
+                                <rect key="frame" x="0.0" y="166" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.91029002569999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HId-uM-ILW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="yO9-H4-iQz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.74628103599999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jG5-7o-qOF">
+                                <rect key="frame" x="18" y="18" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Jnf-wU-Cuj"/>
+                                    <constraint firstAttribute="height" constant="30" id="PfZ-0M-lts"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="WRÓĆ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pnl-3P-kXb" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="czb-cs-Bet"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    WIDOK MECZU" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7P-Lf-d0e">
+                                <rect key="frame" x="0.0" y="66" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.91029002569999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bO8-Fk-H9K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="          Drużyna:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOK-Ax-Gvu">
+                                <rect key="frame" x="0.0" y="136" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="0.91029002569999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZOt-V2-WS1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.74628103599999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xZR-Uq-Zjn"/>
+                        <color key="backgroundColor" red="0.15833521149999999" green="0.35673228709999999" blue="0.2221170717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="jG5-7o-qOF" firstAttribute="leading" secondItem="SQM-Nh-6lc" secondAttribute="leading" constant="18" id="Ca6-aH-6Bg"/>
+                            <constraint firstItem="jG5-7o-qOF" firstAttribute="top" secondItem="SQM-Nh-6lc" secondAttribute="top" constant="18" id="Dp2-E4-2eM"/>
+                            <constraint firstAttribute="bottom" secondItem="agn-HU-7AY" secondAttribute="bottom" id="Gjd-Ww-NT4"/>
+                            <constraint firstItem="6fa-3P-ibc" firstAttribute="top" secondItem="s7P-Lf-d0e" secondAttribute="bottom" id="JoD-r3-wuZ"/>
+                            <constraint firstItem="agn-HU-7AY" firstAttribute="trailing" secondItem="SQM-Nh-6lc" secondAttribute="trailing" id="MiR-Iy-o7l"/>
+                            <constraint firstItem="tOK-Ax-Gvu" firstAttribute="top" secondItem="6fa-3P-ibc" secondAttribute="bottom" id="PbS-mt-KMu"/>
+                            <constraint firstItem="agn-HU-7AY" firstAttribute="top" secondItem="SQM-Nh-6lc" secondAttribute="top" id="S40-5J-qRV"/>
+                            <constraint firstItem="agn-HU-7AY" firstAttribute="leading" secondItem="SQM-Nh-6lc" secondAttribute="leading" id="Wxd-sI-AMw"/>
+                            <constraint firstItem="s7P-Lf-d0e" firstAttribute="leading" secondItem="xZR-Uq-Zjn" secondAttribute="leading" id="Xut-O3-oDy"/>
+                            <constraint firstItem="ptc-Ba-eR4" firstAttribute="trailing" secondItem="xZR-Uq-Zjn" secondAttribute="trailing" id="ZeK-Gl-Fji"/>
+                            <constraint firstItem="s7P-Lf-d0e" firstAttribute="top" secondItem="jG5-7o-qOF" secondAttribute="bottom" constant="18" id="bgW-Vm-oEO"/>
+                            <constraint firstItem="tOK-Ax-Gvu" firstAttribute="trailing" secondItem="xZR-Uq-Zjn" secondAttribute="trailing" id="iHQ-dm-n0L"/>
+                            <constraint firstItem="s7P-Lf-d0e" firstAttribute="trailing" secondItem="xZR-Uq-Zjn" secondAttribute="trailing" id="iKY-hT-Qs5"/>
+                            <constraint firstItem="6fa-3P-ibc" firstAttribute="trailing" secondItem="xZR-Uq-Zjn" secondAttribute="trailing" id="jsy-cN-Fuz"/>
+                            <constraint firstItem="xZR-Uq-Zjn" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jG5-7o-qOF" secondAttribute="trailing" symbolic="YES" id="lfK-dx-Zyi"/>
+                            <constraint firstItem="ptc-Ba-eR4" firstAttribute="leading" secondItem="xZR-Uq-Zjn" secondAttribute="leading" id="pHS-p7-Bre"/>
+                            <constraint firstItem="tOK-Ax-Gvu" firstAttribute="leading" secondItem="SQM-Nh-6lc" secondAttribute="leading" id="sdp-A1-w5C"/>
+                            <constraint firstItem="ptc-Ba-eR4" firstAttribute="top" secondItem="tOK-Ax-Gvu" secondAttribute="bottom" id="xyN-xP-M7w"/>
+                            <constraint firstItem="6fa-3P-ibc" firstAttribute="leading" secondItem="xZR-Uq-Zjn" secondAttribute="leading" id="zD7-fa-Ia1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TaQ-sY-kWV"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="ptc-Ba-eR4" id="mso-2W-OKT"/>
+                        <outlet property="gameNameLabel" destination="6fa-3P-ibc" id="tJc-1i-PDN"/>
+                        <outlet property="teamNameLabel" destination="tOK-Ax-Gvu" id="M97-by-MxK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YON-IO-kWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1722" y="88"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="88w-oD-okF"/>
-        <segue reference="Dv1-zy-g6x"/>
+        <segue reference="xPP-yX-Zhe"/>
+        <segue reference="czb-cs-Bet"/>
+        <segue reference="H0f-Uy-kSi"/>
         <segue reference="w9k-pA-lMn"/>
     </inferredMetricsTieBreakers>
     <resources>

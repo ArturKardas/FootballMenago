@@ -15,6 +15,7 @@ struct Game: Codable {
     var name: String
     var mainTeamSize: Int
     var teamName: String
+    var age: Int
 }
 
 

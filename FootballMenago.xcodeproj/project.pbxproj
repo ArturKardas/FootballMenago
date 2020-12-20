@@ -16,6 +16,7 @@
 		752F37042587B6AB0004EFAB /* mecze.json in Resources */ = {isa = PBXBuildFile; fileRef = 752F37032587B6AB0004EFAB /* mecze.json */; };
 		752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37062587B7490004EFAB /* meczeMODEL.swift */; };
 		752F370A2587BA630004EFAB /* JsonClassGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37092587BA630004EFAB /* JsonClassGames.swift */; };
+		7577305B258FD5F70075372A /* GameHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577305A258FD5F70075372A /* GameHistoryViewController.swift */; };
 		758D9B6D2565766600C0FAAC /* zawodnicy.json in Resources */ = {isa = PBXBuildFile; fileRef = 758D9B6C2565766600C0FAAC /* zawodnicy.json */; };
 		758D9B7125657D8F00C0FAAC /* zawodnicyMODEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */; };
 		7591B3CA25360E2F00443790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3C925360E2F00443790 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		752F37032587B6AB0004EFAB /* mecze.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mecze.json; sourceTree = "<group>"; };
 		752F37062587B7490004EFAB /* meczeMODEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meczeMODEL.swift; sourceTree = "<group>"; };
 		752F37092587BA630004EFAB /* JsonClassGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassGames.swift; sourceTree = "<group>"; };
+		7577305A258FD5F70075372A /* GameHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewController.swift; sourceTree = "<group>"; };
 		758D9B6C2565766600C0FAAC /* zawodnicy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = zawodnicy.json; sourceTree = "<group>"; };
 		758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zawodnicyMODEL.swift; sourceTree = "<group>"; };
 		7591B3C625360E2F00443790 /* FootballMenago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballMenago.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				7591B3F02545798900443790 /* HistoryViewController.swift */,
+				7577305A258FD5F70075372A /* GameHistoryViewController.swift */,
 			);
 			path = HISTORY;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */,
 				752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */,
 				7591B3CE25360E2F00443790 /* ViewController.swift in Sources */,
+				7577305B258FD5F70075372A /* GameHistoryViewController.swift in Sources */,
 				752F36F4258245DB0004EFAB /* TeamsChoosenViewController.swift in Sources */,
 				758D9B7125657D8F00C0FAAC /* zawodnicyMODEL.swift in Sources */,
 				752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */,
