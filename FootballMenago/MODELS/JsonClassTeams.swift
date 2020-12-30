@@ -51,10 +51,10 @@ class JsonClassTeams{
         }
     }
     
-    func addTeam(name: String){
+    func addTeam(name: String, age: Int){
         let names = [String]()
         let numbers = [Int]()
-        let team = Team(title: name, names: names, numbers: numbers)
+        let team = Team(title: name, age: age, names: names, numbers: numbers)
         
         teamsObject?.teams.append(team)
         
@@ -67,6 +67,10 @@ class JsonClassTeams{
     
     func getNumber(team: Int, player: Int) -> String{
         return String((teamsObject?.teams[team].numbers[player])!)
+    }
+    
+    func getAge(team: Int) -> String{
+        return String((teamsObject?.teams[team].age)!)
     }
     
     

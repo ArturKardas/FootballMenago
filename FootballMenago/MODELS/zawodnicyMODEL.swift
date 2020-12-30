@@ -13,6 +13,7 @@ struct Teams: Codable{
 
 struct Team: Codable{
     var title: String
+    var age: Int
     var names: [String]
     var numbers: [Int]
 }

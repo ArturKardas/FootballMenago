@@ -18,7 +18,7 @@ class TeamsChoosenViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.backgroundColor = UIColor.secondaryLabel
-        cell.textLabel?.text = jsonClassTeams?.teamsObject?.teams[indexPath.row].title
+        cell.textLabel?.text = (jsonClassTeams?.teamsObject?.teams[indexPath.row].title)! + "  " + String((jsonClassTeams?.teamsObject?.teams[indexPath.row].age)!)
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.textAlignment = .center
         

@@ -2,11 +2,13 @@
     "teams": [
         {
             "title": "ORŁY",
+            "age": 2005,
             "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
             "numbers": [1,2,3,4]
         },
         {
             "title": "KOCURY",
+            "age": 2009,
             "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
             "numbers": [30,40,3,4]
         }

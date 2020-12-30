@@ -7,6 +7,12 @@
 
 import UIKit
 
+class TeamHistoryCell: UITableViewCell{
+    @IBOutlet weak var gameNameText: UILabel!
+    @IBOutlet weak var teamNameText: UILabel!
+    @IBOutlet weak var dataText: UILabel!
+}
+
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var jsonGame: JsonClassGames?
@@ -16,11 +22,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = (jsonGame?.gamesObject?.games[indexPath.row].name)! + "  " + (jsonGame?.gamesObject?.games[indexPath.row].teamName)!
-        cell.backgroundColor = UIColor.secondaryLabel
-        cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.textAlignment = .center
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as!TeamHistoryCell
+
+        cell.gameNameText.text = jsonGame?.gamesObject?.games[indexPath.row].name
+        cell.teamNameText.text = jsonGame?.gamesObject?.games[indexPath.row].teamName
+        cell.dataText.text = jsonGame?.gamesObject?.games[indexPath.row].date
+        
         return cell
     }
     
@@ -34,6 +41,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.view.addSubview(nextViewController.view)
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "sectionGameCell")
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

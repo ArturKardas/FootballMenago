@@ -13,6 +13,7 @@ class AddTeamViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var buttonDODAJ: UIButton!
     @IBOutlet weak var textFieldNameTeam: UITextField!
+    @IBOutlet weak var textFieldAge: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class AddTeamViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func addTeam(_ sender: Any) {
-        jsonClassTeams?.addTeam(name: textFieldNameTeam.text! as String)
+        jsonClassTeams?.addTeam(name: textFieldNameTeam.text! as String, age: Int(textFieldAge.text!)!)
         jsonClassTeams?.saveObjectToJsonFile()
         
     }
