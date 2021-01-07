@@ -26,7 +26,7 @@
 		7591B3D325360E2F00443790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D225360E2F00443790 /* Assets.xcassets */; };
 		7591B3D625360E2F00443790 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D425360E2F00443790 /* LaunchScreen.storyboard */; };
 		7591B3E82539F18600443790 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3E72539F18600443790 /* MatchViewController.swift */; };
-		7591B3ED253A21E200443790 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3EC253A21E200443790 /* TeamViewController.swift */; };
+		7591B3ED253A21E200443790 /* PlayerChoosenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3EC253A21E200443790 /* PlayerChoosenController.swift */; };
 		7591B3F12545798900443790 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3F02545798900443790 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,7 @@
 		7591B3D525360E2F00443790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7591B3D725360E2F00443790 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7591B3E72539F18600443790 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
-		7591B3EC253A21E200443790 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		7591B3EC253A21E200443790 /* PlayerChoosenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerChoosenController.swift; sourceTree = "<group>"; };
 		7591B3F02545798900443790 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */,
-				7591B3EC253A21E200443790 /* TeamViewController.swift */,
+				7591B3EC253A21E200443790 /* PlayerChoosenController.swift */,
 				752F36F9258252F40004EFAB /* PlayerViewController.swift */,
 				752F36E8258012070004EFAB /* AddPlayerViewController.swift */,
 				752F36FC25829BED0004EFAB /* AddTeamViewController.swift */,
@@ -238,7 +238,7 @@
 				7591B3F12545798900443790 /* HistoryViewController.swift in Sources */,
 				752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */,
 				7591B3CC25360E2F00443790 /* SceneDelegate.swift in Sources */,
-				7591B3ED253A21E200443790 /* TeamViewController.swift in Sources */,
+				7591B3ED253A21E200443790 /* PlayerChoosenController.swift in Sources */,
 				752F36F0258244C40004EFAB /* Variables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +384,7 @@
 		7591B3DB25360E2F00443790 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
@@ -404,7 +404,7 @@
 		7591B3DC25360E2F00443790 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8WVMB49K9U;

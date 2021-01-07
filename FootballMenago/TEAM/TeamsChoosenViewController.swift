@@ -7,6 +7,11 @@
 
 import UIKit
 
+class TeamCell: UITableViewCell {
+    @IBOutlet weak var nameTeamText: UILabel!
+    @IBOutlet weak var ageTeamText: UILabel!
+}
+
 class TeamsChoosenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var jsonClassTeams: JsonClassTeams?
@@ -16,11 +21,10 @@ class TeamsChoosenViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = UIColor.secondaryLabel
-        cell.textLabel?.text = (jsonClassTeams?.teamsObject?.teams[indexPath.row].title)! + "  " + String((jsonClassTeams?.teamsObject?.teams[indexPath.row].age)!)
-        cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.textAlignment = .center
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") as! TeamCell
+        
+        cell.nameTeamText.text = jsonClassTeams?.teamsObject?.teams[indexPath.row].title
+        cell.ageTeamText.text = String((jsonClassTeams?.teamsObject?.teams[indexPath.row].age)!)
         
         return cell
     }
@@ -33,6 +37,15 @@ class TeamsChoosenViewController: UIViewController, UITableViewDataSource, UITab
         self.addChild(nextViewController)
         nextViewController.view.frame = self.view.frame
         self.view.addSubview(nextViewController.view)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableCell(withIdentifier: "headerTeamCell")
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
     
     override func viewDidLoad() {

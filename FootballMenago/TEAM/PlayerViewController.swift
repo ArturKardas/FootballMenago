@@ -11,6 +11,7 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldNumber: UITextField!
+    @IBOutlet weak var textFieldPosition: UITextField!
     var jsonClassTeams: JsonClassTeams?
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
         jsonClassTeams = JsonClassTeams()
         textFieldName.text = jsonClassTeams?.getName(team: Variables.tmpTeam, player: Variables.tmpPlayer)
         textFieldNumber.text = jsonClassTeams?.getNumber(team: Variables.tmpTeam, player: Variables.tmpPlayer)
+        textFieldPosition.text = jsonClassTeams?.getPosition(team: Variables.tmpTeam, player: Variables.tmpPlayer)
     }
     
     @IBAction func deletePlayer(_ sender: Any) {

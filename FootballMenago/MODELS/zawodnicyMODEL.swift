@@ -15,6 +15,9 @@ struct Team: Codable{
     var title: String
     var age: Int
     var names: [String]
+    var surnames: [String]
+    var birthDates: [String]
     var numbers: [Int]
+    var position: [String]
 }
 

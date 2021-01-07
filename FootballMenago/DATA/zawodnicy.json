@@ -4,13 +4,19 @@
             "title": "ORŁY",
             "age": 2005,
             "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
-            "numbers": [1,2,3,4]
+            "surnames": ["Łysy", "Gruby", "Seba", "Marcinek"],
+            "birthDates": ["01.01.2002", "01.01.2002", "01.01.2002", "01.01.2002"],
+            "numbers": [1,2,3,4],
+            "position": ["BR","OB","N","P"]
         },
         {
             "title": "KOCURY",
             "age": 2009,
             "names": ["Łysy", "Gruby", "Seba", "Marcinek"],
-            "numbers": [30,40,3,4]
+            "surnames": ["Łysy", "Gruby", "Seba", "Marcinek"],
+            "birthDates": ["01.01.2002", "01.01.2002", "01.01.2002", "01.01.2002"],
+            "numbers": [1,10,7,8],
+            "position": ["BR","OB","N","P"]
         }
     ]
 }

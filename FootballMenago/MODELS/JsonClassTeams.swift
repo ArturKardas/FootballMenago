@@ -53,8 +53,11 @@ class JsonClassTeams{
     
     func addTeam(name: String, age: Int){
         let names = [String]()
+        let surnames = [String]()
         let numbers = [Int]()
-        let team = Team(title: name, age: age, names: names, numbers: numbers)
+        let position = [String]()
+        let birthDate = [String]()
+        let team = Team(title: name, age: age, names: names, surnames: surnames, birthDates: birthDate,numbers: numbers, position: position)
         
         teamsObject?.teams.append(team)
         
@@ -65,6 +68,10 @@ class JsonClassTeams{
         return (teamsObject?.teams[team].names[player])!
     }
     
+    func getSurname(team: Int, player: Int) -> String{
+        return (teamsObject?.teams[team].surnames[player])!
+    }
+    
     func getNumber(team: Int, player: Int) -> String{
         return String((teamsObject?.teams[team].numbers[player])!)
     }
@@ -73,6 +80,13 @@ class JsonClassTeams{
         return String((teamsObject?.teams[team].age)!)
     }
     
+    func  getPosition(team: Int, player: Int) -> String {
+        return (teamsObject?.teams[team].position[player])!
+    }
+    
+    func getDateOfBirthString(team: Int, player: Int) -> String {
+        return (teamsObject?.teams[team].birthDates[player])!
+    }
     
     
     

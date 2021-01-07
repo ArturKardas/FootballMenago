@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "FootbalPitch1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "FootbalPitch1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "FootbalPitch1@3x.png",
+      "filename" : "GoodDayPNG.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
