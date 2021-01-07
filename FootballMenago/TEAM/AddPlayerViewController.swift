@@ -11,6 +11,9 @@ class AddPlayerViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textName: UITextField!
     @IBOutlet weak var textNumber: UITextField!
+    @IBOutlet weak var textSurname: UITextField!
+    @IBOutlet weak var textPosition: UITextField!
+    @IBOutlet weak var textBirthDate: UITextField!
     
     @IBOutlet weak var buttonDODAJ: UIButton!
     
@@ -39,13 +42,15 @@ class AddPlayerViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func addPlayer(_ sender: Any) {
-        print(textName.text! as String)
-        let number = Int(textNumber.text!)!
-        let index = (jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].names.count)! as Int
-        jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].names.insert(textName.text! as String, at: index)
-        jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].numbers.insert(number, at: index)
         
-        jsonClassTeams?.saveObjectToJsonFile()
+        let name = textName.text
+        let surname = textSurname.text
+        let number = Int(textNumber.text!)
+        let position = textPosition.text
+        let birthDate = textBirthDate.text
+        
+        jsonClassTeams?.addPlayer(name: name!, surname: surname!, number: number!, position: position!, birthDate: birthDate!)
+        
     }
     
 }

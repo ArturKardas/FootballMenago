@@ -64,6 +64,19 @@ class JsonClassTeams{
         
     }
     
+    func  addPlayer(name: String, surname: String, number: Int, position: String, birthDate: String){
+        
+        let index = (teamsObject?.teams[Variables.tmpTeam].names.count)! as Int
+        
+        teamsObject?.teams[Variables.tmpTeam].names.insert(name, at: index)
+        teamsObject?.teams[Variables.tmpTeam].surnames.insert(surname, at: index)
+        teamsObject?.teams[Variables.tmpTeam].numbers.insert(number, at: index)
+        teamsObject?.teams[Variables.tmpTeam].position.insert(position, at: index)
+        teamsObject?.teams[Variables.tmpTeam].birthDates.insert(birthDate, at: index)
+        
+        saveObjectToJsonFile()
+    }
+    
     func getName(team: Int, player: Int) -> String{
         return (teamsObject?.teams[team].names[player])!
     }
