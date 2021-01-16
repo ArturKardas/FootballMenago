@@ -12,5 +12,4 @@ struct Variables{
     static var tmpPlayer = 0
     static var tmpGame = 0
     
-    
 }

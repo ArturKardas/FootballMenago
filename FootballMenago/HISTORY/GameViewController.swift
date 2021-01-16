@@ -13,8 +13,6 @@ class PlayerHistoryTabelViewCell: UITableViewCell{
     
     
     @IBOutlet weak var timeTextField: UILabel!
-    @IBOutlet weak var eightteenTextField: UILabel!
-    @IBOutlet weak var sevenTedxtField: UILabel!
     @IBOutlet weak var goalsTextField: UILabel!
     @IBOutlet weak var assisstsTextField: UILabel!
     @IBOutlet weak var yellowCardTextField: UILabel!
@@ -29,7 +27,7 @@ class SectionTableViewCell: UITableViewCell {
 }
 
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -46,7 +44,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ageLabel.text = String((jsonGame?.gamesObject?.games[Variables.tmpGame].age)!)
         dateLabel.text = String((jsonGame?.gamesObject?.games[Variables.tmpGame].date)!)
         super.viewDidLoad()
-
+        
     }
     
     //tableView
@@ -67,17 +65,17 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowCount = 0
-            if section == 0 {
-                rowCount = (jsonGame?.gamesObject?.games[Variables.tmpGame].mainTeamSize)!
-            }
-            if section == 1 {
-                rowCount = (jsonGame?.gamesObject?.games[Variables.tmpGame].secondTeamSize)!
-            }
-            return rowCount
+        if section == 0 {
+            rowCount = (jsonGame?.gamesObject?.games[Variables.tmpGame].mainTeamSize)!
+        }
+        if section == 1 {
+            rowCount = (jsonGame?.gamesObject?.games[Variables.tmpGame].secondTeamSize)!
+        }
+        return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerHistoryTabelViewCell
         
         if indexPath.section == 0 {
@@ -85,8 +83,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.playerNameText.text = jsonGame?.getName(game: Variables.tmpGame, player: indexPath.row)
             
             cell.timeTextField.text = jsonGame?.getPlayedTime(game: Variables.tmpGame, player: indexPath.row)
-            cell.eightteenTextField.text = jsonGame?.get18(game: Variables.tmpGame, player: indexPath.row)
-            cell.sevenTedxtField.text = jsonGame?.get7(game: Variables.tmpGame, player: indexPath.row)
             cell.goalsTextField.text = jsonGame?.getNumbersOfGoals(game: Variables.tmpGame, player: indexPath.row)
             cell.assisstsTextField.text = jsonGame?.getAssists(game: Variables.tmpGame, player: indexPath.row)
             cell.yellowCardTextField.text = jsonGame?.getNumbersOFYellowCards(game: Variables.tmpGame, player: indexPath.row)
@@ -97,8 +93,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.numberTextField.text = jsonGame?.getNumber(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
             cell.playerNameText.text = jsonGame?.getName(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
             cell.timeTextField.text = jsonGame?.getPlayedTime(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.eightteenTextField.text = jsonGame?.get18(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.sevenTedxtField.text = jsonGame?.get7(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
             cell.goalsTextField.text = jsonGame?.getNumbersOfGoals(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
             cell.assisstsTextField.text = jsonGame?.getAssists(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
             cell.yellowCardTextField.text = jsonGame?.getNumbersOFYellowCards(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
@@ -108,7 +102,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionTableViewCell
         if section == 0 {
@@ -122,6 +116,20 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 65
+    }
+    @IBAction func excelButtonClicked(_ sender: Any) {
+        let excel = ExcelController()
+        
+        excel.printExcel()
+        
+        // create the alert
+        let alert = UIAlertController(title: "Excel!!!", message: "Excel został stworzony w folderze PLIKI/FOOTBALLMENAGO", preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

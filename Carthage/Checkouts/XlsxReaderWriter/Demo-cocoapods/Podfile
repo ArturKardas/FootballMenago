@@ -1,0 +1,9 @@
+target 'Demo' do
+    
+    platform :ios, '10.3'
+    
+    pod 'XlsxReaderWriter', path: '../XlsxReaderWriter.podspec'
+    
+    use_frameworks!
+    
+end

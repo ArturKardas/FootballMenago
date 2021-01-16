@@ -1,0 +1,23 @@
+PODS:
+  - SSZipArchive (2.2.3)
+  - XlsxReaderWriter (2.4.1):
+    - SSZipArchive (~> 2.1)
+
+DEPENDENCIES:
+  - XlsxReaderWriter (from `../XlsxReaderWriter.podspec`)
+
+SPEC REPOS:
+  trunk:
+    - SSZipArchive
+
+EXTERNAL SOURCES:
+  XlsxReaderWriter:
+    :path: "../XlsxReaderWriter.podspec"
+
+SPEC CHECKSUMS:
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  XlsxReaderWriter: 853f56a6d43474c453c48a3a107e756094bca3a3
+
+PODFILE CHECKSUM: a84da9e51e4efb22214e3791423a9387d6d6f4ad
+
+COCOAPODS: 1.10.0

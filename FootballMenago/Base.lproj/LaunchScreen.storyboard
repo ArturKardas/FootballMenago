@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FootbalPitch1" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-zs-y4k">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoodDay" translatesAutoresizingMaskIntoConstraints="NO" id="v9o-Ob-CDZ">
                                 <rect key="frame" x="50.666666666666657" y="71" width="289" height="702"/>
                                 <constraints>
@@ -31,14 +27,10 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="AAC-zs-y4k" secondAttribute="bottom" id="2mJ-P7-rMg"/>
-                            <constraint firstItem="AAC-zs-y4k" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Ogw-e2-fCW"/>
                             <constraint firstItem="v9o-Ob-CDZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Wkf-Ot-yrA"/>
-                            <constraint firstItem="AAC-zs-y4k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yvm-Gq-gfD"/>
                             <constraint firstItem="v9o-Ob-CDZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iFC-2g-cEg"/>
-                            <constraint firstItem="AAC-zs-y4k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nsC-uZ-F9X"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -48,10 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FootbalPitch1" width="222" height="323"/>
         <image name="GoodDay" width="166.66667175292969" height="166.66667175292969"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
