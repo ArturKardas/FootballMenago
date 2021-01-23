@@ -31,8 +31,6 @@
 		75C215C025AD489A00878A2F /* CartFile in Resources */ = {isa = PBXBuildFile; fileRef = 7576FEE425AD3F6E0086EEB8 /* CartFile */; };
 		75C21AC025AD4A2D00878A2F /* XlsxReaderWriter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A7925AD4A1B00878A2F /* XlsxReaderWriter.framework */; };
 		75C21AC125AD4A2D00878A2F /* XlsxReaderWriter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A7925AD4A1B00878A2F /* XlsxReaderWriter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		75C21AC225AD4A2D00878A2F /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; };
-		75C21AC325AD4A2D00878A2F /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75C21AC525AD4A7B00878A2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3CF25360E2F00443790 /* Main.storyboard */; };
 		75C21AC625AD4A7B00878A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D425360E2F00443790 /* LaunchScreen.storyboard */; };
 		75C4FB2E25AD23C800AAEA98 /* ExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */; };
@@ -252,7 +250,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				75C21AC125AD4A2D00878A2F /* XlsxReaderWriter.framework in Embed Frameworks */,
-				75C21AC325AD4A2D00878A2F /* ZipArchive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,7 +644,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C21AC025AD4A2D00878A2F /* XlsxReaderWriter.framework in Frameworks */,
-				75C21AC225AD4A2D00878A2F /* ZipArchive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
