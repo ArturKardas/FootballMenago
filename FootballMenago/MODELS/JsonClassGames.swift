@@ -11,24 +11,30 @@ class JsonClassGames{
     var gamesObject: Games?
     
     init(){
-        //odczytywanie pliku
-        guard let path = Bundle.main.path(forResource: "mecze", ofType: "json") else {
-            print("Nie ma takiego pliku")
-            return
-        }
-        
-        let url = URL(fileURLWithPath: path)
         
         do{
+            //odczytywanie pliku
+            let path = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let url =  path.appendingPathComponent("NIE-USUWAC-HISTORIA.json")
+            
             let jsonData = try Data(contentsOf: url)
             gamesObject = try JSONDecoder().decode( Games.self, from: jsonData)
-            if let games = gamesObject{
-                print(games)
-            }else{
-                print("no nie pykło")
-          }
         }catch{
-            print("Error: \(error)")
+            
+            let documentPath: String = Bundle.main.path(forResource: "mecze", ofType: "json")!
+            
+            do {
+                let path = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                let url =  path.appendingPathComponent("NIE-USUWAC-HISTORIA.json")
+                let newPath = url.path
+                try FileManager.default.copyItem(atPath: documentPath, toPath: newPath)
+                
+                let jsonData = try Data(contentsOf: url)
+                gamesObject = try JSONDecoder().decode( Games.self, from: jsonData)
+            } catch{
+                print("Error: \(error)")
+            }
+            
         }
     }
     

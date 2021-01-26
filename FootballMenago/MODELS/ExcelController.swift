@@ -18,15 +18,15 @@ class ExcelController {
         
         let team = games.gamesObject?.games[Variables.tmpGame]
         
-        //Save a copy
-        //giving  path to directory
         do{
+            //giving  path to directory
             let path = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             
             //giving new name to file
             let newUrl =  path.appendingPathComponent("Test\(Date.init()).xlsx")
             let excelNewPath = newUrl.path
             
+            //Save a copy
             try FileManager.default.copyItem(atPath: documentPath, toPath: excelNewPath)
             
             let spreadsheet: BRAOfficeDocumentPackage = BRAOfficeDocumentPackage.open(excelNewPath)

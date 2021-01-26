@@ -131,14 +131,39 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="hnS-QE-YIZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cF7-Kv-veD" userLabel="Title View">
+                                <rect key="frame" x="0.0" y="66" width="390" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOWY MECZ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weh-wa-PZB">
+                                        <rect key="frame" x="49.999999999999986" y="0.0" width="188.66666666666663" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="dzN-bK-IhS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="LabelsBackgroundDarkest"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JhO-hA-24K"/>
+                                    <constraint firstAttribute="bottom" secondItem="weh-wa-PZB" secondAttribute="bottom" id="MTQ-H8-GcF"/>
+                                    <constraint firstItem="weh-wa-PZB" firstAttribute="leading" secondItem="cF7-Kv-veD" secondAttribute="leading" constant="50" id="VMr-IC-PlG"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="WVx-Mp-amj"/>
+                                    <constraint firstItem="weh-wa-PZB" firstAttribute="top" secondItem="cF7-Kv-veD" secondAttribute="top" id="kya-uY-be1"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="vxK-Sc-ovE"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="weh-wa-PZB" secondAttribute="trailing" constant="20" symbolic="YES" id="yHQ-3i-ZvK"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-ha-Ai0">
                                 <rect key="frame" x="0.0" y="116" width="390" height="254"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2j2-Gz-HPn">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nazwa Meczu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKA-Uk-jKm">
-                                                <rect key="frame" x="30" y="0.0" width="134" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drużyny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKA-Uk-jKm">
+                                                <rect key="frame" x="30" y="0.0" width="82" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="ExH-k3-Eup"/>
@@ -162,17 +187,30 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-xA-g4F">
-                                        <rect key="frame" x="0.0" y="32" width="320" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <rect key="frame" x="0.0" y="32" width="390" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nazwa drużyn" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsI-ff-GXM">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                                <color key="backgroundColor" name="TextGray"/>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="jsI-ff-GXM" secondAttribute="bottom" id="Mbl-79-86i"/>
                                             <constraint firstAttribute="height" constant="30" id="e3P-ZF-gLj"/>
+                                            <constraint firstAttribute="trailing" secondItem="jsI-ff-GXM" secondAttribute="trailing" id="kAU-i8-t0s"/>
+                                            <constraint firstItem="jsI-ff-GXM" firstAttribute="top" secondItem="bh6-xA-g4F" secondAttribute="top" id="lkg-9I-58f"/>
+                                            <constraint firstItem="jsI-ff-GXM" firstAttribute="leading" secondItem="bh6-xA-g4F" secondAttribute="leading" id="rcW-NI-3I1"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-X9-Cut">
                                         <rect key="frame" x="0.0" y="64" width="390" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rozmiar pierwszej drużyny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPY-As-vrM">
-                                                <rect key="frame" x="30" y="0.0" width="263.33333333333331" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rozmiar 1 składu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPY-As-vrM">
+                                                <rect key="frame" x="30" y="0.0" width="165.33333333333334" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="3EQ-zz-Qbx"/>
@@ -196,17 +234,30 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lk5-5h-g7i">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <rect key="frame" x="0.0" y="96" width="390" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U92-Kh-kpK">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                                <color key="backgroundColor" name="TextGray"/>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="U92-Kh-kpK" firstAttribute="top" secondItem="Lk5-5h-g7i" secondAttribute="top" id="5Yc-5T-ozk"/>
+                                            <constraint firstItem="U92-Kh-kpK" firstAttribute="leading" secondItem="Lk5-5h-g7i" secondAttribute="leading" id="bgh-hf-d6N"/>
                                             <constraint firstAttribute="height" constant="30" id="nIV-yh-DLj"/>
+                                            <constraint firstAttribute="trailing" secondItem="U92-Kh-kpK" secondAttribute="trailing" id="nJ7-qT-8sG"/>
+                                            <constraint firstAttribute="bottom" secondItem="U92-Kh-kpK" secondAttribute="bottom" id="x8f-Kp-S7E"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeu-gc-aBf">
                                         <rect key="frame" x="0.0" y="128" width="390" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nazwa Drużyny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehA-vk-jgS">
-                                                <rect key="frame" x="30" y="0.0" width="152" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Przeciwnik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehA-vk-jgS">
+                                                <rect key="frame" x="30" y="0.0" width="108" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="Evz-dj-cil"/>
@@ -230,10 +281,23 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-xw-8xQ">
-                                        <rect key="frame" x="0.0" y="160" width="320" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <rect key="frame" x="0.0" y="160" width="390" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nazwa przeciwnika" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RPk-pz-qTB">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                                <color key="backgroundColor" name="TextGray"/>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Hgf-Qq-1Yc"/>
+                                            <constraint firstItem="RPk-pz-qTB" firstAttribute="leading" secondItem="ehE-xw-8xQ" secondAttribute="leading" id="IPZ-B7-XEC"/>
+                                            <constraint firstItem="RPk-pz-qTB" firstAttribute="top" secondItem="ehE-xw-8xQ" secondAttribute="top" id="Xc4-93-OmY"/>
+                                            <constraint firstAttribute="bottom" secondItem="RPk-pz-qTB" secondAttribute="bottom" id="hTZ-Zp-YvJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="RPk-pz-qTB" secondAttribute="trailing" id="vIT-X4-e1f"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCQ-gN-6AU">
@@ -264,49 +328,45 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwX-7V-PdV">
-                                        <rect key="frame" x="0.0" y="224" width="320" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <rect key="frame" x="0.0" y="224" width="390" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Data" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhb-26-CaN">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                                <color key="backgroundColor" name="TextGray"/>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vhb-26-CaN" secondAttribute="trailing" id="3zD-bF-R73"/>
+                                            <constraint firstAttribute="bottom" secondItem="vhb-26-CaN" secondAttribute="bottom" id="Et8-9T-Idm"/>
+                                            <constraint firstItem="vhb-26-CaN" firstAttribute="leading" secondItem="hwX-7V-PdV" secondAttribute="leading" id="KAF-je-hGE"/>
                                             <constraint firstAttribute="height" constant="30" id="UPw-MI-fCz"/>
+                                            <constraint firstItem="vhb-26-CaN" firstAttribute="top" secondItem="hwX-7V-PdV" secondAttribute="top" id="o1x-dh-nUZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2j2-Gz-HPn" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="5b6-v5-R8S"/>
+                                    <constraint firstItem="bh6-xA-g4F" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="Cii-Fz-4QQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ehE-xw-8xQ" secondAttribute="trailing" id="DLh-yR-P4b"/>
                                     <constraint firstAttribute="trailing" secondItem="6rN-X9-Cut" secondAttribute="trailing" id="OYR-m8-tfO"/>
                                     <constraint firstAttribute="trailing" secondItem="yeu-gc-aBf" secondAttribute="trailing" id="RQX-bH-6RQ"/>
+                                    <constraint firstItem="Lk5-5h-g7i" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="UZ0-nC-yS5"/>
                                     <constraint firstAttribute="trailing" secondItem="oCQ-gN-6AU" secondAttribute="trailing" id="W4K-5E-mPF"/>
+                                    <constraint firstAttribute="trailing" secondItem="hwX-7V-PdV" secondAttribute="trailing" id="cDh-md-ZgC"/>
+                                    <constraint firstAttribute="trailing" secondItem="bh6-xA-g4F" secondAttribute="trailing" id="eQe-Wx-yts"/>
+                                    <constraint firstItem="hwX-7V-PdV" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="euI-XF-R2z"/>
                                     <constraint firstItem="oCQ-gN-6AU" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="jph-8o-vpu"/>
+                                    <constraint firstItem="ehE-xw-8xQ" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="nA9-zK-kGA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lk5-5h-g7i" secondAttribute="trailing" id="pix-SY-9rP"/>
                                     <constraint firstItem="yeu-gc-aBf" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="vWO-ql-2ri"/>
                                     <constraint firstAttribute="trailing" secondItem="2j2-Gz-HPn" secondAttribute="trailing" id="wH1-Af-f0o"/>
                                     <constraint firstItem="6rN-X9-Cut" firstAttribute="leading" secondItem="zFr-ha-Ai0" secondAttribute="leading" id="wZh-V9-u76"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cF7-Kv-veD" userLabel="Title View">
-                                <rect key="frame" x="0.0" y="66" width="390" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOWY MECZ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weh-wa-PZB">
-                                        <rect key="frame" x="49.999999999999986" y="0.0" width="188.66666666666663" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="dzN-bK-IhS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="LabelsBackgroundDarkest"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="JhO-hA-24K"/>
-                                    <constraint firstAttribute="bottom" secondItem="weh-wa-PZB" secondAttribute="bottom" id="MTQ-H8-GcF"/>
-                                    <constraint firstItem="weh-wa-PZB" firstAttribute="leading" secondItem="cF7-Kv-veD" secondAttribute="leading" constant="50" id="VMr-IC-PlG"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="WVx-Mp-amj"/>
-                                    <constraint firstItem="weh-wa-PZB" firstAttribute="top" secondItem="cF7-Kv-veD" secondAttribute="top" id="kya-uY-be1"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="vxK-Sc-ovE"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="weh-wa-PZB" secondAttribute="trailing" constant="20" symbolic="YES" id="yHQ-3i-ZvK"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eYe-KO-1b9"/>
                         <color key="backgroundColor" red="0.15833521149999999" green="0.35673228709999999" blue="0.2221170717" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -330,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzz-cU-fj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.79999999999995" y="-654.67980295566508"/>
+            <point key="canvasLocation" x="928" y="-648"/>
         </scene>
         <!--Player Choosen Controller-->
         <scene sceneID="7Lm-JM-oXi">
@@ -772,6 +832,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="5tg-DW-TGt"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
@@ -782,6 +843,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="9uD-ai-P1U"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="b3A-pK-KJU"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
@@ -792,6 +854,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="QTN-qb-pOo"/>
                                                     <constraint firstAttribute="height" constant="30" id="tc0-BU-sGJ"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
@@ -802,6 +865,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="3cJ-TA-hgp"/>
                                                     <constraint firstAttribute="height" constant="30" id="Ocb-6c-D57"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
@@ -812,6 +876,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="WOu-mn-LA3"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="haV-Md-Sjw"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
@@ -904,7 +969,7 @@
                                 <rect key="frame" x="0.0" y="124" width="390" height="686"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" systemColor="secondaryLabelColor"/>
+                                <color key="separatorColor" name="LabelsBackgroundDarkest"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="secondaryLabelColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="sectionGameCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sectionGameCell" rowHeight="33" id="Zq0-oi-Pi4" userLabel="gameCell" customClass="UIViewCell">
@@ -1211,8 +1276,8 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1dI-Nf-bZD" secondAttribute="trailing" constant="20" symbolic="YES" id="s0o-XB-UMW"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bcU-RA-WlJ">
-                                <rect key="frame" x="0.0" y="124" width="390" height="686"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bcU-RA-WlJ">
+                                <rect key="frame" x="0.0" y="114" width="390" height="686"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" name="LabelsBackgroundDarkest"/>
@@ -1485,6 +1550,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="uGw-j0-XUj"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
@@ -1494,6 +1560,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="XR3-Ex-sLk"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
@@ -1504,6 +1571,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="6vA-k5-6e9"/>
                                                     <constraint firstAttribute="height" constant="30" id="7zA-iK-gvT"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
@@ -1517,6 +1585,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="6Px-iK-VI3"/>
                                                     <constraint firstAttribute="height" constant="30" id="wV2-LZ-6PT"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                             </textField>
@@ -1527,6 +1596,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="4Ti-bO-TUC"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="P3L-Zx-KP9"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
@@ -1562,7 +1632,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="deletePlayer:" destination="gtF-uX-e0s" eventType="touchUpInside" id="tLU-uz-zbs"/>
+                                            <action selector="saveButtonClicked:" destination="gtF-uX-e0s" eventType="touchUpInside" id="J8e-Ab-7XU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXA-hG-LfS">
@@ -1668,6 +1738,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="3uH-tD-EuJ"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                                 <connections>
@@ -1681,6 +1752,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="M1N-9b-Un8"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="bL5-lD-slt"/>
                                                 </constraints>
+                                                <color key="textColor" name="LabelsBackgroundDarkest"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
@@ -2370,10 +2442,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WwN-aV-6In"/>
+        <segue reference="FIa-Ss-XIr"/>
+        <segue reference="xPP-yX-Zhe"/>
         <segue reference="czb-cs-Bet"/>
         <segue reference="UH5-nB-FOe"/>
-        <segue reference="hnS-QE-YIZ"/>
+        <segue reference="w9k-pA-lMn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FootbalPitch1" width="222" height="323"/>

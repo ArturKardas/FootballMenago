@@ -1082,6 +1082,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2B4B24741C21500E00CC99E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../Carthage/Build/ios/**",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SwiftExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DUseCarthage";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.SwiftExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
 		2B4B24751C21500E00CC99E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1099,6 +1117,19 @@
 			};
 			name = Release;
 		};
+		3713238E2271BDF400269296 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B55C60580DEC0CBAA4AF5918 /* Pods-core-SwiftExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = SwiftExample/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.SwiftExample;
+				PRODUCT_NAME = SwiftExample;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+			};
+			name = Debug;
+		};
 		3713238F2271BDF400269296 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BAD0809DD91D0BCE1D25BAF /* Pods-core-SwiftExample.release.xcconfig */;
@@ -1110,6 +1141,29 @@
 				PRODUCT_NAME = SwiftExample;
 			};
 			name = Release;
+		};
+		37329A0F2273057500FEA32A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A402F95C1A1F3CE2BC9894EB /* Pods-core-SwiftExample_macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CODE_SIGN_ENTITLEMENTS = SwiftExample_macOS/SwiftExample_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				INFOPLIST_FILE = SwiftExample_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ziparchive.SwiftExample-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+			};
+			name = Debug;
 		};
 		37329A102273057500FEA32A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1132,6 +1186,23 @@
 			};
 			name = Release;
 		};
+		3773ADB31F7F44D9009A4B2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48AB7DF053F85FCC6AFB0C26 /* Pods-core-ObjectiveCExampleTests_macOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ObjectiveCExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ziparchive.ObjectiveCExampleTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
 		3773ADB41F7F44D9009A4B2D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04CB37570807602F7E5C66D9 /* Pods-core-ObjectiveCExampleTests_macOS.release.xcconfig */;
@@ -1149,6 +1220,22 @@
 			};
 			name = Release;
 		};
+		3793E6DD1F7F5F93000B1A19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB7EEC7952E1561D1E668B3B /* Pods-core-ObjectiveCExampleTests_tvOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ObjectiveCExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ziparchive.ObjectiveCExampleTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
 		3793E6DE1F7F5F93000B1A19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC1DEADE9E9CE0AF5B487DCF /* Pods-core-ObjectiveCExampleTests_tvOS.release.xcconfig */;
@@ -1164,6 +1251,74 @@
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
+		};
+		8DFE1A0A1BDA9FF300709011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES_AGGRESSIVE;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SEMICOLON_BEFORE_METHOD_BODY = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_ACTIVITY_MODE = "";
+				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = default;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
 		};
 		8DFE1A0B1BDA9FF300709011 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1227,6 +1382,21 @@
 			};
 			name = Release;
 		};
+		8DFE1A0D1BDA9FF300709011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F30FF220ECFD8DC810E21A /* Pods-core-ObjectiveCExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ObjectiveCExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziparchive.ObjectiveCExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+			};
+			name = Debug;
+		};
 		8DFE1A0E1BDA9FF300709011 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 254DE0B206EE66F57BBE7EEE /* Pods-core-ObjectiveCExample.release.xcconfig */;
@@ -1240,6 +1410,19 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
+		};
+		8DFE1A101BDA9FF300709011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2E5B3BB819D409D02E989BC /* Pods-core-ObjectiveCExampleTests_iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = ObjectiveCExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ziparchive.ObjectiveCExampleTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
 		};
 		8DFE1A111BDA9FF300709011 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1260,6 +1443,7 @@
 		2B4B24731C21500E00CC99E5 /* Build configuration list for PBXNativeTarget "SwiftExampleCarthage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				2B4B24741C21500E00CC99E5 /* Debug */,
 				2B4B24751C21500E00CC99E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1268,6 +1452,7 @@
 		37329A112273057500FEA32A /* Build configuration list for PBXNativeTarget "SwiftExample_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				37329A0F2273057500FEA32A /* Debug */,
 				37329A102273057500FEA32A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1276,6 +1461,7 @@
 		3773ADB51F7F44D9009A4B2D /* Build configuration list for PBXNativeTarget "ObjectiveCExampleTests_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				3773ADB31F7F44D9009A4B2D /* Debug */,
 				3773ADB41F7F44D9009A4B2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1284,6 +1470,7 @@
 		3793E6DC1F7F5F93000B1A19 /* Build configuration list for PBXNativeTarget "ObjectiveCExampleTests_tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				3793E6DD1F7F5F93000B1A19 /* Debug */,
 				3793E6DE1F7F5F93000B1A19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1292,6 +1479,7 @@
 		8DFE19261BDA74F800709011 /* Build configuration list for PBXNativeTarget "SwiftExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				3713238E2271BDF400269296 /* Debug */,
 				3713238F2271BDF400269296 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1300,6 +1488,7 @@
 		8DFE19E51BDA9FF300709011 /* Build configuration list for PBXProject "ZipArchiveExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				8DFE1A0A1BDA9FF300709011 /* Debug */,
 				8DFE1A0B1BDA9FF300709011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1308,6 +1497,7 @@
 		8DFE1A0C1BDA9FF300709011 /* Build configuration list for PBXNativeTarget "ObjectiveCExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				8DFE1A0D1BDA9FF300709011 /* Debug */,
 				8DFE1A0E1BDA9FF300709011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1316,6 +1506,7 @@
 		8DFE1A0F1BDA9FF300709011 /* Build configuration list for PBXNativeTarget "ObjectiveCExampleTests_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
+				8DFE1A101BDA9FF300709011 /* Debug */,
 				8DFE1A111BDA9FF300709011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

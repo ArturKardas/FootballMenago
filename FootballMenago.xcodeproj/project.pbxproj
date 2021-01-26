@@ -33,7 +33,10 @@
 		75C21AC125AD4A2D00878A2F /* XlsxReaderWriter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A7925AD4A1B00878A2F /* XlsxReaderWriter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75C21AC525AD4A7B00878A2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3CF25360E2F00443790 /* Main.storyboard */; };
 		75C21AC625AD4A7B00878A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D425360E2F00443790 /* LaunchScreen.storyboard */; };
+		75C21B5B25BCAA3B00878A2F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75C21B3D25BCAA3B00878A2F /* README.md */; };
 		75C4FB2E25AD23C800AAEA98 /* ExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */; };
+		75FBC9EC25C0299A00275FF7 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; };
+		75FBC9ED25C0299A00275FF7 /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +253,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				75C21AC125AD4A2D00878A2F /* XlsxReaderWriter.framework in Embed Frameworks */,
+				75FBC9ED25C0299A00275FF7 /* ZipArchive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +638,7 @@
 		75C21A6425AD4A1B00878A2F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		75C21A6525AD4A1B00878A2F /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		75C21A6625AD4A1B00878A2F /* XlsxReaderWriter.framework.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = XlsxReaderWriter.framework.zip; sourceTree = "<group>"; };
+		75C21B3D25BCAA3B00878A2F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelController.swift; sourceTree = "<group>"; };
 		75C4FB3025AD242800AAEA98 /* a.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = a.xlsx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -644,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C21AC025AD4A2D00878A2F /* XlsxReaderWriter.framework in Frameworks */,
+				75FBC9EC25C0299A00275FF7 /* ZipArchive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +717,7 @@
 				75C21ABF25AD4A2D00878A2F /* Frameworks */,
 				7576FEE725AD3FF50086EEB8 /* Cartfile.resolved */,
 				7576FEE425AD3F6E0086EEB8 /* CartFile */,
+				75C21B3D25BCAA3B00878A2F /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1805,6 +1812,7 @@
 				75C215C025AD489A00878A2F /* CartFile in Resources */,
 				75C215BD25AD487B00878A2F /* Assets.xcassets in Resources */,
 				7576021025AD42D90086EEB8 /* a.xlsx in Resources */,
+				75C21B5B25BCAA3B00878A2F /* README.md in Resources */,
 				7576021125AD42D90086EEB8 /* mecze.json in Resources */,
 				7576021225AD42D90086EEB8 /* zawodnicy.json in Resources */,
 			);
