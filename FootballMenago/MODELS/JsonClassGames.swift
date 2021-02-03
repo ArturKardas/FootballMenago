@@ -38,17 +38,45 @@ class JsonClassGames{
         }
     }
     
+    func addGame(teamName: String,nameOfTeams: String, enemy: String, teamSize: Int, data: String, category: String, age: Int){
+        
+        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, date: data, firstTeam:[], players: [[]], bench: [[]])
+        
+        gamesObject?.games.append(game)
+    }
+    
+    func save() {
+        let encoder = JSONEncoder()
+        do{
+            //odczytywanie pliku
+            let path = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let url =  path.appendingPathComponent("NIE-USUWAC-HISTORIA.json")
+            
+            try encoder.encode(gamesObject).write(to: url)
+        }catch{
+            do {
+                let path = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                let url =  path.appendingPathComponent("NIE-USUWAC-HISTORIA.json")
+                
+                try encoder.encode(gamesObject).write(to: url)
+            } catch{
+                print("Error: \(error)")
+            }
+            
+        }
+    }
+    
     func getFirstTeamSize(game: Int) ->  Int {
         return (gamesObject?.games[game].mainTeamSize)!
     }
     
-    func checkFirstSquad(game: Int, player: Int) -> Bool{
-        if (gamesObject?.games[game].players[player][11] == "1"){
-            return true
-        }else{
-            return false
-        }
-    }
+    //    func checkFirstSquad(game: Int, player: Int) -> Bool{
+    //        if (gamesObject?.games[game].players[player][11] == "1"){
+    //            return true
+    //        }else{
+    //            return false
+    //        }
+    //    }
     
     func getName(game: Int, player: Int) ->  String {
         return (gamesObject?.games[game].players[player][0])!

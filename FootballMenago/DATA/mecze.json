@@ -1,7 +1,6 @@
 {
     "games": [
         {
-            "name": "Drużyny",
             "teamName": "ORŁY",
             "enemyTeam": "FAJTUŁAPY",
             "mainTeamSize": 4,
@@ -15,11 +14,14 @@
                 ["Łysy","23","3","3","1","0","0","0","5","40","Imie,Numer,18,7,gole,asysty,zółte,czerwone,ocena,czas grany,opis, 1 team","1","BR","Nazwisko"],
                 ["Gruby","43","14","4","1","3","0","0","5","40","opis","1","LP","Nazwisko"],
                 ["Seba","10","1","2","1","0","0","0","5","40","opis","1","ŚO","Nazwisko"],
-                ["Marcinek","9","1","7","1","0","0","0","5","40","opis","1","PP","Nazwisko"],
+                ["Marcinek","9","1","7","1","0","0","0","5","40","opis","1","PP","Nazwisko"]
+            ],
+            "bench": [
                 ["MarcinekREZERWO","9","18","7","1","0","0","0","5","40","opis","0","N","Nazwisko"],
                 ["MarcinekRRRRrrr","9","18","7","1","0","0","0","5","40","opis","0","ŚP","Nazwisko"],
                 ["MarcinekrrrRQQQ","9","18","7","1","0","0","0","5","40","opis","0","PP","Nazwisko"]
             ]
+            
         }
     ]
 }

@@ -36,6 +36,8 @@ class ExcelController {
             firstWorksheet.cell(forCellReference: "E3", shouldCreate: true)?.setStringValue("\(team?.typeOfMatch ?? "nie zczytano")")
             firstWorksheet.cell(forCellReference: "I3", shouldCreate: true)?.setStringValue("\(team?.teamName ?? "nie zczytano") - \(team?.enemyTeam ?? "nie zaczytano")")
             
+            var index: Int = 0
+            
             for i in 0..<((team?.players.count)!){
                 firstWorksheet.cell(forCellReference: "B\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][0] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "D\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][12] ?? "nie zczytano")")
@@ -48,6 +50,21 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "K\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][6] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "L\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][7] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "M\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][8] ?? "nie zczytano")")
+            }
+            index = index + (team?.players.count)! + 5
+            
+            for i in 0..<((team?.bench.count)!){
+                firstWorksheet.cell(forCellReference: "B\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][0] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "D\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][12] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "E\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][1] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "F\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][2] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "G\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][3] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "H\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][9] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "I\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][4] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "J\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][5] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "K\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][6] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "L\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][7] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "M\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][8] ?? "nie zczytano")")
             }
             
             let komorka: String = (firstWorksheet.cell(forCellReference: "B5")?.stringValue())!

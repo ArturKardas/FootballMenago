@@ -8,7 +8,7 @@
 import UIKit
 
 class TeamHistoryCell: UITableViewCell{
-    @IBOutlet weak var gameNameText: UILabel!
+    @IBOutlet weak var enemyNameText: UILabel!
     @IBOutlet weak var teamNameText: UILabel!
     @IBOutlet weak var dataText: UILabel!
 }
@@ -24,7 +24,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as!TeamHistoryCell
 
-        cell.gameNameText.text = jsonGame?.gamesObject?.games[indexPath.row].name
+        cell.enemyNameText.text = jsonGame?.gamesObject?.games[indexPath.row].enemyTeam
         cell.teamNameText.text = jsonGame?.gamesObject?.games[indexPath.row].teamName
         cell.dataText.text = jsonGame?.gamesObject?.games[indexPath.row].date
         

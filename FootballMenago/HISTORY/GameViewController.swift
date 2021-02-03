@@ -28,7 +28,7 @@ class SectionTableViewCell: UITableViewCell {
 
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var enemyNameLabel: UILabel!
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -39,7 +39,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         jsonGame = JsonClassGames()
         
-        gameNameLabel.text = (jsonGame?.gamesObject?.games[Variables.tmpGame].name)!
+        enemyNameLabel.text = (jsonGame?.gamesObject?.games[Variables.tmpGame].enemyTeam)!
         teamNameLabel.text = (jsonGame?.gamesObject?.games[Variables.tmpGame].teamName)!
         ageLabel.text = String((jsonGame?.gamesObject?.games[Variables.tmpGame].age)!)
         dateLabel.text = String((jsonGame?.gamesObject?.games[Variables.tmpGame].date)!)
@@ -90,14 +90,14 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.degreeTextField.text = jsonGame?.getGrade(game: Variables.tmpGame, player: indexPath.row)
         }
         if indexPath.section == 1 {
-            cell.numberTextField.text = jsonGame?.getNumber(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.playerNameText.text = jsonGame?.getName(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.timeTextField.text = jsonGame?.getPlayedTime(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.goalsTextField.text = jsonGame?.getNumbersOfGoals(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.assisstsTextField.text = jsonGame?.getAssists(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.yellowCardTextField.text = jsonGame?.getNumbersOFYellowCards(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.redCardTextField.text = jsonGame?.get7NumbersOfRedCards(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
-            cell.degreeTextField.text = jsonGame?.getGrade(game: Variables.tmpGame, player: ((jsonGame?.getFirstTeamSize(game: Variables.tmpGame))!) + indexPath.row)
+            cell.numberTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][1]
+            cell.playerNameText.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][0]
+            cell.timeTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][9]
+            cell.goalsTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][4]
+            cell.assisstsTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][5]
+            cell.yellowCardTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][6]
+            cell.redCardTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][7]
+            cell.degreeTextField.text = jsonGame?.gamesObject?.games[Variables.tmpGame].bench[indexPath.row][8]
         }
         
         return cell

@@ -35,6 +35,8 @@
 		75C21AC625AD4A7B00878A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D425360E2F00443790 /* LaunchScreen.storyboard */; };
 		75C21B5B25BCAA3B00878A2F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 75C21B3D25BCAA3B00878A2F /* README.md */; };
 		75C4FB2E25AD23C800AAEA98 /* ExcelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */; };
+		75EF5FC725C3303B00C77BD4 /* TeamChoosenMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF5FC625C3303B00C77BD4 /* TeamChoosenMatchViewController.swift */; };
+		75EF600A25C6C02100C77BD4 /* PlayerFirstTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF600925C6C02100C77BD4 /* PlayerFirstTeamViewController.swift */; };
 		75FBC9EC25C0299A00275FF7 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; };
 		75FBC9ED25C0299A00275FF7 /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -641,6 +643,8 @@
 		75C21B3D25BCAA3B00878A2F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelController.swift; sourceTree = "<group>"; };
 		75C4FB3025AD242800AAEA98 /* a.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = a.xlsx; sourceTree = "<group>"; };
+		75EF5FC625C3303B00C77BD4 /* TeamChoosenMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamChoosenMatchViewController.swift; sourceTree = "<group>"; };
+		75EF600925C6C02100C77BD4 /* PlayerFirstTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFirstTeamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -680,7 +684,9 @@
 		75773062258FEE940075372A /* MATCH */ = {
 			isa = PBXGroup;
 			children = (
+				75EF5FC625C3303B00C77BD4 /* TeamChoosenMatchViewController.swift */,
 				7591B3E72539F18600443790 /* MatchViewController.swift */,
+				75EF600925C6C02100C77BD4 /* PlayerFirstTeamViewController.swift */,
 			);
 			path = MATCH;
 			sourceTree = "<group>";
@@ -1828,10 +1834,12 @@
 				752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */,
 				7591B3E82539F18600443790 /* MatchViewController.swift in Sources */,
 				752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */,
+				75EF5FC725C3303B00C77BD4 /* TeamChoosenMatchViewController.swift in Sources */,
 				752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */,
 				7591B3CE25360E2F00443790 /* ViewController.swift in Sources */,
 				7577305B258FD5F70075372A /* GameViewController.swift in Sources */,
 				752F36F4258245DB0004EFAB /* TeamsChoosenViewController.swift in Sources */,
+				75EF600A25C6C02100C77BD4 /* PlayerFirstTeamViewController.swift in Sources */,
 				758D9B7125657D8F00C0FAAC /* zawodnicyMODEL.swift in Sources */,
 				752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */,
 				75C4FB2E25AD23C800AAEA98 /* ExcelController.swift in Sources */,

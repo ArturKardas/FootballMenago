@@ -12,7 +12,6 @@ struct Games: Codable {
 }
 
 struct Game: Codable {
-    var name: String
     var mainTeamSize: Int
     var secondTeamSize: Int
     var teamName: String
@@ -22,6 +21,7 @@ struct Game: Codable {
     var date: String
     var firstTeam: [Int]
     var players:[[String]]
+    var bench:[[String]]
 }
 
 
