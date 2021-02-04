@@ -36,7 +36,7 @@ class TeamChoosenMatchViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        Variables.tmpTeam = indexPath.row
+        Tmp.tmpTeam = indexPath.row
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MatchValue")

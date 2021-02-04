@@ -40,9 +40,16 @@ class JsonClassGames{
     
     func addGame(teamName: String,nameOfTeams: String, enemy: String, teamSize: Int, data: String, category: String, age: Int){
         
-        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, date: data, players: [[]], bench: [[]])
+        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, date: data, players: [], bench: [])
         
         gamesObject?.games.append(game)
+    }
+    
+    func addPlayerToMainTeam(name: String, number: String, position: String, surname: String) {
+        let string: [String] = ["\(name)","\(number)","X","X","1","0","0","0","-","00","opis","X","\(position)","\(surname)"]
+        gamesObject?.games[Tmp.tmpGame].players.append(string)
+        
+        
     }
     
     func save() {
@@ -69,14 +76,6 @@ class JsonClassGames{
     func getFirstTeamSize(game: Int) ->  Int {
         return (gamesObject?.games[game].mainTeamSize)!
     }
-    
-    //    func checkFirstSquad(game: Int, player: Int) -> Bool{
-    //        if (gamesObject?.games[game].players[player][11] == "1"){
-    //            return true
-    //        }else{
-    //            return false
-    //        }
-    //    }
     
     func getName(game: Int, player: Int) ->  String {
         return (gamesObject?.games[game].players[player][0])!

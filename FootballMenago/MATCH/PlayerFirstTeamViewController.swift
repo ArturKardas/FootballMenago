@@ -17,12 +17,14 @@ class PlayerMatchCell: UITableViewCell {
 }
 
 class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-   
+    
     let jsonTeams = JsonClassTeams()
+    let jsonGame = JsonClassGames()
     
     var selected: [Int] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +32,17 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (jsonTeams.teamsObject?.teams[Variables.tmpTeam].names.count)!
+        return (jsonTeams.teamsObject?.teams[Tmp.tmpTeam].names.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerMatchCell") as! PlayerMatchCell
         
-        cell.numberText.text = jsonTeams.getNumber(team: Variables.tmpTeam, player: indexPath.row)
-        cell.positionTextField.text = jsonTeams.getPosition(team: Variables.tmpTeam, player: indexPath.row)
-        cell.nameText.text = jsonTeams.getName(team: Variables.tmpTeam, player: indexPath.row)
-        cell.surnameTextField.text = jsonTeams.getSurname(team: Variables.tmpTeam, player: indexPath.row)
-        cell.birthDateTextField.text = jsonTeams.getDateOfBirthString(team: Variables.tmpTeam, player: indexPath.row)
+        cell.numberText.text = jsonTeams.getNumber(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.positionTextField.text = jsonTeams.getPosition(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.nameText.text = jsonTeams.getName(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.surnameTextField.text = jsonTeams.getSurname(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.birthDateTextField.text = jsonTeams.getDateOfBirthString(team: Tmp.tmpTeam, player: indexPath.row)
         return cell
     }
     
@@ -62,5 +64,36 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
         print(selected)
     }
     
-
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        let index: Int = selected.count
+        
+        if index < (jsonGame.gamesObject?.games[Tmp.tmpGame].mainTeamSize)!{
+            // create the alert
+            let alert = UIAlertController(title: "Uwaga!", message: "Wybrałeś zbyt małą liczbę zawodników.", preferredStyle: UIAlertController.Style.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }else if index > (jsonGame.gamesObject?.games[Tmp.tmpGame].mainTeamSize)!{
+            // create the alert
+            let alert = UIAlertController(title: "Uwaga!", message: "Wybrałeś zbyt wielu zawodników.", preferredStyle: UIAlertController.Style.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            for i in 0..<index {
+                jsonGame.addPlayerToMainTeam(name: jsonTeams.getName(team: Tmp.tmpTeam, player: i), number: jsonTeams.getNumber(team: Tmp.tmpTeam, player: i), position: jsonTeams.getPosition(team: Tmp.tmpTeam, player: i), surname: jsonTeams.getSurname(team: Tmp.tmpTeam, player: i))
+            }
+            jsonGame.save()
+        }
+        
+        
+        
+    }
+    
 }

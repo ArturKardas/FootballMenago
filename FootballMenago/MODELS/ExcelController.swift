@@ -16,7 +16,7 @@ class ExcelController {
     func printExcel(){
         let documentPath: String = Bundle.main.path(forResource: "a", ofType: "xlsx")!
         
-        let team = games.gamesObject?.games[Variables.tmpGame]
+        let team = games.gamesObject?.games[Tmp.tmpGame]
         
         do{
             //giving  path to directory

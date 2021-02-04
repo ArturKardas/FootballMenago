@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36E8258012070004EFAB /* AddPlayerViewController.swift */; };
 		752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */; };
-		752F36F0258244C40004EFAB /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EF258244C40004EFAB /* Variables.swift */; };
+		752F36F0258244C40004EFAB /* Tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EF258244C40004EFAB /* Tmp.swift */; };
 		752F36F4258245DB0004EFAB /* TeamsChoosenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */; };
 		752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36F9258252F40004EFAB /* PlayerViewController.swift */; };
 		752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36FC25829BED0004EFAB /* AddTeamViewController.swift */; };
@@ -265,7 +265,7 @@
 /* Begin PBXFileReference section */
 		752F36E8258012070004EFAB /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 		752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassTeams.swift; sourceTree = "<group>"; };
-		752F36EF258244C40004EFAB /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
+		752F36EF258244C40004EFAB /* Tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tmp.swift; sourceTree = "<group>"; };
 		752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsChoosenViewController.swift; sourceTree = "<group>"; };
 		752F36F9258252F40004EFAB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		752F36FC25829BED0004EFAB /* AddTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
@@ -707,7 +707,7 @@
 				75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */,
 				758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */,
 				752F37062587B7490004EFAB /* meczeMODEL.swift */,
-				752F36EF258244C40004EFAB /* Variables.swift */,
+				752F36EF258244C40004EFAB /* Tmp.swift */,
 				752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */,
 				752F37092587BA630004EFAB /* JsonClassGames.swift */,
 			);
@@ -1849,7 +1849,7 @@
 				752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */,
 				7591B3CC25360E2F00443790 /* SceneDelegate.swift in Sources */,
 				7591B3ED253A21E200443790 /* PlayerChoosenController.swift in Sources */,
-				752F36F0258244C40004EFAB /* Variables.swift in Sources */,
+				752F36F0258244C40004EFAB /* Tmp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

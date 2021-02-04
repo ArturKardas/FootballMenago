@@ -38,12 +38,13 @@ class MatchViewController: UIViewController {
         let teamSizeInt = Int(teamSizeTF.text!)!
         let dataText = dataTF.text!
         let categoryText = categoryTF.text!
-        let allyName = jsonTeam.teamsObject?.teams[Variables.tmpTeam].title
-        let age = jsonTeam.teamsObject?.teams[Variables.tmpTeam].age
+        let allyName = jsonTeam.teamsObject?.teams[Tmp.tmpTeam].title
+        let age = jsonTeam.teamsObject?.teams[Tmp.tmpTeam].age
         
         jsonGame.addGame(teamName: allyName!, nameOfTeams: name, enemy: enemyText, teamSize: teamSizeInt, data: dataText, category: categoryText, age: age!)
         jsonGame.save()
         
+        Tmp.tmpGame = (jsonGame.gamesObject?.games.count)! - 1
     }
     
 }

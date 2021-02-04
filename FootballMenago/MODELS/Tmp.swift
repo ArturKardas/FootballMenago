@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Variables{
+struct Tmp{
     static var tmpTeam = 0
     static var tmpPlayer = 0
     static var tmpGame = 0

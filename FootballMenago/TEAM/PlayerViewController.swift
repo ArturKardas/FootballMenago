@@ -22,11 +22,11 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
         
         jsonClassTeams = JsonClassTeams()
         
-        textFieldName.text = jsonClassTeams?.getName(team: Variables.tmpTeam, player: Variables.tmpPlayer)
-        textFieldSurname.text = jsonClassTeams?.getSurname(team: Variables.tmpTeam, player: Variables.tmpPlayer)
-        textFieldNumber.text = jsonClassTeams?.getNumber(team: Variables.tmpTeam, player: Variables.tmpPlayer)
-        textFieldPosition.text = jsonClassTeams?.getPosition(team: Variables.tmpTeam, player: Variables.tmpPlayer)
-        textFieldBirthDate.text = jsonClassTeams?.getDateOfBirthString(team: Variables.tmpTeam, player: Variables.tmpPlayer)
+        textFieldName.text = jsonClassTeams?.getName(team: Tmp.tmpTeam, player: Tmp.tmpPlayer)
+        textFieldSurname.text = jsonClassTeams?.getSurname(team: Tmp.tmpTeam, player: Tmp.tmpPlayer)
+        textFieldNumber.text = jsonClassTeams?.getNumber(team: Tmp.tmpTeam, player: Tmp.tmpPlayer)
+        textFieldPosition.text = jsonClassTeams?.getPosition(team: Tmp.tmpTeam, player: Tmp.tmpPlayer)
+        textFieldBirthDate.text = jsonClassTeams?.getDateOfBirthString(team: Tmp.tmpTeam, player: Tmp.tmpPlayer)
         
     }
     
@@ -46,11 +46,11 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
-        jsonClassTeams?.setName(team: Variables.tmpTeam, player: Variables.tmpPlayer, name: textFieldName.text!)
-        jsonClassTeams?.setSurname(team: Variables.tmpTeam, player: Variables.tmpPlayer, surname: textFieldSurname.text!)
-        jsonClassTeams?.setNumber(team: Variables.tmpTeam, player: Variables.tmpPlayer, number: textFieldNumber.text!)
-        jsonClassTeams?.setPosition(team: Variables.tmpTeam, player: Variables.tmpPlayer, position: textFieldPosition.text!)
-        jsonClassTeams?.setDateOfBirth(team: Variables.tmpTeam, player: Variables.tmpPlayer, date: textFieldBirthDate.text!)
+        jsonClassTeams?.setName(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, name: textFieldName.text!)
+        jsonClassTeams?.setSurname(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, surname: textFieldSurname.text!)
+        jsonClassTeams?.setNumber(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, number: textFieldNumber.text!)
+        jsonClassTeams?.setPosition(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, position: textFieldPosition.text!)
+        jsonClassTeams?.setDateOfBirth(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, date: textFieldBirthDate.text!)
         
         jsonClassTeams?.saveObjectToJsonFile()
         
@@ -65,8 +65,8 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     func deletePlayer(){
-        jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].names.remove(at: Variables.tmpPlayer)
-        jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].numbers.remove(at: Variables.tmpPlayer)
+        jsonClassTeams?.teamsObject?.teams[Tmp.tmpTeam].names.remove(at: Tmp.tmpPlayer)
+        jsonClassTeams?.teamsObject?.teams[Tmp.tmpTeam].numbers.remove(at: Tmp.tmpPlayer)
         jsonClassTeams?.saveObjectToJsonFile()
 
         

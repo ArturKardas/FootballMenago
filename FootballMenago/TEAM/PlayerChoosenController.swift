@@ -21,23 +21,23 @@ class PlayerChoosenController: UIViewController, UITableViewDataSource, UITableV
     var jsonClassTeams: JsonClassTeams?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (jsonClassTeams?.teamsObject?.teams[Variables.tmpTeam].names.count)!
+        return (jsonClassTeams?.teamsObject?.teams[Tmp.tmpTeam].names.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell") as! PlayerCell
         
-        cell.numberText.text = jsonClassTeams?.getNumber(team: Variables.tmpTeam, player: indexPath.row)
-        cell.positionTextField.text = jsonClassTeams?.getPosition(team: Variables.tmpTeam, player: indexPath.row)
-        cell.nameText.text = jsonClassTeams?.getName(team: Variables.tmpTeam, player: indexPath.row)
-        cell.surnameTextField.text = jsonClassTeams?.getSurname(team: Variables.tmpTeam, player: indexPath.row)
-        cell.birthDateTextField.text = jsonClassTeams?.getDateOfBirthString(team: Variables.tmpTeam, player: indexPath.row)
+        cell.numberText.text = jsonClassTeams?.getNumber(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.positionTextField.text = jsonClassTeams?.getPosition(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.nameText.text = jsonClassTeams?.getName(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.surnameTextField.text = jsonClassTeams?.getSurname(team: Tmp.tmpTeam, player: indexPath.row)
+        cell.birthDateTextField.text = jsonClassTeams?.getDateOfBirthString(team: Tmp.tmpTeam, player: indexPath.row)
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        Variables.tmpPlayer = indexPath.row
+        Tmp.tmpPlayer = indexPath.row
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "PlayerView")

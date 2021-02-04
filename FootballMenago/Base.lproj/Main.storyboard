@@ -3013,6 +3013,9 @@
                                         <state key="normal" title="DALEJ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextButtonClicked:" destination="4f0-7h-K34" eventType="touchUpInside" id="4bS-fY-1Pw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="LabelsBackgroundDarkest"/>
@@ -3044,6 +3047,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextButton" destination="3qg-96-R8c" id="V3a-qX-8Wx"/>
                         <outlet property="tableView" destination="gyU-tY-N1m" id="e1e-6D-Vik"/>
                     </connections>
                 </viewController>
@@ -3056,7 +3060,7 @@
         <segue reference="S3A-GV-jOI"/>
         <segue reference="czb-cs-Bet"/>
         <segue reference="Dv1-zy-g6x"/>
-        <segue reference="U8J-XR-lht"/>
+        <segue reference="vyz-8j-WGn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FootbalPitch1" width="222" height="323"/>
