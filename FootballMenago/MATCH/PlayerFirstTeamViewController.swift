@@ -87,11 +87,18 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
             self.present(alert, animated: true, completion: nil)
         }else{
             for i in 0..<index {
-                jsonGame.addPlayerToMainTeam(name: jsonTeams.getName(team: Tmp.tmpTeam, player: i), number: jsonTeams.getNumber(team: Tmp.tmpTeam, player: i), position: jsonTeams.getPosition(team: Tmp.tmpTeam, player: i), surname: jsonTeams.getSurname(team: Tmp.tmpTeam, player: i))
+                jsonGame.addPlayerToMainTeam(name: jsonTeams.getName(team: Tmp.tmpTeam, player: selected[i]), number: jsonTeams.getNumber(team: Tmp.tmpTeam, player: selected[i]), position: jsonTeams.getPosition(team: Tmp.tmpTeam, player: selected[i]), surname: jsonTeams.getSurname(team: Tmp.tmpTeam, player: selected[i]))
             }
             jsonGame.save()
+            
+            Tmp.tmpFirstTeam = selected
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BenchTeam")
+            self.addChild(nextViewController)
+            nextViewController.view.frame = self.view.frame
+            self.view.addSubview(nextViewController.view)
         }
-        
         
         
     }

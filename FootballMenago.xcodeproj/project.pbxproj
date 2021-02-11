@@ -15,6 +15,7 @@
 		752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36FC25829BED0004EFAB /* AddTeamViewController.swift */; };
 		752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37062587B7490004EFAB /* meczeMODEL.swift */; };
 		752F370A2587BA630004EFAB /* JsonClassGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37092587BA630004EFAB /* JsonClassGames.swift */; };
+		7539F75725CC7CB1007671F8 /* BenchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539F75625CC7CB1007671F8 /* BenchViewController.swift */; };
 		7576021025AD42D90086EEB8 /* a.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 75C4FB3025AD242800AAEA98 /* a.xlsx */; };
 		7576021125AD42D90086EEB8 /* mecze.json in Resources */ = {isa = PBXBuildFile; fileRef = 752F37032587B6AB0004EFAB /* mecze.json */; };
 		7576021225AD42D90086EEB8 /* zawodnicy.json in Resources */ = {isa = PBXBuildFile; fileRef = 758D9B6C2565766600C0FAAC /* zawodnicy.json */; };
@@ -272,6 +273,7 @@
 		752F37032587B6AB0004EFAB /* mecze.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mecze.json; sourceTree = "<group>"; };
 		752F37062587B7490004EFAB /* meczeMODEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meczeMODEL.swift; sourceTree = "<group>"; };
 		752F37092587BA630004EFAB /* JsonClassGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassGames.swift; sourceTree = "<group>"; };
+		7539F75625CC7CB1007671F8 /* BenchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchViewController.swift; sourceTree = "<group>"; };
 		7576FEE425AD3F6E0086EEB8 /* CartFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CartFile; sourceTree = "<group>"; };
 		7576FEE725AD3FF50086EEB8 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		7577305A258FD5F70075372A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -687,6 +689,7 @@
 				75EF5FC625C3303B00C77BD4 /* TeamChoosenMatchViewController.swift */,
 				7591B3E72539F18600443790 /* MatchViewController.swift */,
 				75EF600925C6C02100C77BD4 /* PlayerFirstTeamViewController.swift */,
+				7539F75625CC7CB1007671F8 /* BenchViewController.swift */,
 			);
 			path = MATCH;
 			sourceTree = "<group>";
@@ -1834,6 +1837,7 @@
 				752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */,
 				7591B3E82539F18600443790 /* MatchViewController.swift in Sources */,
 				752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */,
+				7539F75725CC7CB1007671F8 /* BenchViewController.swift in Sources */,
 				75EF5FC725C3303B00C77BD4 /* TeamChoosenMatchViewController.swift in Sources */,
 				752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */,
 				7591B3CE25360E2F00443790 /* ViewController.swift in Sources */,

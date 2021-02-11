@@ -46,8 +46,15 @@ class JsonClassGames{
     }
     
     func addPlayerToMainTeam(name: String, number: String, position: String, surname: String) {
-        let string: [String] = ["\(name)","\(number)","X","X","1","0","0","0","-","00","opis","X","\(position)","\(surname)"]
+        let string: [String] = ["\(name)","\(number)","X","X","0","0","0","0","-","00","opis","X","\(position)","\(surname)"]
         gamesObject?.games[Tmp.tmpGame].players.append(string)
+        
+        
+    }
+    
+    func addPlayerToBenchTeam(name: String, number: String, position: String, surname: String) {
+        let string: [String] = ["\(name)","\(number)","X","","0","0","0","0","-","00","opis","","\(position)","\(surname)"]
+        gamesObject?.games[Tmp.tmpGame].bench.append(string)
         
         
     }

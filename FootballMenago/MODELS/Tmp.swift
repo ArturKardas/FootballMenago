@@ -11,4 +11,9 @@ struct Tmp{
     static var tmpTeam = 0
     static var tmpPlayer = 0
     static var tmpGame = 0
+    
+    static var tmpFirstTeam: [Int] = [] //selected players to main team
+    static var tmpBenchTeam: [Int] = [] //selected players to bench
+    static var restTeam: [Int] = [] // players dont selected in firtst selection
+    
 }
