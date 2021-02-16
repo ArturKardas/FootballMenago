@@ -39,7 +39,7 @@ class TeamChoosenMatchViewController: UIViewController, UITableViewDataSource, U
         Tmp.tmpTeam = indexPath.row
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MatchValue")
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NewMatchView")
         self.addChild(nextViewController)
         nextViewController.view.frame = self.view.frame
         self.view.addSubview(nextViewController.view)

@@ -53,11 +53,11 @@ class BenchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selected.append(indexPath.row)
+        selected.append(Tmp.restTeam[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let i = selected.firstIndex(of: indexPath.row)
+        let i = selected.firstIndex(of: Tmp.restTeam[indexPath.row])
         selected.remove(at: i!)
     }
     

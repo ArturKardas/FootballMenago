@@ -26,7 +26,7 @@ class SectionTableViewCell: UITableViewCell {
     @IBOutlet weak var sectionTextName: UITextField!
 }
 
-class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var enemyNameLabel: UILabel!
     @IBOutlet weak var teamNameLabel: UILabel!
