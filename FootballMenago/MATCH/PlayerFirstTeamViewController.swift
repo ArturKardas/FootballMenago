@@ -53,7 +53,7 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selected.append(indexPath.row)
-        
+        print(indexPath.section)
         print(selected)
     }
     

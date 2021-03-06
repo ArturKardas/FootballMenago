@@ -33,13 +33,18 @@ class ExcelController {
             let firstWorksheet: BRAWorksheet = spreadsheet.workbook.worksheets[0] as! BRAWorksheet
             
             firstWorksheet.cell(forCellReference: "A3", shouldCreate: true)?.setStringValue("\(team?.date ?? "nie zczytano")")
+            firstWorksheet.cell(forCellReference: "C3", shouldCreate: true)?.setStringValue("\(team?.hour ?? "nie zczytano")/\(team?.place ?? "nie zczytano")")
             firstWorksheet.cell(forCellReference: "E3", shouldCreate: true)?.setStringValue("\(team?.typeOfMatch ?? "nie zczytano")")
             firstWorksheet.cell(forCellReference: "I3", shouldCreate: true)?.setStringValue("\(team?.teamName ?? "nie zczytano") - \(team?.enemyTeam ?? "nie zaczytano")")
+            firstWorksheet.cell(forCellReference: "O3", shouldCreate: true)?.setStringValue("\(team?.firstHalfAlly ?? 0)")
+            firstWorksheet.cell(forCellReference: "P3", shouldCreate: true)?.setStringValue("\(team?.firstHalfEnemy ?? 0)")
+            firstWorksheet.cell(forCellReference: "Q3", shouldCreate: true)?.setStringValue("\(team?.fullTimeAlly ?? 0)")
+            firstWorksheet.cell(forCellReference: "R3", shouldCreate: true)?.setStringValue("\(team?.fullTimeEnemy ?? 0)")
             
             var index: Int = 0
             
             for i in 0..<((team?.players.count)!){
-                firstWorksheet.cell(forCellReference: "B\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][0] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "B\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][0] ?? "nie zczytano") \(team?.players[i][13] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "D\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][12] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "E\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][1] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "F\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][2] ?? "nie zczytano")")
@@ -54,7 +59,7 @@ class ExcelController {
             index = index + (team?.players.count)! + 5
             
             for i in 0..<((team?.bench.count)!){
-                firstWorksheet.cell(forCellReference: "B\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][0] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "B\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][0] ?? "nie zczytano") \(team?.bench[i][13] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "D\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][12] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "E\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][1] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "F\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][2] ?? "nie zczytano")")
@@ -65,6 +70,13 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "K\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][6] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "L\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][7] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "M\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][8] ?? "nie zczytano")")
+            }
+            
+            for i in 0 ..< (team?.goals.count)! {
+                firstWorksheet.cell(forCellReference: "O\(24+i)", shouldCreate: true)?.setStringValue("\(team?.goals[i][0] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "P\(24+i)", shouldCreate: true)?.setStringValue("\(team?.goals[i][1] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "Q\(24+i)", shouldCreate: true)?.setStringValue("\(team?.goals[i][2] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "R\(24+i)", shouldCreate: true)?.setStringValue("\(team?.goals[i][3] ?? "nie zczytano")")
             }
             
             let komorka: String = (firstWorksheet.cell(forCellReference: "B5")?.stringValue())!

@@ -18,7 +18,16 @@ struct Game: Codable {
     var enemyTeam: String
     var age: Int
     var typeOfMatch: String
+    var timeHalf: Int
+    var place: String
     var date: String
+    var hour: String
+    var firstHalfAlly: Int
+    var firstHalfEnemy: Int
+    var fullTimeAlly: Int
+    var fullTimeEnemy: Int
+    
+    var goals: [[String]]
     var players:[[String]]
     var bench:[[String]]
 }

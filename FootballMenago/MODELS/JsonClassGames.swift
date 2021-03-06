@@ -38,22 +38,22 @@ class JsonClassGames{
         }
     }
     
-    func addGame(teamName: String,nameOfTeams: String, enemy: String, teamSize: Int, data: String, category: String, age: Int){
+    func addGame(teamName: String,enemy: String, teamSize: Int, data: String, category: String, age: Int, hour: String, place: String, timeHalf: Int){
         
-        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, date: data, players: [], bench: [])
+        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, timeHalf: timeHalf, place: place, date: data, hour: hour ,firstHalfAlly: 0, firstHalfEnemy: 0, fullTimeAlly: 0, fullTimeEnemy: 0, goals: [], players: [], bench: [])
         
         gamesObject?.games.append(game)
     }
     
     func addPlayerToMainTeam(name: String, number: String, position: String, surname: String) {
-        let string: [String] = ["\(name)","\(number)","X","X","0","0","0","0","-","00","opis","X","\(position)","\(surname)"]
+        let string: [String] = ["\(name)","\(number)","","X","0","0","0","0","-","0","opis","X","\(position)","\(surname)"]
         gamesObject?.games[Tmp.tmpGame].players.append(string)
         
         
     }
     
     func addPlayerToBenchTeam(name: String, number: String, position: String, surname: String) {
-        let string: [String] = ["\(name)","\(number)","X","","0","0","0","0","-","00","opis","","\(position)","\(surname)"]
+        let string: [String] = ["\(name)","\(number)","X","","0","0","0","0","-","0","opis","","\(position)","\(surname)"]
         gamesObject?.games[Tmp.tmpGame].bench.append(string)
         
         
@@ -86,6 +86,10 @@ class JsonClassGames{
     
     func getName(game: Int, player: Int) ->  String {
         return (gamesObject?.games[game].players[player][0])!
+    }
+    
+    func getSurname(game: Int, player: Int) -> String{
+        return (gamesObject?.games[game].players[player][13])!
     }
     
     func getNumber(game: Int, player: Int) ->  String {

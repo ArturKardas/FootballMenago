@@ -13,11 +13,13 @@ class NewMatchViewController: UIViewController {
     var jsonTeam: JsonClassTeams!
     
     //TextView
-    @IBOutlet weak var nameOfTeamsTF: UITextField!
+    @IBOutlet weak var hourOfMatch: UITextField!
     @IBOutlet weak var enemyTF: UITextField!
     @IBOutlet weak var teamSizeTF: UITextField!
     @IBOutlet weak var dataTF: UITextField!
     @IBOutlet weak var categoryTF: UITextField!
+    @IBOutlet weak var placeTF: UITextField!
+    @IBOutlet weak var timeHalfTF: UITextField!
     
     
     
@@ -31,7 +33,8 @@ class NewMatchViewController: UIViewController {
         
         let date = Date()
         let calendar = Calendar.current
-        //let hour = calendar.component(.hour, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
         let day = calendar.component(.day, from: date)
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date)
@@ -46,20 +49,27 @@ class NewMatchViewController: UIViewController {
             dataTF.text = String("\(day)-\(month)-\(year)")
         }
         
+        hourOfMatch.text = String("\(hour):\(minute)")
+        
     }
 
 
     @IBAction func nextButtonClicked(_ sender: Any) {
         
-        let name = nameOfTeamsTF.text!
+        
         let enemyText = enemyTF.text!
         let teamSizeInt = Int(teamSizeTF.text!)!
         let dataText = dataTF.text!
+        let hourText = hourOfMatch.text!
         let categoryText = categoryTF.text!
         let allyName = jsonTeam.teamsObject?.teams[Tmp.tmpTeam].title
         let age = jsonTeam.teamsObject?.teams[Tmp.tmpTeam].age
+        let place = placeTF.text!
+        let timeHalf = Int(timeHalfTF.text!)
         
-        jsonGame.addGame(teamName: allyName!, nameOfTeams: name, enemy: enemyText, teamSize: teamSizeInt, data: dataText, category: categoryText, age: age!)
+        jsonGame.addGame(teamName: allyName!, enemy: enemyText, teamSize: teamSizeInt, data: dataText, category: categoryText, age: age!, hour: hourText, place: place, timeHalf: timeHalf!)
+        
+        
         jsonGame.save()
         
         Tmp.tmpGame = (jsonGame.gamesObject?.games.count)! - 1
