@@ -89,6 +89,8 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerMatchTabelViewCell
         
+        // TODO: let players = jsonGame?.gamesObject?.games[Tmp.tmpGame].players
+        
         if indexPath.section == 0 {
             cell.numberTextField.text = jsonGame?.getNumber(game: Tmp.tmpGame, player: indexPath.row)
             cell.playerNameText.text = jsonGame?.getName(game: Tmp.tmpGame, player: indexPath.row)
@@ -105,6 +107,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.section == 1 {
             cell.numberTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][1]
             cell.playerNameText.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][0]
+            cell.SurnameTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][13]
             cell.timeTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][9]
             cell.goalsTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][4]
             cell.assisstsTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][5]
@@ -664,12 +667,18 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             var playerIn = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow2.row]
             
             if minute != ""{
-                playerOut![9] = minute
-                playerIn![9] = minute
+                let timeAll = Int(playerOut![9])
+                let timeOldIn = Int(playerOut![14])
+                let time = timeAll! + Int(minute)! - timeOldIn!
+                playerOut![9] = String(time)
+                playerIn![14] = minute
             }
             
             jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row] = playerIn!
             jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow2.row] = playerOut!
+            jsonGame?.save()
+            
+            Thread.sleep(forTimeInterval: 0.2)
             
             tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
             tableV.reloadRows(at: [selectRow2], with: UITableView.RowAnimation.bottom)
@@ -680,16 +689,20 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             select2 = false
             tableV.cellForRow(at: selectRow2)?.isSelected = false
         }else if select1 == true && select2 == true && selectRow2.section == 0 && selectRow2.section != selectRow1.section{
-            var playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row]
-            var playerIn = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row]
+            var playerIn = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row]
+            var playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row]
             
             if minute != ""{
-                playerOut![9] = minute
-                playerIn![9] = minute
+                let timeAll = Int(playerOut![9])
+                let timeOldIn = Int(playerOut![14])
+                let time = timeAll! + Int(minute)! - timeOldIn!
+                playerOut![9] = String(time)
+                playerIn![14] = minute
             }
             
-            jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row] = playerIn!
-            jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row] = playerOut!
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row] = playerOut!
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row] = playerIn!
+            jsonGame?.save()
             
             tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
             tableV.reloadRows(at: [selectRow2], with: UITableView.RowAnimation.bottom)
