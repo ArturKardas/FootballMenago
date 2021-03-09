@@ -35,6 +35,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var allyState: UITextField!
     @IBOutlet weak var enemyState: UITextField!
     @IBOutlet weak var minusEnemyButton: UIButton!
+    @IBOutlet weak var minusAllyButton: UIButton!
     
     @IBOutlet weak var tableV: UITableView!
     
@@ -56,6 +57,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dateLabel.text = String((game?.date)!)
         hourLabel.text = game?.hour
         minusEnemyButton.isUserInteractionEnabled = false
+        minusAllyButton.isUserInteractionEnabled = false
         self.tableV.allowsMultipleSelection = true
     }
     
@@ -124,6 +126,10 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             header.sectionTextName.text = "Ławka rezerwowych"
         }
         return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 35
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -241,12 +247,14 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //player
         let string = jsonGame?.getNumbersOfGoals(game: Tmp.tmpGame, player: selectRow1.row)
         let player = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][13]
+        let playerNumber = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][1]
         var goals = Int(string!)
         goals = goals! + 1
         jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][4] = String(goals!)
         
         
         var assistPlayer = ""
+        var assistNumber = ""
         //asysta
         for i in 0 ..< game!.mainTeamSize {
             if game!.players[i][1] == asisst{
@@ -254,16 +262,17 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 assist = assist! + 1
                 jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][5] = String("\(assist ?? 0)")
                 assistPlayer = (jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][13])!
-                
+                assistNumber = (jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][1])!
                 let array = tableV.indexPathsForVisibleRows
                 tableV.reloadRows(at:[array![i]], with: UITableView.RowAnimation.bottom)
             }
         }
         
-        jsonGame?.gamesObject?.games[Tmp.tmpGame].goals.append(["\(val!+1)-"+enemyState.text! , minute + "'", player! , assistPlayer])
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].goals.append(["\(val!+1)-"+enemyState.text! , minute + "'", player! , assistPlayer, playerNumber!, assistNumber])
         jsonGame?.save()
         
         //tech
+        minusAllyButton.isUserInteractionEnabled = true
         select1 = false
         tableV.cellForRow(at: selectRow1)?.isSelected = false
         tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
@@ -500,9 +509,98 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         goals = goals! - 1
         enemyState.text = String(goals!)
         if goals! < 1 {
-            minusEnemyButton.isUserInteractionEnabled = false
+            minusAllyButton.isUserInteractionEnabled = false
         }
+        
+        var max = (game?.goals.count)! - 1
+        var bool: Bool = false
+        
+        while bool == false && max >= 0{
+            if game?.goals[max][2] == "przeciwnik"{
+                jsonGame?.gamesObject?.games[Tmp.tmpGame].goals.remove(at: max)
+                jsonGame?.save()
+                bool = true
+            }
+            max = max - 1
+        }
+        
     }
+    
+    @IBAction func minusGoalAlly(_ sender: Any) {
+        // MARK: Odejmowanie gola swoim :D
+        var goals = Int(allyState.text!)
+        let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
+        let first = Int(game!.firstHalfAlly)
+        
+        
+        if goals == first {
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].firstHalfAlly = goals! - 1
+        }else{
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].fullTimeAlly = goals! - 1
+        }
+        
+        goals = goals! - 1
+        allyState.text = String(goals!)
+        if goals! < 1 {
+            minusAllyButton.isUserInteractionEnabled = false
+        }
+        
+        var max = (game?.goals.count)! - 1
+        var bool: Bool = false
+        
+        var numberGoal: String
+        var numberAssist: String
+        
+        
+        while bool == false && max >= 0{
+            if game?.goals[max][2] != "przeciwnik"{
+                numberGoal = (game?.goals[max][4])!
+                numberAssist = (game?.goals[max][5])!
+                
+                for i in 0 ..< (game?.players.count)!{
+                    if game?.players[i][1] == numberGoal{
+                        let goal = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][4])!)
+                        jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][4] = "\(goal! - 1)"
+                        let array = tableV.indexPathsForVisibleRows
+                        tableV.reloadRows(at:[array![i]], with: UITableView.RowAnimation.bottom)
+                    }
+                    if game?.players[i][1] == numberAssist{
+                        let asis = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][5])!)
+                        jsonGame?.gamesObject?.games[Tmp.tmpGame].players[i][5] = "\(asis! - 1)"
+                        let array = tableV.indexPathsForVisibleRows
+                        tableV.reloadRows(at:[array![i]], with: UITableView.RowAnimation.bottom)
+                    }
+                }
+                
+                for i in 0 ..< (game?.bench.count)!{
+                    if game?.bench[i][1] == numberGoal{
+                        let goal = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[i][4])!)
+                        jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[i][4] = "\(goal! - 1)"
+                        let array = tableV.indexPathsForVisibleRows
+                        let index = game?.mainTeamSize
+                        tableV.reloadRows(at:[array![index! + i]], with: UITableView.RowAnimation.bottom)
+                        
+                    }
+                    if game?.bench[i][1] == numberAssist{
+                        let asis = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[i][5])!)
+                        jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[i][5] = "\(asis! - 1)"
+                        let array = tableV.indexPathsForVisibleRows
+                        let index = game?.mainTeamSize
+                        tableV.reloadRows(at:[array![index! + i]], with: UITableView.RowAnimation.bottom)
+                    }
+                }
+                
+                jsonGame?.gamesObject?.games[Tmp.tmpGame].goals.remove(at: max)
+                
+                jsonGame?.save()
+                bool = true
+            }
+            max = max - 1
+        }
+        
+
+    }
+    
     
     @IBAction func endGAmeButton(_ sender: Any) {
         // MARK: zakończenie gry przycisk
@@ -580,8 +678,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tableV.cellForRow(at: selectRow1)?.isSelected = false
             
             select2 = false
-            tableV.cellForRow(at: selectRow2)?.isUserInteractionEnabled = false
-            tableV.cellForRow(at: selectRow2)?.backgroundColor = UIColor.red
             tableV.cellForRow(at: selectRow2)?.isSelected = false
         }else if select1 == true && select2 == true && selectRow2.section == 0 && selectRow2.section != selectRow1.section{
             var playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row]
@@ -600,8 +696,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             select1 = false
             tableV.cellForRow(at: selectRow1)?.isSelected = false
-            tableV.cellForRow(at: selectRow1)?.isUserInteractionEnabled = false
-            tableV.cellForRow(at: selectRow1)?.backgroundColor = UIColor.red
             
             select2 = false
             tableV.cellForRow(at: selectRow2)?.isSelected = false

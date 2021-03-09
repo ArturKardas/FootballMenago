@@ -56,6 +56,7 @@ class NewMatchViewController: UIViewController {
 
     @IBAction func nextButtonClicked(_ sender: Any) {
         
+       
         
         let enemyText = enemyTF.text!
         let teamSizeInt = Int(teamSizeTF.text!)!
@@ -67,12 +68,25 @@ class NewMatchViewController: UIViewController {
         let place = placeTF.text!
         let timeHalf = Int(timeHalfTF.text!)
         
-        jsonGame.addGame(teamName: allyName!, enemy: enemyText, teamSize: teamSizeInt, data: dataText, category: categoryText, age: age!, hour: hourText, place: place, timeHalf: timeHalf!)
+        if teamSizeInt > (jsonTeam.teamsObject?.teams[Tmp.tmpTeam].numbers.count)!{
+            let alert = UIAlertController(title: "UWAGA", message: "Masz za mało graczy w zaespole!", preferredStyle: UIAlertController.Style.alert)
+            
+            let tak = UIAlertAction(title: "OK", style: .default, handler:{(action) -> Void in print("alert")})
+            
+            alert.addAction(tak)
+            
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            jsonGame.addGame(teamName: allyName!, enemy: enemyText, teamSize: teamSizeInt, data: dataText, category: categoryText, age: age!, hour: hourText, place: place, timeHalf: timeHalf!)
+            
+            jsonGame.save()
+            
+            Tmp.tmpGame = (jsonGame.gamesObject?.games.count)! - 1
+        }
         
         
-        jsonGame.save()
         
-        Tmp.tmpGame = (jsonGame.gamesObject?.games.count)! - 1
+ 
     }
     
 }

@@ -51,6 +51,10 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
         return header
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 35
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selected.append(indexPath.row)
         print(indexPath.section)

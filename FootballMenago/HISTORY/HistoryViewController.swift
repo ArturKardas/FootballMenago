@@ -21,6 +21,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return (jsonGame?.gamesObject?.games.count)!
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 35
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as!TeamHistoryCell
 

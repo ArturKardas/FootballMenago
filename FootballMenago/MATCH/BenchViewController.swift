@@ -41,6 +41,10 @@ class BenchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return Tmp.restTeam.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 35
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerBenchMatchCell") as! PlayerBenchMatchCell
         

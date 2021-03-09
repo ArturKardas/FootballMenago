@@ -44,6 +44,10 @@ class TeamsChoosenViewController: UIViewController, UITableViewDataSource, UITab
         return header
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 35
+    }
+    
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 30
 //    }
