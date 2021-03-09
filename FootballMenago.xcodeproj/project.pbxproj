@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750A119025F654220043F6C1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 750A118F25F654220043F6C1 /* Podfile */; };
+		750A126F25F7A0DF0043F6C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 750A126E25F7A0DF0043F6C1 /* GoogleService-Info.plist */; };
 		752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36E8258012070004EFAB /* AddPlayerViewController.swift */; };
 		752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */; };
 		752F36F0258244C40004EFAB /* Tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EF258244C40004EFAB /* Tmp.swift */; };
@@ -43,6 +45,7 @@
 		75EF600A25C6C02100C77BD4 /* PlayerFirstTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF600925C6C02100C77BD4 /* PlayerFirstTeamViewController.swift */; };
 		75FBC9EC25C0299A00275FF7 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; };
 		75FBC9ED25C0299A00275FF7 /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C21A8125AD4A1B00878A2F /* ZipArchive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E61C10B5901C30C3DF1DA526 /* Pods_FootballMenago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD3540A8C7FB449D218E630 /* Pods_FootballMenago.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,55 +203,6 @@
 			remoteGlobalIDString = 2B4B24761C21500E00CC99E5;
 			remoteInfo = SwiftExampleCarthage;
 		};
-		75C21AB025AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DFE19EA1BDA9FF300709011;
-			remoteInfo = ObjectiveCExample;
-		};
-		75C21AB225AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DFE1A031BDA9FF300709011;
-			remoteInfo = ObjectiveCExampleTests_iOS;
-		};
-		75C21AB425AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3773ADAE1F7F44D8009A4B2D;
-			remoteInfo = ObjectiveCExampleTests_macOS;
-		};
-		75C21AB625AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3793E6D71F7F5F93000B1A19;
-			remoteInfo = ObjectiveCExampleTests_tvOS;
-		};
-		75C21AB825AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DFE19091BDA74F800709011;
-			remoteInfo = SwiftExample;
-		};
-		75C21ABA25AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37329A022273057300FEA32A;
-			remoteInfo = SwiftExample_macOS;
-		};
-		75C21ABC25AD4A1B00878A2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2B4B24761C21500E00CC99E5;
-			remoteInfo = SwiftExampleCarthage;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -267,6 +221,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		101FEBF5E1090E1E9E5A0F58 /* Pods-FootballMenago.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballMenago.release.xcconfig"; path = "Target Support Files/Pods-FootballMenago/Pods-FootballMenago.release.xcconfig"; sourceTree = "<group>"; };
+		6CD3540A8C7FB449D218E630 /* Pods_FootballMenago.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FootballMenago.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		750A118F25F654220043F6C1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		750A119825F655300043F6C1 /* FootballMenago.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = FootballMenago.xcworkspace; sourceTree = "<group>"; };
+		750A126E25F7A0DF0043F6C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		752F36E8258012070004EFAB /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 		752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassTeams.swift; sourceTree = "<group>"; };
 		752F36EF258244C40004EFAB /* Tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tmp.swift; sourceTree = "<group>"; };
@@ -297,62 +256,6 @@
 		759DC8F525ED9F0F00601BE2 /* mecze-kopia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mecze-kopia.json"; sourceTree = "<group>"; };
 		759DC8F725ED9F4700601BE2 /* zawodnicy-kopia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "zawodnicy-kopia.json"; sourceTree = "<group>"; };
 		75C218C525AD4A1A00878A2F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		75C218C825AD4A1A00878A2F /* 1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = 1.md; sourceTree = "<group>"; };
-		75C218C925AD4A1A00878A2F /* mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mountain.png; sourceTree = "<group>"; };
-		75C218CA25AD4A1A00878A2F /* 2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = 2.md; sourceTree = "<group>"; };
-		75C218CB25AD4A1A00878A2F /* ZipArchiveExample.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = ZipArchiveExample.xcworkspace; sourceTree = "<group>"; };
-		75C218CD25AD4A1A00878A2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		75C218CE25AD4A1A00878A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		75C218CF25AD4A1A00878A2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		75C218D125AD4A1A00878A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		75C218D325AD4A1A00878A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		75C218D425AD4A1A00878A2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		75C218D525AD4A1A00878A2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		75C218D625AD4A1A00878A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C218D725AD4A1A00878A2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ZipArchiveExample.xcodeproj; sourceTree = "<group>"; };
-		75C218DB25AD4A1A00878A2F /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		75C218DD25AD4A1A00878A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75C218DE25AD4A1A00878A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		75C218E025AD4A1A00878A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		75C218E125AD4A1A00878A2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75C218E225AD4A1A00878A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C218E325AD4A1A00878A2F /* SwiftExample_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftExample_macOS.entitlements; sourceTree = "<group>"; };
-		75C218E525AD4A1A00878A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75C218E625AD4A1A00878A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		75C218E825AD4A1A00878A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		75C218EA25AD4A1A00878A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		75C218EB25AD4A1A00878A2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75C218EC25AD4A1A00878A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C218ED25AD4A1A00878A2F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		75C218EF25AD4A1A00878A2F /* CancelDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CancelDelegate.m; sourceTree = "<group>"; };
-		75C218F025AD4A1A00878A2F /* CollectingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectingDelegate.h; sourceTree = "<group>"; };
-		75C218F125AD4A1A00878A2F /* SSZipArchiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSZipArchiveTests.m; sourceTree = "<group>"; };
-		75C218F225AD4A1A00878A2F /* ProgressDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressDelegate.h; sourceTree = "<group>"; };
-		75C218F325AD4A1A00878A2F /* CancelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CancelDelegate.h; sourceTree = "<group>"; };
-		75C218F525AD4A1A00878A2F /* 1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.m4a; sourceTree = "<group>"; };
-		75C218F625AD4A1A00878A2F /* 0.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0.m4a; sourceTree = "<group>"; };
-		75C218F725AD4A1A00878A2F /* 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.m4a; sourceTree = "<group>"; };
-		75C218F825AD4A1A00878A2F /* 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.m4a; sourceTree = "<group>"; };
-		75C218F925AD4A1A00878A2F /* 7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.m4a; sourceTree = "<group>"; };
-		75C218FA25AD4A1A00878A2F /* 6.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.m4a; sourceTree = "<group>"; };
-		75C218FB25AD4A1A00878A2F /* 4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.m4a; sourceTree = "<group>"; };
-		75C218FC25AD4A1A00878A2F /* 5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.m4a; sourceTree = "<group>"; };
-		75C218FD25AD4A1A00878A2F /* CollectingDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectingDelegate.m; sourceTree = "<group>"; };
-		75C218FF25AD4A1A00878A2F /* SymbolicLink.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SymbolicLink.zip; sourceTree = "<group>"; };
-		75C2190025AD4A1A00878A2F /* TestPasswordArchive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TestPasswordArchive.zip; sourceTree = "<group>"; };
-		75C2190125AD4A1A00878A2F /* PathTraversal.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = PathTraversal.zip; sourceTree = "<group>"; };
-		75C2190225AD4A1A00878A2F /* TestAESPasswordArchive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TestAESPasswordArchive.zip; sourceTree = "<group>"; };
-		75C2190325AD4A1A00878A2F /* hello.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = hello.zip; sourceTree = "<group>"; };
-		75C2190425AD4A1A00878A2F /* PermissionsTestApp.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = PermissionsTestApp.app; sourceTree = "<group>"; };
-		75C2190525AD4A1A00878A2F /* Empty.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Empty.zip; sourceTree = "<group>"; };
-		75C2190625AD4A1A00878A2F /* IncorrectHeaders.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = IncorrectHeaders.zip; sourceTree = "<group>"; };
-		75C2190725AD4A1A00878A2F /* RelativeSymbolicLink.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = RelativeSymbolicLink.zip; sourceTree = "<group>"; };
-		75C2190825AD4A1A00878A2F /* Unicode.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Unicode.zip; sourceTree = "<group>"; };
-		75C2190925AD4A1A00878A2F /* TestArchive.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = TestArchive.zip; sourceTree = "<group>"; };
-		75C2190A25AD4A1A00878A2F /* ProgressDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressDelegate.m; sourceTree = "<group>"; };
-		75C2190B25AD4A1A00878A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75C2190C25AD4A1A00878A2F /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		75C2190D25AD4A1A00878A2F /* SSZipArchive.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SSZipArchive.podspec; sourceTree = "<group>"; };
 		75C2190E25AD4A1A00878A2F /* ZipArchive.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ZipArchive.xcodeproj; sourceTree = "<group>"; };
 		75C2191125AD4A1A00878A2F /* Release-Instructions.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Release-Instructions.md"; sourceTree = "<group>"; };
@@ -653,6 +556,7 @@
 		75C4FB3025AD242800AAEA98 /* a.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = a.xlsx; sourceTree = "<group>"; };
 		75EF5FC625C3303B00C77BD4 /* TeamChoosenMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamChoosenMatchViewController.swift; sourceTree = "<group>"; };
 		75EF600925C6C02100C77BD4 /* PlayerFirstTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFirstTeamViewController.swift; sourceTree = "<group>"; };
+		BE4103866E886639E303E71D /* Pods-FootballMenago.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballMenago.debug.xcconfig"; path = "Target Support Files/Pods-FootballMenago/Pods-FootballMenago.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -662,12 +566,22 @@
 			files = (
 				75C21AC025AD4A2D00878A2F /* XlsxReaderWriter.framework in Frameworks */,
 				75FBC9EC25C0299A00275FF7 /* ZipArchive.framework in Frameworks */,
+				E61C10B5901C30C3DF1DA526 /* Pods_FootballMenago.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B0CF670A4DB8C68ED3B2B00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE4103866E886639E303E71D /* Pods-FootballMenago.debug.xcconfig */,
+				101FEBF5E1090E1E9E5A0F58 /* Pods-FootballMenago.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		752F36F7258252A10004EFAB /* TEAM */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,6 +643,8 @@
 		7591B3BD25360E2F00443790 = {
 			isa = PBXGroup;
 			children = (
+				750A119825F655300043F6C1 /* FootballMenago.xcworkspace */,
+				750A118F25F654220043F6C1 /* Podfile */,
 				7591B3C825360E2F00443790 /* FootballMenago */,
 				7591B3C725360E2F00443790 /* Products */,
 				75C218C225AD4A1A00878A2F /* Carthage */,
@@ -736,6 +652,7 @@
 				7576FEE725AD3FF50086EEB8 /* Cartfile.resolved */,
 				7576FEE425AD3F6E0086EEB8 /* CartFile */,
 				75C21B3D25BCAA3B00878A2F /* README.md */,
+				1B0CF670A4DB8C68ED3B2B00 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -762,6 +679,7 @@
 				7591B3CF25360E2F00443790 /* Main.storyboard */,
 				7591B3D425360E2F00443790 /* LaunchScreen.storyboard */,
 				7591B3D725360E2F00443790 /* Info.plist */,
+				750A126E25F7A0DF0043F6C1 /* GoogleService-Info.plist */,
 			);
 			path = FootballMenago;
 			sourceTree = "<group>";
@@ -787,7 +705,6 @@
 			isa = PBXGroup;
 			children = (
 				75C218C525AD4A1A00878A2F /* icon.png */,
-				75C218C625AD4A1A00878A2F /* Example */,
 				75C2190D25AD4A1A00878A2F /* SSZipArchive.podspec */,
 				75C2190E25AD4A1A00878A2F /* ZipArchive.xcodeproj */,
 				75C2191125AD4A1A00878A2F /* Release-Instructions.md */,
@@ -798,139 +715,6 @@
 				75C2191625AD4A1A00878A2F /* SSZipArchive */,
 			);
 			path = ZipArchive;
-			sourceTree = "<group>";
-		};
-		75C218C625AD4A1A00878A2F /* Example */ = {
-			isa = PBXGroup;
-			children = (
-				75C218C725AD4A1A00878A2F /* Sample Data */,
-				75C218CB25AD4A1A00878A2F /* ZipArchiveExample.xcworkspace */,
-				75C218CC25AD4A1A00878A2F /* ObjectiveCExample */,
-				75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */,
-				75C218DB25AD4A1A00878A2F /* Cartfile */,
-				75C218DC25AD4A1A00878A2F /* SwiftExample_macOS */,
-				75C218E425AD4A1A00878A2F /* SwiftExample */,
-				75C218ED25AD4A1A00878A2F /* Podfile */,
-				75C218EE25AD4A1A00878A2F /* ObjectiveCExampleTests */,
-				75C2190C25AD4A1A00878A2F /* Podfile.lock */,
-			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		75C218C725AD4A1A00878A2F /* Sample Data */ = {
-			isa = PBXGroup;
-			children = (
-				75C218C825AD4A1A00878A2F /* 1.md */,
-				75C218C925AD4A1A00878A2F /* mountain.png */,
-				75C218CA25AD4A1A00878A2F /* 2.md */,
-			);
-			path = "Sample Data";
-			sourceTree = "<group>";
-		};
-		75C218CC25AD4A1A00878A2F /* ObjectiveCExample */ = {
-			isa = PBXGroup;
-			children = (
-				75C218CD25AD4A1A00878A2F /* AppDelegate.h */,
-				75C218CE25AD4A1A00878A2F /* Assets.xcassets */,
-				75C218CF25AD4A1A00878A2F /* ViewController.m */,
-				75C218D025AD4A1A00878A2F /* LaunchScreen.storyboard */,
-				75C218D225AD4A1A00878A2F /* Main.storyboard */,
-				75C218D425AD4A1A00878A2F /* main.m */,
-				75C218D525AD4A1A00878A2F /* AppDelegate.m */,
-				75C218D625AD4A1A00878A2F /* Info.plist */,
-				75C218D725AD4A1A00878A2F /* ViewController.h */,
-			);
-			path = ObjectiveCExample;
-			sourceTree = "<group>";
-		};
-		75C218D925AD4A1A00878A2F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				75C21AB125AD4A1B00878A2F /* ObjectiveCExample.app */,
-				75C21AB325AD4A1B00878A2F /* ObjectiveCExampleTests_iOS.xctest */,
-				75C21AB525AD4A1B00878A2F /* ObjectiveCExampleTests_macOS.xctest */,
-				75C21AB725AD4A1B00878A2F /* ObjectiveCExampleTests_tvOS.xctest */,
-				75C21AB925AD4A1B00878A2F /* SwiftExample.app */,
-				75C21ABB25AD4A1B00878A2F /* SwiftExample_macOS.app */,
-				75C21ABD25AD4A1B00878A2F /* SwiftExampleCarthage.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		75C218DC25AD4A1A00878A2F /* SwiftExample_macOS */ = {
-			isa = PBXGroup;
-			children = (
-				75C218DD25AD4A1A00878A2F /* ViewController.swift */,
-				75C218DE25AD4A1A00878A2F /* Assets.xcassets */,
-				75C218DF25AD4A1A00878A2F /* Main.storyboard */,
-				75C218E125AD4A1A00878A2F /* AppDelegate.swift */,
-				75C218E225AD4A1A00878A2F /* Info.plist */,
-				75C218E325AD4A1A00878A2F /* SwiftExample_macOS.entitlements */,
-			);
-			path = SwiftExample_macOS;
-			sourceTree = "<group>";
-		};
-		75C218E425AD4A1A00878A2F /* SwiftExample */ = {
-			isa = PBXGroup;
-			children = (
-				75C218E525AD4A1A00878A2F /* ViewController.swift */,
-				75C218E625AD4A1A00878A2F /* Assets.xcassets */,
-				75C218E725AD4A1A00878A2F /* LaunchScreen.storyboard */,
-				75C218E925AD4A1A00878A2F /* Main.storyboard */,
-				75C218EB25AD4A1A00878A2F /* AppDelegate.swift */,
-				75C218EC25AD4A1A00878A2F /* Info.plist */,
-			);
-			path = SwiftExample;
-			sourceTree = "<group>";
-		};
-		75C218EE25AD4A1A00878A2F /* ObjectiveCExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				75C218EF25AD4A1A00878A2F /* CancelDelegate.m */,
-				75C218F025AD4A1A00878A2F /* CollectingDelegate.h */,
-				75C218F125AD4A1A00878A2F /* SSZipArchiveTests.m */,
-				75C218F225AD4A1A00878A2F /* ProgressDelegate.h */,
-				75C218F325AD4A1A00878A2F /* CancelDelegate.h */,
-				75C218F425AD4A1A00878A2F /* Multi_Zip_Test */,
-				75C218FD25AD4A1A00878A2F /* CollectingDelegate.m */,
-				75C218FE25AD4A1A00878A2F /* Fixtures */,
-				75C2190A25AD4A1A00878A2F /* ProgressDelegate.m */,
-				75C2190B25AD4A1A00878A2F /* Info.plist */,
-			);
-			path = ObjectiveCExampleTests;
-			sourceTree = "<group>";
-		};
-		75C218F425AD4A1A00878A2F /* Multi_Zip_Test */ = {
-			isa = PBXGroup;
-			children = (
-				75C218F525AD4A1A00878A2F /* 1.m4a */,
-				75C218F625AD4A1A00878A2F /* 0.m4a */,
-				75C218F725AD4A1A00878A2F /* 2.m4a */,
-				75C218F825AD4A1A00878A2F /* 3.m4a */,
-				75C218F925AD4A1A00878A2F /* 7.m4a */,
-				75C218FA25AD4A1A00878A2F /* 6.m4a */,
-				75C218FB25AD4A1A00878A2F /* 4.m4a */,
-				75C218FC25AD4A1A00878A2F /* 5.m4a */,
-			);
-			path = Multi_Zip_Test;
-			sourceTree = "<group>";
-		};
-		75C218FE25AD4A1A00878A2F /* Fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				75C218FF25AD4A1A00878A2F /* SymbolicLink.zip */,
-				75C2190025AD4A1A00878A2F /* TestPasswordArchive.zip */,
-				75C2190125AD4A1A00878A2F /* PathTraversal.zip */,
-				75C2190225AD4A1A00878A2F /* TestAESPasswordArchive.zip */,
-				75C2190325AD4A1A00878A2F /* hello.zip */,
-				75C2190425AD4A1A00878A2F /* PermissionsTestApp.app */,
-				75C2190525AD4A1A00878A2F /* Empty.zip */,
-				75C2190625AD4A1A00878A2F /* IncorrectHeaders.zip */,
-				75C2190725AD4A1A00878A2F /* RelativeSymbolicLink.zip */,
-				75C2190825AD4A1A00878A2F /* Unicode.zip */,
-				75C2190925AD4A1A00878A2F /* TestArchive.zip */,
-			);
-			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		75C2190F25AD4A1A00878A2F /* Products */ = {
@@ -1526,6 +1310,7 @@
 		75C21ABF25AD4A2D00878A2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CD3540A8C7FB449D218E630 /* Pods_FootballMenago.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1537,10 +1322,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7591B3DA25360E2F00443790 /* Build configuration list for PBXNativeTarget "FootballMenago" */;
 			buildPhases = (
+				DB0283F7F92C1B667374779F /* [CP] Check Pods Manifest.lock */,
 				7591B3C225360E2F00443790 /* Sources */,
 				7591B3C325360E2F00443790 /* Frameworks */,
 				7591B3C425360E2F00443790 /* Resources */,
 				75C21AC425AD4A2D00878A2F /* Embed Frameworks */,
+				0D78090A90C7E5348FBB15C8 /* [CP] Embed Pods Frameworks */,
+				750A18EB25F7AFE40043F6C1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1600,10 +1388,6 @@
 				{
 					ProductGroup = 75C2197E25AD4A1B00878A2F /* Products */;
 					ProjectRef = 75C2197D25AD4A1B00878A2F /* ZipArchiveExample.xcodeproj */;
-				},
-				{
-					ProductGroup = 75C218D925AD4A1A00878A2F /* Products */;
-					ProjectRef = 75C218D825AD4A1A00878A2F /* ZipArchiveExample.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1768,55 +1552,6 @@
 			remoteRef = 75C21AA725AD4A1B00878A2F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		75C21AB125AD4A1B00878A2F /* ObjectiveCExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ObjectiveCExample.app;
-			remoteRef = 75C21AB025AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75C21AB325AD4A1B00878A2F /* ObjectiveCExampleTests_iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ObjectiveCExampleTests_iOS.xctest;
-			remoteRef = 75C21AB225AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75C21AB525AD4A1B00878A2F /* ObjectiveCExampleTests_macOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ObjectiveCExampleTests_macOS.xctest;
-			remoteRef = 75C21AB425AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75C21AB725AD4A1B00878A2F /* ObjectiveCExampleTests_tvOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ObjectiveCExampleTests_tvOS.xctest;
-			remoteRef = 75C21AB625AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75C21AB925AD4A1B00878A2F /* SwiftExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SwiftExample.app;
-			remoteRef = 75C21AB825AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75C21ABB25AD4A1B00878A2F /* SwiftExample_macOS.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SwiftExample_macOS.app;
-			remoteRef = 75C21ABA25AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		75C21ABD25AD4A1B00878A2F /* SwiftExampleCarthage.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SwiftExampleCarthage.app;
-			remoteRef = 75C21ABC25AD4A1B00878A2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1824,6 +1559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750A126F25F7A0DF0043F6C1 /* GoogleService-Info.plist in Resources */,
 				75C21AC525AD4A7B00878A2F /* Main.storyboard in Resources */,
 				75C21AC625AD4A7B00878A2F /* LaunchScreen.storyboard in Resources */,
 				759DC8F825ED9F4700601BE2 /* zawodnicy-kopia.json in Resources */,
@@ -1832,6 +1568,7 @@
 				75C215BD25AD487B00878A2F /* Assets.xcassets in Resources */,
 				759DC8F625ED9F0F00601BE2 /* mecze-kopia.json in Resources */,
 				7576021025AD42D90086EEB8 /* a.xlsx in Resources */,
+				750A119025F654220043F6C1 /* Podfile in Resources */,
 				75C21B5B25BCAA3B00878A2F /* README.md in Resources */,
 				7576021125AD42D90086EEB8 /* mecze.json in Resources */,
 				7576021225AD42D90086EEB8 /* zawodnicy.json in Resources */,
@@ -1839,6 +1576,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D78090A90C7E5348FBB15C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootballMenago/Pods-FootballMenago-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FootballMenago/Pods-FootballMenago-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FootballMenago/Pods-FootballMenago-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		750A18EB25F7AFE40043F6C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		DB0283F7F92C1B667374779F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FootballMenago-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7591B3C225360E2F00443790 /* Sources */ = {
@@ -1886,46 +1682,6 @@
 				7591B3D525360E2F00443790 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		75C218D025AD4A1A00878A2F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75C218D125AD4A1A00878A2F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		75C218D225AD4A1A00878A2F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75C218D325AD4A1A00878A2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		75C218DF25AD4A1A00878A2F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75C218E025AD4A1A00878A2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		75C218E725AD4A1A00878A2F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75C218E825AD4A1A00878A2F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		75C218E925AD4A1A00878A2F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75C218EA25AD4A1A00878A2F /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		75C2194325AD4A1B00878A2F /* LaunchScreen.storyboard */ = {
@@ -2121,10 +1877,12 @@
 		};
 		7591B3DB25360E2F00443790 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4103866E886639E303E71D /* Pods-FootballMenago.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2139,6 +1897,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = artur.kardas.FootballMenago;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -2148,10 +1907,12 @@
 		};
 		7591B3DC25360E2F00443790 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 101FEBF5E1090E1E9E5A0F58 /* Pods-FootballMenago.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2166,6 +1927,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = artur.kardas.FootballMenago;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -55,6 +55,7 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "K\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][6] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "L\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][7] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "M\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][8] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "N\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][10] ?? "nie zczytano")")
             }
             index = index + (team?.players.count)! + 5
             
@@ -70,6 +71,7 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "K\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][6] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "L\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][7] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "M\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][8] ?? "nie zczytano")")
+                firstWorksheet.cell(forCellReference: "N\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][10] ?? "nie zczytano")")
             }
             
             for i in 0 ..< (team?.goals.count)! {

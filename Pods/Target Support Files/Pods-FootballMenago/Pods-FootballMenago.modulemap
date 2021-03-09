@@ -1,0 +1,6 @@
+framework module Pods_FootballMenago {
+  umbrella header "Pods-FootballMenago-umbrella.h"
+
+  export *
+  module * { export * }
+}

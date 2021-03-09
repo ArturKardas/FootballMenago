@@ -49,8 +49,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         jsonGame = JsonClassGames()
-        var game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
-        
+        let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
         
         enemyNameLabel.text = (game?.enemyTeam)!
         teamNameLabel.text = (game?.teamName)!
@@ -58,9 +57,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         hourLabel.text = game?.hour
         minusEnemyButton.isUserInteractionEnabled = false
         self.tableV.allowsMultipleSelection = true
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -275,31 +271,44 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func yellowCardButton(_ sender: Any) {
-        if select2 == false && select1 == true {
-            let string = jsonGame?.getNumbersOFYellowCards(game: Tmp.tmpGame, player: selectRow1.row)
-            var cards = Int(string!)
-            cards = cards! + 1
+        // MARK: Żółta kartka button
+        if select2 == false && select1 == true && selectRow1.section == 0{
+            let alert = UIAlertController(title: "Czy chcesz dać zawodnikowi Żółtą kartkę?", message: "Jeśli tak wpisz w której minucie meczu.", preferredStyle: UIAlertController.Style.alert)
             
-            if selectRow1.section == 0 {
-                jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][6] = String(cards!)
-                jsonGame?.save()
-            }
+            alert.addTextField()
+            alert.textFields![0].keyboardType = UIKeyboardType.numberPad
+            let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.yellowCard(minute: alert.textFields![0].text!)})
+            let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie dano kartki")})
+            nie.setValue(UIColor.red, forKey: "titleTextColor")
             
-            select1 = false
-            tableV.cellForRow(at: selectRow1)?.isSelected = false
-            tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
+            alert.addAction(tak)
+            alert.addAction(nie)
             
-            print("Goals")
+            self.present(alert, animated: true, completion: nil)
+        }else if (select2 == true && select1 == true){
+            let alert = UIAlertController(title: "Uwaga", message: "Za dużo zaznaczonych zawodników, odznacz proszę jednego :)", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                print("OK")
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }else {
-            print("NIe można dodać gola bo za dużo zaznaczonych")
+            let alert = UIAlertController(title: "Uwaga", message: "Zaznacz zawodnika z pierwszego składu :)", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                print("OK")
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
     
     
     @IBAction func redCardButton(_ sender: Any) {
-        // MARK: Czerwona kartka
-        if select2 == false && select1 == true{
+        // MARK: Czerwona kartka button
+        if select2 == false && select1 == true  && selectRow1.section == 0{
             let alert = UIAlertController(title: "Czy chcesz dać zawodnikowi CZERWONĄ kartkę?", message: "Jeśli tak wpisz w której minucie meczu.", preferredStyle: UIAlertController.Style.alert)
             
             alert.addTextField()
@@ -329,11 +338,10 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func switchButton(_ sender: Any) {
-        // MARK: zmiana zawodnika
+        // MARK: zmiana zawodnika button
         
         if select2 == true && selectRow2.section != selectRow1.section{
             let alert = UIAlertController(title: "UWAGA!!!", message: "Czy chcesz wymienić zawodników? Jeśli tak to wpisz w której minucie :D", preferredStyle: UIAlertController.Style.alert)
@@ -361,8 +369,83 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    @IBAction func addEnemy(_ sender: Any) {
+    @IBAction func optionButton(_ sender: Any) {
+        // MARK: Naciśniecie option
+        if select2 == false && select1 == true{
+            let alert = UIAlertController(title: "Ocena Zawodnika", message: "", preferredStyle: UIAlertController.Style.alert)
+            
+            var ocena = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][8]
+            var uwaga = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][10]
+            
+            if selectRow1.section == 1{
+                ocena = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row][8]
+                uwaga = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row][10]
+            }
+            
+            alert.addTextField()
+            alert.textFields![0].text = "Ocena"
+            alert.textFields![0].isUserInteractionEnabled = false
+            
+            alert.addTextField()
+            alert.textFields![1].text = ocena
+            alert.textFields![1].keyboardType = UIKeyboardType.numberPad
+            
+            alert.addTextField()
+            alert.textFields![2].text = "Uwagi"
+            alert.textFields![2].isUserInteractionEnabled = false
+            
+            alert.addTextField()
+            alert.textFields![3].keyboardType = UIKeyboardType.asciiCapable
+            alert.textFields![3].text = uwaga
+            alert.textFields![3].frame.size.height = 60
+            
+            let tak = UIAlertAction(title: "OK", style: .default, handler:{(action) -> Void in self.optionFunc(grade: alert.textFields![1].text!, warnung: alert.textFields![3].text!)})
+            let nie = UIAlertAction(title: "Anuluj", style: .cancel, handler:{(action) -> Void in print("nie dano kartki")})
+            nie.setValue(UIColor.red, forKey: "titleTextColor")
+            
+            alert.addAction(tak)
+            alert.addAction(nie)
+            
+            self.present(alert, animated: true, completion: nil)
+        }else if (select2 == true && select1 == true){
+            let alert = UIAlertController(title: "Uwaga", message: "Za dużo zaznaczonych zawodników, odznacz proszę jednego :)", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                print("OK")
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }else {
+            let alert = UIAlertController(title: "Uwaga", message: "Zaznacz zawodnika z pierwszego składu :)", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+                print("OK")
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
         
+    }
+    
+    func optionFunc(grade: String, warnung: String) {
+        if selectRow1.section == 0 {
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][8] = grade
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][10] = warnung
+        }else if selectRow1.section == 1 {
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row][8] = grade
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row][10] = warnung
+        }
+        
+        jsonGame?.save()
+        tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
+        
+        select1 = false
+        tableV.cellForRow(at: selectRow1)?.isSelected = false
+    }
+    
+    
+    @IBAction func addEnemy(_ sender: Any) {
+        // MARK: Gol dla przeciwnika button
         let alert = UIAlertController(title: "GOL", message: "Wpisz w której minucie przeciwnik strzelił bramkę.", preferredStyle: UIAlertController.Style.alert)
         
         alert.addTextField()
@@ -380,6 +463,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func addEnemyGoalFunc(minute: String)  {
+        // MARK: Funkcja obsługująca gola przeciwnika
         var goals = Int(enemyState.text!)
         goals = goals! + 1
         enemyState.text = String(goals!)
@@ -401,10 +485,11 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func minusEnemy(_ sender: Any) {
+        // MARK: Odejmowanie gola przeciwnikowi
         var goals = Int(enemyState.text!)
         let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
         let first = Int(game!.firstHalfEnemy)
-
+        
         
         if goals == first {
             jsonGame?.gamesObject?.games[Tmp.tmpGame].firstHalfEnemy = goals! - 1
@@ -420,8 +505,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func endGAmeButton(_ sender: Any) {
-        
-        // MARK: zakończenie gry
+        // MARK: zakończenie gry przycisk
         let alert = UIAlertController(title: "UWAGA!!!", message: "Czy chcesz zakończyć mecz?", preferredStyle: UIAlertController.Style.alert)
         
         let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.endDD()})
@@ -436,6 +520,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func redCard(minute: String) {
+        // MARK: czewrwona kartka funkcja
         let string = jsonGame?.get7NumbersOfRedCards(game: Tmp.tmpGame, player: selectRow1.row)
         var cards = Int(string!)
         cards = cards! + 1
@@ -456,9 +541,26 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         select1 = false
     }
     
-    func switchFunc(minute: String) {
+    func yellowCard(minute: String){
+        // MARK: żółta kartka funkcja
+        let string = jsonGame?.getNumbersOFYellowCards(game: Tmp.tmpGame, player: selectRow1.row)
+        var cards = Int(string!)
+        cards = cards! + 1
         
-        // TODO: Żle działa sprawdzanie czy jedne jest zaxznaczony
+        if selectRow1.section == 0 {
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][6] = String(cards!)
+            jsonGame?.save()
+        }
+        
+        select1 = false
+        tableV.cellForRow(at: selectRow1)?.isSelected = false
+        tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
+        
+        print("yellow")
+    }
+    
+    func switchFunc(minute: String) {
+        // MARK: Funkcja obsługująca zmianę zawodników
         if select1 == true && select2 == true && selectRow2.section == 1 && selectRow2.section != selectRow1.section{
             var playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row]
             var playerIn = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow2.row]
@@ -507,9 +609,11 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func endDD(){
+        // MARK: Funkcja obsługująca zakończenie meczu
         let size = (jsonGame?.getFirstTeamSize(game: Tmp.tmpGame))!
         var game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
-        // TODO: zsumowanie wszystkim minut
+        
+        // zsumowanie wszystkim minut dla każdego gracza
         for i in 0 ..< size {
             //sprawdzenie czy zawodnik otrzymał żółtą kartkę
             if game?.players[i][7] == "1" && game?.players[i][9] != ""{
@@ -521,8 +625,11 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        if game?.fullTimeAlly == 0 && game?.fullTimeEnemy == 0 && (game?.firstHalfAlly  != 0 || game?.firstHalfEnemy != 0 ){
+        if game?.fullTimeAlly == 0 && game?.firstHalfAlly  != 0 {
             game?.fullTimeAlly = Int(allyState.text!)!
+        }
+        
+        if game?.fullTimeEnemy == 0 && game?.firstHalfEnemy != 0 {
             game?.fullTimeEnemy = Int(enemyState.text!)!
         }
         
