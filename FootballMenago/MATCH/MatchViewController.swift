@@ -37,6 +37,22 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var minusEnemyButton: UIButton!
     @IBOutlet weak var minusAllyButton: UIButton!
     
+    //funktionsButton
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var breakButton: UIButton!
+    @IBOutlet weak var endButton: UIButton!
+    
+    
+    //Buttons and time text field
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var secondTextField: UITextField!
+    @IBOutlet weak var yellowCardButton: UIButton!
+    @IBOutlet weak var redCardButton: UIButton!
+    @IBOutlet weak var switchButton: UIButton!
+    @IBOutlet weak var goalButton: UIButton!
+    @IBOutlet weak var opinionButton: UIButton!
+    
+    
     @IBOutlet weak var tableV: UITableView!
     
     var selectRow1 = IndexPath()
@@ -46,11 +62,16 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var jsonGame: JsonClassGames?
     
+    
+    var i = 0
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         jsonGame = JsonClassGames()
         let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
+        Tmp.halfTime = 0
         
         enemyNameLabel.text = (game?.enemyTeam)!
         teamNameLabel.text = (game?.teamName)!
@@ -59,6 +80,36 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         minusEnemyButton.isUserInteractionEnabled = false
         minusAllyButton.isUserInteractionEnabled = false
         self.tableV.allowsMultipleSelection = true
+       
+    }
+    
+    func addMinuteToFirstTeam(){
+        var players = jsonGame?.gamesObject?.games[Tmp.tmpGame].players
+//        let dateTo = Date()
+//        let diffComponents = Calendar.current.dateComponents([.minute], from: Tmp.startTime, to: dateTo)
+        let minuteOfTheMatch = Int(timeTextField.text!)!
+        
+        for i in 0 ..< players!.count{
+            if players![i][7] == "1"{
+                
+            }else{
+                let m = Int(players![i][14])
+                players![i][14] = String(minuteOfTheMatch)
+                let timePlayed = Int(players![i][9])
+                players![i][9] =  String(timePlayed! + minuteOfTheMatch - m!)
+            }
+            
+        }
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].players = players!
+        jsonGame?.save()
+        
+        if select1 == false{
+            let array = tableV.indexPathsForVisibleRows
+            tableV.reloadRows(at:array!, with: .none)
+            select1 = false
+            select2 = false
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -189,19 +240,21 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func goalButton(_ sender: Any) {
         // MARK: Funkcja odpowiedzialna za obsługę przyciska GOL i błędów
-        
         if select2 == false && select1 == true && selectRow1.section == 0{
             let alert = UIAlertController(title: "GOOOOL", message: "Wpisz w której minucie strzelono gola, oraz kto asystował (opcjonalnie)", preferredStyle: UIAlertController.Style.alert)
             
             alert.addTextField()
             alert.textFields![0].text = "Minuta"
+            alert.textFields![0].textAlignment = .center
             alert.textFields![0].isUserInteractionEnabled = false
             
             alert.addTextField()
+            alert.textFields![1].text = timeTextField.text
             alert.textFields![1].keyboardType = UIKeyboardType.numberPad
             
             alert.addTextField()
             alert.textFields![2].text = "Numer Asystującego"
+            alert.textFields![2].textAlignment = .center
             alert.textFields![2].isUserInteractionEnabled = false
             
             alert.addTextField()
@@ -279,6 +332,12 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         select1 = false
         tableV.cellForRow(at: selectRow1)?.isSelected = false
         tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
+        
+        //reload table
+        let array = tableV.indexPathsForVisibleRows
+        tableV.reloadRows(at:array!, with: .none)
+        select1 = false
+        select2 = false
         print("Goal")
     }
     
@@ -289,6 +348,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             alert.addTextField()
             alert.textFields![0].keyboardType = UIKeyboardType.numberPad
+            alert.textFields![0].text = timeTextField.text
             let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.yellowCard(minute: alert.textFields![0].text!)})
             let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie dano kartki")})
             nie.setValue(UIColor.red, forKey: "titleTextColor")
@@ -325,6 +385,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             alert.addTextField()
             alert.textFields![0].keyboardType = UIKeyboardType.numberPad
+            alert.textFields![0].text = timeTextField.text
             let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.redCard(minute: alert.textFields![0].text!)})
             let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie dano kartki")})
             nie.setValue(UIColor.red, forKey: "titleTextColor")
@@ -360,7 +421,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             alert.addTextField()
             alert.textFields![0].keyboardType = UIKeyboardType.numberPad
-            alert.textFields![0].placeholder = "24"
+            alert.textFields![0].text = timeTextField.text
             
             let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.switchFunc(minute: alert.textFields![0].text!)})
             let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie dokończono zmiany")})
@@ -382,6 +443,8 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @IBAction func optionButton(_ sender: Any) {
+        
+        
         // MARK: Naciśniecie option
         if select2 == false && select1 == true{
             let alert = UIAlertController(title: "Ocena Zawodnika", message: "", preferredStyle: UIAlertController.Style.alert)
@@ -453,6 +516,12 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         select1 = false
         tableV.cellForRow(at: selectRow1)?.isSelected = false
+        
+        //reload table
+        let array = tableV.indexPathsForVisibleRows
+        tableV.reloadRows(at:array!, with: .none)
+        select1 = false
+        select2 = false
     }
     
     
@@ -462,7 +531,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         alert.addTextField()
         alert.textFields![0].keyboardType = UIKeyboardType.numberPad
-        alert.textFields![0].placeholder = "24"
+        alert.textFields![0].text = timeTextField.text
         
         let tak = UIAlertAction(title: "GOL", style: .default, handler:{(action) -> Void in self.addEnemyGoalFunc(minute: alert.textFields![0].text!)})
         let nie = UIAlertAction(title: "Anuluj", style: .cancel, handler:{(action) -> Void in print("nie dodano gola przeciwnikowi")})
@@ -601,11 +670,51 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             max = max - 1
         }
         
-
+        
     }
     
+    @IBAction func startButtonClicked(_ sender: Any) {
+        Tmp.startTime = Date()
+        startButton.isUserInteractionEnabled = false
+        startButton.backgroundColor = UIColor.gray
+        breakButton.isUserInteractionEnabled = true
+        breakButton.backgroundColor = UIColor.blue
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2 , repeats: true) { [self] (Timer) in
+            let dateTo = Date()
+            let diffComponents  = Calendar.current.dateComponents([ .minute, .second], from: Tmp.startTime, to: dateTo)
+            let second = diffComponents.second
+            let minuteOfTheMatch = diffComponents.minute!
+            
+            timeTextField.text = String(minuteOfTheMatch + Tmp.halfTime)
+            secondTextField.text = String(format: "%02d", second!)
+            self.addMinuteToFirstTeam()
+        }
+    }
     
-    @IBAction func endGAmeButton(_ sender: Any) {
+    @IBAction func breakButtonClicked(_ sender: Any) {
+        timer.invalidate()
+        
+        startButton.backgroundColor = UIColor.green
+        startButton.isUserInteractionEnabled = true
+        breakButton.isUserInteractionEnabled = false
+        breakButton.backgroundColor = UIColor.gray
+        
+
+        
+        //Tmp.halfTime = Int(timeTextField.text!)!
+        Tmp.halfTime = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].timeHalf)!)
+        
+        
+        var players = jsonGame?.gamesObject?.games[Tmp.tmpGame].players
+        for i in 0 ..< players!.count{
+            players![i][14] = String(Tmp.halfTime)
+        }
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].players = players!
+        jsonGame?.save()
+    }
+    
+    @IBAction func endGameButtonClicked(_ sender: Any) {
         // MARK: zakończenie gry przycisk
         let alert = UIAlertController(title: "UWAGA!!!", message: "Czy chcesz zakończyć mecz?", preferredStyle: UIAlertController.Style.alert)
         
@@ -627,19 +736,25 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cards = cards! + 1
         
         if selectRow1.section == 0 {
-            if minute != ""{
-                jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][9] = minute
-            }
+//            if minute != ""{
+//                jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][9] = minute
+//            }
             
             jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][7] = String(cards!)
             jsonGame?.save()
             
             tableV.cellForRow(at: selectRow1)?.isSelected = false
             tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
-            tableV.cellForRow(at: selectRow1)?.backgroundColor = UIColor.red
-            tableV.cellForRow(at: selectRow1)?.isUserInteractionEnabled = false
+//            tableV.cellForRow(at: selectRow1)?.backgroundColor = UIColor.red
+//            tableV.cellForRow(at: selectRow1)?.isUserInteractionEnabled = false
         }
         select1 = false
+        
+        //reload table
+        let array = tableV.indexPathsForVisibleRows
+        tableV.reloadRows(at:array!, with: .none)
+        select1 = false
+        select2 = false
     }
     
     func yellowCard(minute: String){
@@ -658,27 +773,30 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
         
         print("yellow")
+        
+        //reload table
+        let array = tableV.indexPathsForVisibleRows
+        tableV.reloadRows(at:array!, with: .none)
+        select1 = false
+        select2 = false
     }
     
     func switchFunc(minute: String) {
         // MARK: Funkcja obsługująca zmianę zawodników
         if select1 == true && select2 == true && selectRow2.section == 1 && selectRow2.section != selectRow1.section{
-            var playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row]
+            let playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row]
             var playerIn = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow2.row]
             
-            if minute != ""{
-                let timeAll = Int(playerOut![9])
-                let timeOldIn = Int(playerOut![14])
-                let time = timeAll! + Int(minute)! - timeOldIn!
-                playerOut![9] = String(time)
-                playerIn![14] = minute
+            //playerIn![14] = minute
+            if minute == ""{
+                playerIn![14] = timeTextField.text!
             }
+            playerIn![14] = timeTextField.text!
             
             jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row] = playerIn!
             jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow2.row] = playerOut!
             jsonGame?.save()
             
-            Thread.sleep(forTimeInterval: 0.2)
             
             tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
             tableV.reloadRows(at: [selectRow2], with: UITableView.RowAnimation.bottom)
@@ -690,15 +808,13 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tableV.cellForRow(at: selectRow2)?.isSelected = false
         }else if select1 == true && select2 == true && selectRow2.section == 0 && selectRow2.section != selectRow1.section{
             var playerIn = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row]
-            var playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row]
+            let playerOut = jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row]
             
-            if minute != ""{
-                let timeAll = Int(playerOut![9])
-                let timeOldIn = Int(playerOut![14])
-                let time = timeAll! + Int(minute)! - timeOldIn!
-                playerOut![9] = String(time)
-                playerIn![14] = minute
+            playerIn![14] = minute
+            if minute == ""{
+                playerIn![14] = timeTextField.text!
             }
+            playerIn![14] = timeTextField.text!
             
             jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[selectRow1.row] = playerOut!
             jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow2.row] = playerIn!
@@ -713,24 +829,18 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             select2 = false
             tableV.cellForRow(at: selectRow2)?.isSelected = false
         }
+        //reload table
+        let array = tableV.indexPathsForVisibleRows
+        tableV.reloadRows(at:array!, with: .none)
+        select1 = false
+        select2 = false
     }
     
     func endDD(){
-        // MARK: Funkcja obsługująca zakończenie meczu
-        let size = (jsonGame?.getFirstTeamSize(game: Tmp.tmpGame))!
-        var game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
         
-        // zsumowanie wszystkim minut dla każdego gracza
-        for i in 0 ..< size {
-            //sprawdzenie czy zawodnik otrzymał żółtą kartkę
-            if game?.players[i][7] == "1" && game?.players[i][9] != ""{
-                
-            }else{
-                var time = Int((game?.players[i][9])!)
-                time = (game!.timeHalf*2) - time!
-                game?.players[i][9] = String(time!)
-            }
-        }
+        // MARK: Funkcja obsługująca zakończenie meczu
+        var game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
+        timer.invalidate()
         
         if game?.fullTimeAlly == 0 && game?.firstHalfAlly  != 0 {
             game?.fullTimeAlly = Int(allyState.text!)!

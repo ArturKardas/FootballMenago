@@ -39,17 +39,9 @@ class NewMatchViewController: UIViewController {
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date)
         
-        if day < 10 && month < 10{
-            dataTF.text = String("0\(day)-0\(month)-\(year)")
-        }else if day < 10 && month >= 10{
-            dataTF.text = String("0\(day)-\(month)-\(year)")
-        }else if day >= 10 && month < 10{
-            dataTF.text = String("\(day)-0\(month)-\(year)")
-        }else{
-            dataTF.text = String("\(day)-\(month)-\(year)")
-        }
+        dataTF.text = String(format: "%02d", day) + "." + String(format: "%02d", month) + "." + String(format: "%04d", year)
         
-        hourOfMatch.text = String("\(hour):\(minute)")
+        hourOfMatch.text = String(format: "%02d", hour) + ":" + String(format: "%02d", minute)
         
     }
 
@@ -70,6 +62,14 @@ class NewMatchViewController: UIViewController {
         
         if teamSizeInt > (jsonTeam.teamsObject?.teams[Tmp.tmpTeam].numbers.count)!{
             let alert = UIAlertController(title: "UWAGA", message: "Masz za mało graczy w zaespole!", preferredStyle: UIAlertController.Style.alert)
+            
+            let tak = UIAlertAction(title: "OK", style: .default, handler:{(action) -> Void in print("alert")})
+            
+            alert.addAction(tak)
+            
+            self.present(alert, animated: true, completion: nil)
+        }else if timeHalfTF.text == ""{
+            let alert = UIAlertController(title: "UWAGA", message: "Prosze wpisz poprawnie standardowy czas jednej połowy", preferredStyle: UIAlertController.Style.alert)
             
             let tak = UIAlertAction(title: "OK", style: .default, handler:{(action) -> Void in print("alert")})
             

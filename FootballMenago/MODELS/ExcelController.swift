@@ -22,8 +22,16 @@ class ExcelController {
             //giving  path to directory
             let path = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             
+            let date = Date()
+            let calendar = Calendar.current.dateComponents([.day,.month,.year, .minute, .second], from: date)
+            let year = calendar.year
+            let day = calendar.day
+            let month = calendar.month
+            let min = calendar.minute
+            let sec = calendar.second
+            
             //giving new name to file
-            let newUrl =  path.appendingPathComponent("Test\(Date.init()).xlsx")
+            let newUrl =  path.appendingPathComponent("\(day ?? Int.random(in: 0...99))_\(month ?? Int.random(in: 0...99))_\(year ??   Int.random(in: 0...99))_\(min ??  Int.random(in: 0...99))\(sec ??  Int.random(in: 0...99)).xlsx")
             let excelNewPath = newUrl.path
             
             //Save a copy
