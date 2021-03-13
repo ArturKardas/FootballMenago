@@ -39,7 +39,7 @@ class JsonClassTeams{
         }
     }
     
-    func saveObjectToJsonFile(){
+    func save(){
         let encoder = JSONEncoder()
         
         do{
@@ -78,7 +78,7 @@ class JsonClassTeams{
         teamsObject?.teams[Tmp.tmpTeam].position.insert(position, at: index)
         teamsObject?.teams[Tmp.tmpTeam].birthDates.insert(birthDate, at: index)
         
-        saveObjectToJsonFile()
+        save()
     }
     
     func getName(team: Int, player: Int) -> String{

@@ -23,7 +23,7 @@ class AddTeamViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addTeam(_ sender: Any) {
         jsonClassTeams?.addTeam(name: textFieldNameTeam.text! as String, age: Int(textFieldAge.text!)!)
-        jsonClassTeams?.saveObjectToJsonFile()
+        jsonClassTeams?.save()
         
     }
     

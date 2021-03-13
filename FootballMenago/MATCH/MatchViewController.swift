@@ -63,7 +63,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var jsonGame: JsonClassGames?
     
     
-    var i = 0
+    //var i = 0
     var timer = Timer()
     
     override func viewDidLoad() {
@@ -72,6 +72,13 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         jsonGame = JsonClassGames()
         let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
         Tmp.halfTime = 0
+        
+        breakButton.backgroundColor = UIColor.gray
+        breakButton.isUserInteractionEnabled = false
+        yellowCardButton.isUserInteractionEnabled = false
+        redCardButton.isUserInteractionEnabled = false
+        switchButton.isUserInteractionEnabled = false
+        goalButton.isUserInteractionEnabled = false
         
         enemyNameLabel.text = (game?.enemyTeam)!
         teamNameLabel.text = (game?.teamName)!
@@ -349,6 +356,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             alert.addTextField()
             alert.textFields![0].keyboardType = UIKeyboardType.numberPad
             alert.textFields![0].text = timeTextField.text
+            
             let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.yellowCard(minute: alert.textFields![0].text!)})
             let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie dano kartki")})
             nie.setValue(UIColor.red, forKey: "titleTextColor")
@@ -460,6 +468,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             alert.addTextField()
             alert.textFields![0].text = "Ocena"
             alert.textFields![0].isUserInteractionEnabled = false
+            alert.textFields![0].textAlignment = .center
             
             alert.addTextField()
             alert.textFields![1].text = ocena
@@ -468,6 +477,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             alert.addTextField()
             alert.textFields![2].text = "Uwagi"
             alert.textFields![2].isUserInteractionEnabled = false
+            alert.textFields![2].textAlignment = .center
             
             alert.addTextField()
             alert.textFields![3].keyboardType = UIKeyboardType.asciiCapable
@@ -672,13 +682,25 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
     }
-    
+    var isSecondHalf = false
     @IBAction func startButtonClicked(_ sender: Any) {
         Tmp.startTime = Date()
-        startButton.isUserInteractionEnabled = false
+        
         startButton.backgroundColor = UIColor.gray
-        breakButton.isUserInteractionEnabled = true
-        breakButton.backgroundColor = UIColor.blue
+        startButton.isUserInteractionEnabled = false
+        
+        yellowCardButton.isUserInteractionEnabled = true
+        redCardButton.isUserInteractionEnabled = true
+        switchButton.isUserInteractionEnabled = true
+        goalButton.isUserInteractionEnabled = true
+        
+        if isSecondHalf == true{
+            breakButton.isUserInteractionEnabled = false
+            breakButton.backgroundColor = UIColor.gray
+        }else{
+            breakButton.isUserInteractionEnabled = true
+            breakButton.backgroundColor = UIColor.blue
+        }
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.2 , repeats: true) { [self] (Timer) in
             let dateTo = Date()
@@ -695,12 +717,12 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func breakButtonClicked(_ sender: Any) {
         timer.invalidate()
         
-        startButton.backgroundColor = UIColor.green
+        startButton.backgroundColor = UIColor.systemGreen
         startButton.isUserInteractionEnabled = true
         breakButton.isUserInteractionEnabled = false
         breakButton.backgroundColor = UIColor.gray
         
-
+        isSecondHalf = true
         
         //Tmp.halfTime = Int(timeTextField.text!)!
         Tmp.halfTime = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].timeHalf)!)
@@ -837,7 +859,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func endDD(){
-        
         // MARK: Funkcja obsługująca zakończenie meczu
         var game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
         timer.invalidate()

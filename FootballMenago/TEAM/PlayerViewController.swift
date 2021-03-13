@@ -52,7 +52,7 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
         jsonClassTeams?.setPosition(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, position: textFieldPosition.text!)
         jsonClassTeams?.setDateOfBirth(team: Tmp.tmpTeam, player: Tmp.tmpPlayer, date: textFieldBirthDate.text!)
         
-        jsonClassTeams?.saveObjectToJsonFile()
+        jsonClassTeams?.save()
         
         // create the alert
         let alert = UIAlertController(title: "zapisano zmiany :D", message: "", preferredStyle: UIAlertController.Style.alert)
@@ -67,7 +67,7 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
     func deletePlayer(){
         jsonClassTeams?.teamsObject?.teams[Tmp.tmpTeam].names.remove(at: Tmp.tmpPlayer)
         jsonClassTeams?.teamsObject?.teams[Tmp.tmpTeam].numbers.remove(at: Tmp.tmpPlayer)
-        jsonClassTeams?.saveObjectToJsonFile()
+        jsonClassTeams?.save()
 
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

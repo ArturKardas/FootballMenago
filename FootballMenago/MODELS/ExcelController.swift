@@ -58,10 +58,31 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "F\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][2] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "G\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][3] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "H\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][9] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "I\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][4] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "J\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][5] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "K\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][6] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "L\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][7] ?? "nie zczytano")")
+                
+                if team?.players[i][4] == "0"{
+                    firstWorksheet.cell(forCellReference: "I\(5+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "I\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][4] ?? "nie zczytano")")
+                }
+                
+                if team?.players[i][5] == "0"{
+                    firstWorksheet.cell(forCellReference: "J\(5+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "J\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][5] ?? "nie zczytano")")
+                }
+                
+                if team?.players[i][6] == "0"{
+                    firstWorksheet.cell(forCellReference: "K\(5+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "K\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][6] ?? "nie zczytano")")
+                }
+                
+                if team?.players[i][7] == "0"{
+                    firstWorksheet.cell(forCellReference: "L\(5+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "L\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][7] ?? "nie zczytano")")
+                }
+                
                 firstWorksheet.cell(forCellReference: "M\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][8] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "N\(5+i)", shouldCreate: true)?.setStringValue("\(team?.players[i][10] ?? "nie zczytano")")
             }
@@ -74,10 +95,31 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "F\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][2] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "G\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][3] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "H\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][9] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "I\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][4] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "J\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][5] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "K\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][6] ?? "nie zczytano")")
-                firstWorksheet.cell(forCellReference: "L\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][7] ?? "nie zczytano")")
+                
+                if team?.bench[i][4] == "0"{
+                    firstWorksheet.cell(forCellReference: "I\(index+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "I\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][4] ?? "nie zczytano")")
+                }
+                
+                if team?.bench[i][5] == "0"{
+                    firstWorksheet.cell(forCellReference: "J\(index+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "J\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][5] ?? "nie zczytano")")
+                }
+                
+                if team?.bench[i][6] == "0"{
+                    firstWorksheet.cell(forCellReference: "K\(index+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "K\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][6] ?? "nie zczytano")")
+                }
+                
+                if team?.bench[i][7] == "0"{
+                    firstWorksheet.cell(forCellReference: "L\(index+i)", shouldCreate: true)?.setStringValue("-")
+                }else{
+                    firstWorksheet.cell(forCellReference: "L\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][7] ?? "nie zczytano")")
+                }
+                
                 firstWorksheet.cell(forCellReference: "M\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][8] ?? "nie zczytano")")
                 firstWorksheet.cell(forCellReference: "N\(index+i)", shouldCreate: true)?.setStringValue("\(team?.bench[i][10] ?? "nie zczytano")")
             }
