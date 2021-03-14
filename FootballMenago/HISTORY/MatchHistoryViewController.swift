@@ -131,6 +131,35 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func deleteMatchClicked(_ sender: Any) {
+        
+        // MARK: zakończenie gry przycisk
+        let alert = UIAlertController(title: "UWAGA!!!", message: "Czy chcesz zakończyć mecz?", preferredStyle: UIAlertController.Style.alert)
+        
+        let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.deleteMatch()})
+        let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie zakończono meczu")})
+        tak.setValue(UIColor.red, forKey: "titleTextColor")
+        
+        alert.addAction(tak)
+        alert.addAction(nie)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func deleteMatch() {
+        jsonGame?.gamesObject?.games.remove(at: Tmp.tmpGame)
+        jsonGame?.save()
+        
+        Tmp.isCreated = false
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "teamsHistoryView")
+        self.addChild(nextViewController)
+        nextViewController.view.frame = self.view.frame
+        self.view.addSubview(nextViewController.view)
+    }
+    
 }
 
 
