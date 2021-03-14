@@ -32,6 +32,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var hourLabel: UILabel!
     
     
+    @IBOutlet weak var noteButton: UIButton!
     @IBOutlet weak var allyState: UITextField!
     @IBOutlet weak var enemyState: UITextField!
     @IBOutlet weak var minusEnemyButton: UIButton!
@@ -682,6 +683,45 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
     }
+    
+    @IBAction func noteButtonClicked(_ sender: Any) {
+        // MARK: Naciśnięcie przycisku NOTE
+        
+        let note = jsonGame?.gamesObject?.games[Tmp.tmpGame].note
+        let alertController = UIAlertController(title: "Notatka\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
+        //alertController.view.bounds.size.width = 200
+        
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 0.6, constant: 250)
+        
+        alertController.view.addConstraint(height)
+        
+        let margin:CGFloat = 8.0
+        let rect = CGRect(x: margin, y: 50, width: 250 , height: 150)
+        let customView = UITextView(frame: rect)
+        
+        customView.backgroundColor = UIColor.white
+        customView.text = note
+        
+        //  customView.backgroundColor = UIColor.greenColor()
+        alertController.view.addSubview(customView)
+        
+        let somethingAction = UIAlertAction(title: "Zapisz", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.noteFunc(note: customView.text)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Anuluj", style: UIAlertAction.Style.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+        
+        alertController.addAction(somethingAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func noteFunc(note: String) {
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].note = note
+        jsonGame?.save()
+    }
+    
+    
     var isSecondHalf = false
     @IBAction func startButtonClicked(_ sender: Any) {
         Tmp.startTime = Date()

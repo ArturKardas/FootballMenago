@@ -21,6 +21,8 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
     let jsonTeams = JsonClassTeams()
     let jsonGame = JsonClassGames()
     
+    
+    
     var selected: [Int] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,6 +31,7 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsMultipleSelection = true
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,4 +110,18 @@ class PlayerFirstTeamViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        
+        Tmp.isCreated = true
+        jsonGame.gamesObject?.games[Tmp.tmpGame].players = []
+        jsonGame.save()
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "newMatchView")
+        self.addChild(nextViewController)
+        nextViewController.view.frame = self.view.frame
+        self.view.addSubview(nextViewController.view)
+        
+        
+    }
 }
