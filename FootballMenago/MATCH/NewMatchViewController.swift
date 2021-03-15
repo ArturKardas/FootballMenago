@@ -25,6 +25,7 @@ class NewMatchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         print("Meczyk")
         
         jsonGame = JsonClassGames()
@@ -59,6 +60,7 @@ class NewMatchViewController: UIViewController {
         
     }
 
+    
 
     @IBAction func nextButtonClicked(_ sender: Any) {
         
@@ -139,4 +141,9 @@ class NewMatchViewController: UIViewController {
             self.view.addSubview(nextViewController.view)
         }
     }
+    
+  
 }
+
+
+

@@ -21,6 +21,7 @@ class AddPlayerViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         textNumber.delegate = self
         jsonClassTeams = JsonClassTeams()
     }

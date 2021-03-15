@@ -26,11 +26,21 @@ struct Game: Codable {
     var firstHalfEnemy: Int
     var fullTimeAlly: Int
     var fullTimeEnemy: Int
-    var note: String
+    
+    
+    var fastNote: String
+    var attackFazePlus: String
+    var attackFazeMinus: String
+    var defenseFazePlus: String
+    var defenseFazeMinus: String
+    
+    var other:[String]
+    
     
     var goals: [[String]]
     var players:[[String]]
     var bench:[[String]]
+    
 }
 
 

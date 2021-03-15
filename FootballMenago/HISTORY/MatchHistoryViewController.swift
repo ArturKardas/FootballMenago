@@ -37,6 +37,7 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         
+        
         jsonGame = JsonClassGames()
         
         enemyNameLabel.text = (jsonGame?.gamesObject?.games[Tmp.tmpGame].enemyTeam)!
@@ -44,6 +45,7 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
         ageLabel.text = String((jsonGame?.gamesObject?.games[Tmp.tmpGame].age)!)
         dateLabel.text = String((jsonGame?.gamesObject?.games[Tmp.tmpGame].date)!)
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
     }
     

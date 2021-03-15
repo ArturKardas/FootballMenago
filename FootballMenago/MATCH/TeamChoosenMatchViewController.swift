@@ -13,6 +13,7 @@ class TeamChoosenMatchViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         jsonClassTeams = JsonClassTeams()
 
     }

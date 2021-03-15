@@ -69,6 +69,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         jsonGame = JsonClassGames()
         let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
@@ -687,7 +688,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func noteButtonClicked(_ sender: Any) {
         // MARK: Naciśnięcie przycisku NOTE
         
-        let note = jsonGame?.gamesObject?.games[Tmp.tmpGame].note
+        let note = jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote
         let alertController = UIAlertController(title: "Notatka\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
         //alertController.view.bounds.size.width = 200
         
@@ -717,7 +718,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func noteFunc(note: String) {
-        jsonGame?.gamesObject?.games[Tmp.tmpGame].note = note
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote = note
         jsonGame?.save()
     }
     

@@ -18,6 +18,7 @@ class PlayerViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         print("Zawodnik Edycja")
         
         jsonClassTeams = JsonClassTeams()

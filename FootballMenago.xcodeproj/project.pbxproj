@@ -11,13 +11,14 @@
 		750A126F25F7A0DF0043F6C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 750A126E25F7A0DF0043F6C1 /* GoogleService-Info.plist */; };
 		7518370B25F824A800C66869 /* Pods_FootballMenago.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD3540A8C7FB449D218E630 /* Pods_FootballMenago.framework */; };
 		7518370C25F824A800C66869 /* Pods_FootballMenago.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD3540A8C7FB449D218E630 /* Pods_FootballMenago.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7518386125FFF81B00C66869 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518386025FFF81B00C66869 /* NoteViewController.swift */; };
 		752F36E9258012070004EFAB /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36E8258012070004EFAB /* AddPlayerViewController.swift */; };
 		752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */; };
 		752F36F0258244C40004EFAB /* Tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36EF258244C40004EFAB /* Tmp.swift */; };
 		752F36F4258245DB0004EFAB /* TeamsChoosenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36F3258245DB0004EFAB /* TeamsChoosenViewController.swift */; };
 		752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36F9258252F40004EFAB /* PlayerViewController.swift */; };
 		752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F36FC25829BED0004EFAB /* AddTeamViewController.swift */; };
-		752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37062587B7490004EFAB /* meczeMODEL.swift */; };
+		752F37072587B7490004EFAB /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37062587B7490004EFAB /* Games.swift */; };
 		752F370A2587BA630004EFAB /* JsonClassGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F37092587BA630004EFAB /* JsonClassGames.swift */; };
 		7539F75725CC7CB1007671F8 /* BenchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539F75625CC7CB1007671F8 /* BenchViewController.swift */; };
 		7576021025AD42D90086EEB8 /* a.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 75C4FB3025AD242800AAEA98 /* a.xlsx */; };
@@ -32,8 +33,8 @@
 		7591B3ED253A21E200443790 /* PlayerChoosenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3EC253A21E200443790 /* PlayerChoosenController.swift */; };
 		7591B3F12545798900443790 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591B3F02545798900443790 /* HistoryViewController.swift */; };
 		759DC8D725DAF40400601BE2 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759DC8D625DAF40400601BE2 /* MatchViewController.swift */; };
-		759DC8F625ED9F0F00601BE2 /* mecze-kopia.json in Resources */ = {isa = PBXBuildFile; fileRef = 759DC8F525ED9F0F00601BE2 /* mecze-kopia.json */; };
-		759DC8F825ED9F4700601BE2 /* zawodnicy-kopia.json in Resources */ = {isa = PBXBuildFile; fileRef = 759DC8F725ED9F4700601BE2 /* zawodnicy-kopia.json */; };
+		759DC8F625ED9F0F00601BE2 /* przykładMecze.json in Resources */ = {isa = PBXBuildFile; fileRef = 759DC8F525ED9F0F00601BE2 /* przykładMecze.json */; };
+		759DC8F825ED9F4700601BE2 /* przykładZawodnicy.json in Resources */ = {isa = PBXBuildFile; fileRef = 759DC8F725ED9F4700601BE2 /* przykładZawodnicy.json */; };
 		75C215BD25AD487B00878A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7591B3D225360E2F00443790 /* Assets.xcassets */; };
 		75C215BF25AD489A00878A2F /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 7576FEE725AD3FF50086EEB8 /* Cartfile.resolved */; };
 		75C215C025AD489A00878A2F /* CartFile in Resources */ = {isa = PBXBuildFile; fileRef = 7576FEE425AD3F6E0086EEB8 /* CartFile */; };
@@ -228,6 +229,7 @@
 		750A118F25F654220043F6C1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		750A119825F655300043F6C1 /* FootballMenago.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = FootballMenago.xcworkspace; sourceTree = "<group>"; };
 		750A126E25F7A0DF0043F6C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7518386025FFF81B00C66869 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		752F36E8258012070004EFAB /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 		752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassTeams.swift; sourceTree = "<group>"; };
 		752F36EF258244C40004EFAB /* Tmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tmp.swift; sourceTree = "<group>"; };
@@ -235,7 +237,7 @@
 		752F36F9258252F40004EFAB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		752F36FC25829BED0004EFAB /* AddTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
 		752F37032587B6AB0004EFAB /* mecze.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mecze.json; sourceTree = "<group>"; };
-		752F37062587B7490004EFAB /* meczeMODEL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meczeMODEL.swift; sourceTree = "<group>"; };
+		752F37062587B7490004EFAB /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		752F37092587BA630004EFAB /* JsonClassGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClassGames.swift; sourceTree = "<group>"; };
 		7539F75625CC7CB1007671F8 /* BenchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchViewController.swift; sourceTree = "<group>"; };
 		7576FEE425AD3F6E0086EEB8 /* CartFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CartFile; sourceTree = "<group>"; };
@@ -255,8 +257,8 @@
 		7591B3EC253A21E200443790 /* PlayerChoosenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerChoosenController.swift; sourceTree = "<group>"; };
 		7591B3F02545798900443790 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		759DC8D625DAF40400601BE2 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
-		759DC8F525ED9F0F00601BE2 /* mecze-kopia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "mecze-kopia.json"; sourceTree = "<group>"; };
-		759DC8F725ED9F4700601BE2 /* zawodnicy-kopia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "zawodnicy-kopia.json"; sourceTree = "<group>"; };
+		759DC8F525ED9F0F00601BE2 /* przykładMecze.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "przykładMecze.json"; sourceTree = "<group>"; };
+		759DC8F725ED9F4700601BE2 /* przykładZawodnicy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "przykładZawodnicy.json"; sourceTree = "<group>"; };
 		75C218C525AD4A1A00878A2F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		75C2190D25AD4A1A00878A2F /* SSZipArchive.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SSZipArchive.podspec; sourceTree = "<group>"; };
 		75C2190E25AD4A1A00878A2F /* ZipArchive.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ZipArchive.xcodeproj; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 			children = (
 				7591B3F02545798900443790 /* HistoryViewController.swift */,
 				7577305A258FD5F70075372A /* MatchHistoryViewController.swift */,
+				7518386025FFF81B00C66869 /* NoteViewController.swift */,
 			);
 			path = HISTORY;
 			sourceTree = "<group>";
@@ -620,8 +623,8 @@
 		758D9B6B2565741700C0FAAC /* DATA */ = {
 			isa = PBXGroup;
 			children = (
-				759DC8F725ED9F4700601BE2 /* zawodnicy-kopia.json */,
-				759DC8F525ED9F0F00601BE2 /* mecze-kopia.json */,
+				759DC8F725ED9F4700601BE2 /* przykładZawodnicy.json */,
+				759DC8F525ED9F0F00601BE2 /* przykładMecze.json */,
 				75C4FB3025AD242800AAEA98 /* a.xlsx */,
 				752F37032587B6AB0004EFAB /* mecze.json */,
 				758D9B6C2565766600C0FAAC /* zawodnicy.json */,
@@ -634,7 +637,7 @@
 			children = (
 				75C4FB2D25AD23C800AAEA98 /* ExcelController.swift */,
 				758D9B7025657D8F00C0FAAC /* zawodnicyMODEL.swift */,
-				752F37062587B7490004EFAB /* meczeMODEL.swift */,
+				752F37062587B7490004EFAB /* Games.swift */,
 				752F36EF258244C40004EFAB /* Tmp.swift */,
 				752F36EB25822EEC0004EFAB /* JsonClassTeams.swift */,
 				752F37092587BA630004EFAB /* JsonClassGames.swift */,
@@ -1564,11 +1567,11 @@
 				750A126F25F7A0DF0043F6C1 /* GoogleService-Info.plist in Resources */,
 				75C21AC525AD4A7B00878A2F /* Main.storyboard in Resources */,
 				75C21AC625AD4A7B00878A2F /* LaunchScreen.storyboard in Resources */,
-				759DC8F825ED9F4700601BE2 /* zawodnicy-kopia.json in Resources */,
+				759DC8F825ED9F4700601BE2 /* przykładZawodnicy.json in Resources */,
 				75C215BF25AD489A00878A2F /* Cartfile.resolved in Resources */,
 				75C215C025AD489A00878A2F /* CartFile in Resources */,
 				75C215BD25AD487B00878A2F /* Assets.xcassets in Resources */,
-				759DC8F625ED9F0F00601BE2 /* mecze-kopia.json in Resources */,
+				759DC8F625ED9F0F00601BE2 /* przykładMecze.json in Resources */,
 				7576021025AD42D90086EEB8 /* a.xlsx in Resources */,
 				750A119025F654220043F6C1 /* Podfile in Resources */,
 				75C21B5B25BCAA3B00878A2F /* README.md in Resources */,
@@ -1645,7 +1648,7 @@
 			files = (
 				752F36FD25829BED0004EFAB /* AddTeamViewController.swift in Sources */,
 				7591B3E82539F18600443790 /* NewMatchViewController.swift in Sources */,
-				752F37072587B7490004EFAB /* meczeMODEL.swift in Sources */,
+				752F37072587B7490004EFAB /* Games.swift in Sources */,
 				7539F75725CC7CB1007671F8 /* BenchViewController.swift in Sources */,
 				75EF5FC725C3303B00C77BD4 /* TeamChoosenMatchViewController.swift in Sources */,
 				752F36EC25822EEC0004EFAB /* JsonClassTeams.swift in Sources */,
@@ -1657,6 +1660,7 @@
 				758D9B7125657D8F00C0FAAC /* zawodnicyMODEL.swift in Sources */,
 				752F36FA258252F40004EFAB /* PlayerViewController.swift in Sources */,
 				75C4FB2E25AD23C800AAEA98 /* ExcelController.swift in Sources */,
+				7518386125FFF81B00C66869 /* NoteViewController.swift in Sources */,
 				7591B3CA25360E2F00443790 /* AppDelegate.swift in Sources */,
 				752F370A2587BA630004EFAB /* JsonClassGames.swift in Sources */,
 				7591B3F12545798900443790 /* HistoryViewController.swift in Sources */,
@@ -1884,7 +1888,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1915,7 +1919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8WVMB49K9U;
 				FRAMEWORK_SEARCH_PATHS = (

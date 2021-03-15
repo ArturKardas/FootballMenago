@@ -131,6 +131,12 @@ class ExcelController {
                 firstWorksheet.cell(forCellReference: "R\(24+i)", shouldCreate: true)?.setStringValue("\(team?.goals[i][3] ?? "nie zczytano")")
             }
             
+            //Nototaki zapisywanie
+            firstWorksheet.cell(forCellReference: "A\(27)", shouldCreate: true)?.setStringValue("\(team?.fastNote ?? "nie zczytano")")
+            firstWorksheet.cell(forCellReference: "A\(37)", shouldCreate: true)?.setStringValue("\(team?.attackFazePlus ?? "nie zczytano")")
+            firstWorksheet.cell(forCellReference: "E\(37)", shouldCreate: true)?.setStringValue("\(team?.attackFazeMinus ?? "nie zczytano")")
+            firstWorksheet.cell(forCellReference: "H\(37)", shouldCreate: true)?.setStringValue("\(team?.defenseFazePlus ?? "nie zczytano")")
+            firstWorksheet.cell(forCellReference: "L\(37)", shouldCreate: true)?.setStringValue("\(team?.defenseFazeMinus ?? "nie zczytano")")
             let komorka: String = (firstWorksheet.cell(forCellReference: "B5")?.stringValue())!
             spreadsheet.save()
             

@@ -40,7 +40,7 @@ class JsonClassGames{
     
     func addGame(teamName: String,enemy: String, teamSize: Int, data: String, category: String, age: Int, hour: String, place: String, timeHalf: Int){
         
-        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, timeHalf: timeHalf, place: place, date: data, hour: hour ,firstHalfAlly: 0, firstHalfEnemy: 0, fullTimeAlly: 0, fullTimeEnemy: 0, note: "", goals: [], players: [], bench: [])
+        let game = Game(mainTeamSize: teamSize, secondTeamSize: 0, teamName: teamName, enemyTeam: enemy, age: age, typeOfMatch: category, timeHalf: timeHalf, place: place, date: data, hour: hour ,firstHalfAlly: 0, firstHalfEnemy: 0, fullTimeAlly: 0, fullTimeEnemy: 0, fastNote: "", attackFazePlus:"", attackFazeMinus: "", defenseFazePlus: "", defenseFazeMinus: "", other: [], goals: [], players:[], bench: [])
         
         gamesObject?.games.append(game)
     }

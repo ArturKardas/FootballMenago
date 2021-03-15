@@ -17,6 +17,7 @@ class AddTeamViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         jsonClassTeams = JsonClassTeams()
         textFieldNameTeam.delegate = self
     }
