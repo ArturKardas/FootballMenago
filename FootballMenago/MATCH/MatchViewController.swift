@@ -67,6 +67,9 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //var i = 0
     var timer = Timer()
     
+    //licznik połówek
+    var numberOfHalf: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -89,13 +92,13 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         minusEnemyButton.isUserInteractionEnabled = false
         minusAllyButton.isUserInteractionEnabled = false
         self.tableV.allowsMultipleSelection = true
-       
+        
     }
     
     func addMinuteToFirstTeam(){
         var players = jsonGame?.gamesObject?.games[Tmp.tmpGame].players
-//        let dateTo = Date()
-//        let diffComponents = Calendar.current.dateComponents([.minute], from: Tmp.startTime, to: dateTo)
+        //        let dateTo = Date()
+        //        let diffComponents = Calendar.current.dateComponents([.minute], from: Tmp.startTime, to: dateTo)
         let minuteOfTheMatch = Int(timeTextField.text!)!
         
         for i in 0 ..< players!.count{
@@ -690,9 +693,8 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let note = jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote
         let alertController = UIAlertController(title: "Notatka\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
-        //alertController.view.bounds.size.width = 200
         
-        let height:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 0.6, constant: 250)
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 0.6, constant: 250)
         
         alertController.view.addConstraint(height)
         
@@ -703,7 +705,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         customView.backgroundColor = UIColor.white
         customView.text = note
         
-        //  customView.backgroundColor = UIColor.greenColor()
         alertController.view.addSubview(customView)
         
         let somethingAction = UIAlertAction(title: "Zapisz", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.noteFunc(note: customView.text)
@@ -722,8 +723,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         jsonGame?.save()
     }
     
-    
-    var isSecondHalf = false
     @IBAction func startButtonClicked(_ sender: Any) {
         Tmp.startTime = Date()
         
@@ -735,7 +734,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         switchButton.isUserInteractionEnabled = true
         goalButton.isUserInteractionEnabled = true
         
-        if isSecondHalf == true{
+        if numberOfHalf == Tmp.numberOfhalf{
             breakButton.isUserInteractionEnabled = false
             breakButton.backgroundColor = UIColor.gray
         }else{
@@ -758,16 +757,14 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func breakButtonClicked(_ sender: Any) {
         timer.invalidate()
         
+        Tmp.halfTime = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].timeHalf)!) * numberOfHalf
+        numberOfHalf = numberOfHalf + 1
+        
         startButton.backgroundColor = UIColor.systemGreen
         startButton.isUserInteractionEnabled = true
+        
         breakButton.isUserInteractionEnabled = false
         breakButton.backgroundColor = UIColor.gray
-        
-        isSecondHalf = true
-        
-        //Tmp.halfTime = Int(timeTextField.text!)!
-        Tmp.halfTime = Int((jsonGame?.gamesObject?.games[Tmp.tmpGame].timeHalf)!)
-        
         
         var players = jsonGame?.gamesObject?.games[Tmp.tmpGame].players
         for i in 0 ..< players!.count{
@@ -799,17 +796,17 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cards = cards! + 1
         
         if selectRow1.section == 0 {
-//            if minute != ""{
-//                jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][9] = minute
-//            }
+            //            if minute != ""{
+            //                jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][9] = minute
+            //            }
             
             jsonGame?.gamesObject?.games[Tmp.tmpGame].players[selectRow1.row][7] = String(cards!)
             jsonGame?.save()
             
             tableV.cellForRow(at: selectRow1)?.isSelected = false
             tableV.reloadRows(at: [selectRow1], with: UITableView.RowAnimation.bottom)
-//            tableV.cellForRow(at: selectRow1)?.backgroundColor = UIColor.red
-//            tableV.cellForRow(at: selectRow1)?.isUserInteractionEnabled = false
+            //            tableV.cellForRow(at: selectRow1)?.backgroundColor = UIColor.red
+            //            tableV.cellForRow(at: selectRow1)?.isUserInteractionEnabled = false
         }
         select1 = false
         
@@ -914,7 +911,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         jsonGame?.gamesObject?.games[Tmp.tmpGame] = game!
         jsonGame?.save()
-        
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainView")

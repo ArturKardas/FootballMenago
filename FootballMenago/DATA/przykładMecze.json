@@ -1,44 +1,5 @@
-{
-    "games": [
-        {
-            "teamName": "ORŁY",
-            "enemyTeam": "FAJTUŁAPY",
-            "mainTeamSize": 4,
-            "secondTeamSize": 3,
-            "age": 2000,
-            "place": "Stadion Raków",
-            "date": "01-01-2020",
-            "hour": "17:00",
-            "typeOfMatch": "MM",
-            "firstHalfAlly": 3,
-            "firstHalfEnemy": 2,
-            "fullTimeAlly": 4,
-            "fullTimeEnemy": 3,
-            
-            "goals": [
-                ["1-0", "","",""]
-            ],
-            
-            "fastNote": "String"
-            "attackFazePlus": "String"
-            "attackFazeMinus": "String"
-            "defenseFazePlus": "String"
-            "defenseFazeMinus": "String"
-            
-            "other":["String"]
-            
-            "players": [
-                ["Łysy","23","3","3","1","0","0","0","5","40","Imie,Numer,18,7,gole,asysty,zółte,czerwone,ocena,czas grany,opis, 1 team, pozycja, nazwisko","1","BR","Nazwisko"],
-                ["Gruby","43","14","4","1","3","0","0","5","40","opis","1","LP","Nazwisko"],
-                ["Seba","10","1","2","1","0","0","0","5","40","opis","1","ŚO","Nazwisko"],
-                ["Marcinek","9","1","7","1","0","0","0","5","40","opis","1","PP","Nazwisko"]
-            ],
-            "bench": [
-                ["MarcinekREZERWO","9","18","7","1","0","0","0","5","40","opis","0","N","Nazwisko"],
-                ["MarcinekRRRRrrr","9","18","7","1","0","0","0","5","40","opis","0","ŚP","Nazwisko"],
-                ["MarcinekrrrRQQQ","9","18","7","1","0","0","0","5","40","opis","0","PP","Nazwisko"]
-            ]
-            
-        }
-    ]
+{"games":[
+    {"teamName":"Raków","other":[],"attackFazePlus":"","defenseFazeMinus":"","place":"np. Raków Częstochowa","players":[["Mateusz","1","","X","0","0","0","0","-","0","opis","X","BR","Polak","0"],["Dawid","12","","X","0","0","0","0","-","0","opis","X","BR","Krygiel","0"],["Szymon ","13","","X","0","0","0","0","-","0","opis","X","BR","Chęciński","0"]],"attackFazeMinus":"","firstHalfEnemy":0,"fastNote":"","typeOfMatch":"MK\/MM","hour":"23:22","bench":[["Alan ","4","X","","0","0","0","0","-","0","opis","","ŚO \/ PN","Magdziarz","0"],["Filip ","2","X","","0","0","0","0","-","0","opis","","ŚO","Graczyk","0"],["Julek","3","X","","0","0","0","0","-","0","opis","","ŚO","Gruszka","0"]],"date":"16.03.2021","fullTimeEnemy":0,"timeHalf":2,"mainTeamSize":3,"firstHalfAlly":0,"fullTimeAlly":0,"age":2010,"defenseFazePlus":"","enemyTeam":"Nazwa przeciwnika","goals":[],"secondTeamSize":3},
+{"teamName":"Raków","other":[],"attackFazePlus":"","defenseFazeMinus":"","place":"Częstochowa","players":[["Kryspin","7","","X","0","0","0","0","-","51","opis","X","ŚPD","Błażejak","60"],["Filip ","2","","X","0","0","0","0","-","60","opis","X","ŚO","Graczyk","60"],["Dawid","14","","X","3","3","0","0","-","55","opis","X","LN\/ŚPO","Kauf","60"],["Adrian","6","","X","0","0","0","0","-","60","opis","X","ŚO\/ŚPD","Kufel","60"],["Dawid","12","X","","0","0","0","0","-","39","opis","","BR","Krygiel","60"],["Julek","3","X","","2","0","0","0","-","32","opis","","ŚO","Gruszka","60"],["Mateusz","1","","X","0","0","0","0","-","51","opis","X","BR","Polak","60"],["Michał","9","","X","2","0","0","0","-","53","opis","X","ŚPO","Kulka","60"],["Aleksander","15","","X","0","1","0","0","-","44","opis","X","PN","Kałuża","60"]],"attackFazeMinus":"","firstHalfEnemy":1,"fastNote":"","typeOfMatch":"MM","hour":"16:00","bench":[["Max","5","","X","1","0","0","0","-","47","opis","X","ŚPD","Gargano","54"],["Jakub","10","","X","3","0","0","0","-","48","opis","X","PN","Tomalski","54"]],"date":"20.03.2021","fullTimeEnemy":1,"timeHalf":30,"mainTeamSize":9,"firstHalfAlly":5,"fullTimeAlly":11,"age":2010,"defenseFazePlus":"","enemyTeam":"Lot Konopiska","goals":[["1-0","7'","Tomalski","Kauf","10","14"],["1-1","9'","przeciwnik",""],["2-1","13'","Gargano","","5",""],["3-1","19'","Kulka","","9",""],["4-1","21'","Kauf","","14",""],["5-1","22'","Kauf","Kałuża","14","15"],["6-1","33'","Tomalski","","10",""],["7-1","34'","Kulka","Kauf","9","14"],["8-1","38'","Tomalski","","10",""],["9-1","50'","Kauf","","14",""],["10-1","53'","Gruszka","","3",""],["11-1","55'","Gruszka","Kauf","3","14"]],"secondTeamSize":2}]
+
 }

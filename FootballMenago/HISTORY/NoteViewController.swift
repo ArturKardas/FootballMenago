@@ -12,14 +12,14 @@ class NoteViewController: UIViewController {
     var jsonGame: JsonClassGames?
     
     //Labels:
-    @IBOutlet weak var fastNoteLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var fazeAtackPlusLabel: UILabel!
     @IBOutlet weak var fazeAttackMinusLabel: UILabel!
     @IBOutlet weak var fazeDefPlusLabel: UILabel!
     @IBOutlet weak var fazeDefMinusLabel: UILabel!
     
     //TextViews:
-    @IBOutlet weak var fastNoteTV: UITextView!
+    @IBOutlet weak var descriptionOfMatchTV: UITextView!
     @IBOutlet weak var fazeAttackPlusTV: UITextView!
     @IBOutlet weak var fazeAttackMinusTV: UITextView!
     @IBOutlet weak var fazeDefPlusTV: UITextView!
@@ -36,7 +36,7 @@ class NoteViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         super.viewDidLoad()
         
-        fastNoteTV.text = game?.fastNote
+        descriptionOfMatchTV.text = game?.other[0]
         fazeAttackPlusTV.text = game?.attackFazePlus
         fazeAttackMinusTV.text = game?.attackFazeMinus
         fazeDefPlusTV.text = game?.defenseFazePlus
@@ -59,7 +59,7 @@ class NoteViewController: UIViewController {
     
     func saveFunc() {
         var game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
-        game?.fastNote = fastNoteTV.text
+        game?.other[0] = descriptionOfMatchTV.text
         game?.attackFazePlus = fazeAttackPlusTV.text
         game?.attackFazeMinus = fazeAttackMinusTV.text
         game?.defenseFazePlus = fazeDefPlusTV.text

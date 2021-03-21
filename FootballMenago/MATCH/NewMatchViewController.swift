@@ -20,6 +20,7 @@ class NewMatchViewController: UIViewController {
     @IBOutlet weak var categoryTF: UITextField!
     @IBOutlet weak var placeTF: UITextField!
     @IBOutlet weak var timeHalfTF: UITextField!
+    @IBOutlet weak var numberOfHalfTF: UITextField!
     
     
     
@@ -64,7 +65,7 @@ class NewMatchViewController: UIViewController {
 
     @IBAction func nextButtonClicked(_ sender: Any) {
         
-       
+        Tmp.numberOfhalf = Int(numberOfHalfTF.text!)!
         
         let enemyText = enemyTF.text!
         let teamSizeInt = Int(teamSizeTF.text!)!
