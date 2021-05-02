@@ -49,6 +49,8 @@ class ExcelController {
             firstWorksheet.cell(forCellReference: "Q3", shouldCreate: true)?.setStringValue("\(team?.fullTimeAlly ?? 0)")
             firstWorksheet.cell(forCellReference: "R3", shouldCreate: true)?.setStringValue("\(team?.fullTimeEnemy ?? 0)")
             
+            firstWorksheet.cell(forCellReference: "G4", shouldCreate: true)?.setStringValue("\"\(team?.mainTeamSize ?? 0)\"")
+            
             var index: Int = 0
             
             for i in 0..<((team?.players.count)!){

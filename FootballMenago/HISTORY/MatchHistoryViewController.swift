@@ -212,7 +212,7 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
         }
         if section == 2{
             header.sectionTextName.text = "Notatki"
-            header.labelsView.isHidden = true
+            header.labelsView.self.isHidden = true
         }
         return header
     }
@@ -247,10 +247,10 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
     @IBAction func deleteMatchClicked(_ sender: Any) {
         
         // MARK: zakończenie gry przycisk
-        let alert = UIAlertController(title: "UWAGA!!!", message: "Czy chcesz zakończyć mecz?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "UWAGA!!!", message: "Czy chcesz usunąć mecz?", preferredStyle: UIAlertController.Style.alert)
         
         let tak = UIAlertAction(title: "Tak", style: .default, handler:{(action) -> Void in self.deleteMatch()})
-        let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie zakończono meczu")})
+        let nie = UIAlertAction(title: "Nie", style: .cancel, handler:{(action) -> Void in print("nie usunięto meczu")})
         tak.setValue(UIColor.red, forKey: "titleTextColor")
         
         alert.addAction(tak)

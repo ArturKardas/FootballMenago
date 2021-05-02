@@ -78,7 +78,7 @@ class NewMatchViewController: UIViewController {
         let timeHalf = Int(timeHalfTF.text!)
         
         if teamSizeInt > (jsonTeam.teamsObject?.teams[Tmp.tmpTeam].numbers.count)!{
-            let alert = UIAlertController(title: "UWAGA", message: "Masz za mało graczy w zaespole!", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "UWAGA", message: "Masz za mało graczy w zespole!", preferredStyle: UIAlertController.Style.alert)
             
             let tak = UIAlertAction(title: "OK", style: .default, handler:{(action) -> Void in print("alert")})
             

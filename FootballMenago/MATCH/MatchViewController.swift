@@ -38,7 +38,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var minusEnemyButton: UIButton!
     @IBOutlet weak var minusAllyButton: UIButton!
     
-    //funktionsButton
+    //functionsButton
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var breakButton: UIButton!
     @IBOutlet weak var endButton: UIButton!
@@ -56,6 +56,9 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableV: UITableView!
     
+    //noteField
+    @IBOutlet weak var noteField: UITextView!
+    
     var selectRow1 = IndexPath()
     var selectRow2 = IndexPath()
     var select1 = false
@@ -71,8 +74,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var numberOfHalf: Int = 1
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        
         
         jsonGame = JsonClassGames()
         let game = jsonGame?.gamesObject?.games[Tmp.tmpGame]
@@ -89,9 +91,13 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         teamNameLabel.text = (game?.teamName)!
         dateLabel.text = String((game?.date)!)
         hourLabel.text = game?.hour
+        
         minusEnemyButton.isUserInteractionEnabled = false
         minusAllyButton.isUserInteractionEnabled = false
         self.tableV.allowsMultipleSelection = true
+        
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
     }
     
@@ -131,11 +137,14 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if section == 1 {
             return "Drugi skład"
         }
+        if section == 2 {
+            return "Notatka"
+        }
         return "Error"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,15 +155,20 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if section == 1 {
             rowCount = (jsonGame?.gamesObject?.games[Tmp.tmpGame].secondTeamSize)!
         }
+        if section == 2 {
+            return 1
+        }
         return rowCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerMatchTabelViewCell
+        
         
         // TODO: let players = jsonGame?.gamesObject?.games[Tmp.tmpGame].players
         
         if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerMatchTabelViewCell
+            
             cell.numberTextField.text = jsonGame?.getNumber(game: Tmp.tmpGame, player: indexPath.row)
             cell.playerNameText.text = jsonGame?.getName(game: Tmp.tmpGame, player: indexPath.row)
             cell.SurnameTextField.text = jsonGame?.getSurname(game: Tmp.tmpGame, player: indexPath.row)
@@ -166,8 +180,11 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.redCardTextField.text = jsonGame?.get7NumbersOfRedCards(game: Tmp.tmpGame, player: indexPath.row)
             cell.degreeTextField.text = jsonGame?.getGrade(game: Tmp.tmpGame, player: indexPath.row)
             Tmp.tmpFirstTeam[indexPath.row] = indexPath.row
+            return cell
         }
         if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! PlayerMatchTabelViewCell
+            
             cell.numberTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][1]
             cell.playerNameText.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][0]
             cell.SurnameTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][13]
@@ -178,9 +195,18 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.redCardTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][7]
             cell.degreeTextField.text = jsonGame?.gamesObject?.games[Tmp.tmpGame].bench[indexPath.row][8]
             Tmp.tmpBenchTeam[indexPath.row] = indexPath.row
+            return cell
         }
         
+        if indexPath.section == 2{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteCell
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! NoteCell
         return cell
+        
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -191,11 +217,20 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if section == 1 {
             header.sectionTextName.text = "Ławka rezerwowych"
         }
+        if section == 2{
+            header.sectionTextName.text = "Notatki"
+            header.labelsView.self.isHidden = true
+        }
         return header
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 35
+        if indexPath.section == 0 || indexPath.section == 1{
+            return 35
+        }else{
+            return  1500
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -203,51 +238,54 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if select1 == false{
-            selectRow1 = indexPath
-            select1 = true
-            print("to")
-            print("------------")
-            print("Zaznaczanie: \(selectRow1.row)+\(selectRow1.section)")
-            print("Zaznaczanie: \(select2)")
-        }else if select2 == false{
-            selectRow2 = indexPath
-            select2 = true
-            print("po tym")
-            print("------------")
-            print("Zaznaczanie: \(selectRow1.row)+\(selectRow1.section)")
-            print("Zaznaczanie: \(select2)")
-            
-        }else{
-            print("za dużo zaznaczonych")
-            tableView.cellForRow(at: indexPath)?.isSelected = false
+        if indexPath.section == 0 || indexPath.section == 1{
+            if select1 == false{
+                selectRow1 = indexPath
+                select1 = true
+                print("to")
+                print("------------")
+                print("Zaznaczanie: \(selectRow1.row)+\(selectRow1.section)")
+                print("Zaznaczanie: \(select2)")
+            }else if select2 == false{
+                selectRow2 = indexPath
+                select2 = true
+                print("po tym")
+                print("------------")
+                print("Zaznaczanie: \(selectRow1.row)+\(selectRow1.section)")
+                print("Zaznaczanie: \(select2)")
+                
+            }else{
+                print("za dużo zaznaczonych")
+                tableView.cellForRow(at: indexPath)?.isSelected = false
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if indexPath == selectRow1 && select1 == true{
-            tableV.cellForRow(at: indexPath)?.isSelected = false
-            if select2 == true{
-                selectRow1 = selectRow2
+        if indexPath.section == 0 || indexPath.section == 1{
+            if indexPath == selectRow1 && select1 == true{
+                tableV.cellForRow(at: indexPath)?.isSelected = false
+                if select2 == true{
+                    selectRow1 = selectRow2
+                    select2 = false
+                    print("------------")
+                    print("odznaczanie: \(selectRow1.row)+\(selectRow1.section)")
+                    print("odznaczanie: \(select2)")
+                }else{
+                    select1 = false
+                    print("------------")
+                    print("odznaczanie: \(selectRow1.row)+\(selectRow1.section)")
+                    print("odznaczanie: \(select2)")
+                }
+            }else if indexPath == selectRow2{
                 select2 = false
                 print("------------")
                 print("odznaczanie: \(selectRow1.row)+\(selectRow1.section)")
                 print("odznaczanie: \(select2)")
             }else{
-                select1 = false
-                print("------------")
-                print("odznaczanie: \(selectRow1.row)+\(selectRow1.section)")
-                print("odznaczanie: \(select2)")
+                print("nie można odznaczyć takeigo wiersza")
             }
-        }else if indexPath == selectRow2{
-            select2 = false
-            print("------------")
-            print("odznaczanie: \(selectRow1.row)+\(selectRow1.section)")
-            print("odznaczanie: \(select2)")
-        }else{
-            print("nie można odznaczyć takeigo wiersza")
         }
-        
     }
     
     @IBAction func goalButton(_ sender: Any) {
@@ -690,6 +728,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func noteButtonClicked(_ sender: Any) {
         // MARK: Naciśnięcie przycisku NOTE
+        // TODO: Zmiana na opis wyruzniającego się zawodnika przeciwnej drużyny
         
         let note = jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote
         let alertController = UIAlertController(title: "Notatka\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
@@ -702,7 +741,6 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let rect = CGRect(x: margin, y: 50, width: 250 , height: 150)
         let customView = UITextView(frame: rect)
         
-        customView.backgroundColor = UIColor.white
         customView.text = note
         
         alertController.view.addSubview(customView)
@@ -909,6 +947,10 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             game?.fullTimeEnemy = Int(enemyState.text!)!
         }
         
+        var noteIndex = IndexPath()
+        noteIndex.section = 2
+        noteIndex.row = 0
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote =
         jsonGame?.gamesObject?.games[Tmp.tmpGame] = game!
         jsonGame?.save()
         
