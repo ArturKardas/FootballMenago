@@ -122,7 +122,9 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         jsonGame?.save()
         
         if select1 == false{
-            let array = tableV.indexPathsForVisibleRows
+            var array = tableV.indexPathsForVisibleRows
+            array?.removeLast()
+            print(array)
             tableV.reloadRows(at:array!, with: .none)
             select1 = false
             select2 = false
@@ -726,11 +728,16 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    @IBAction func noteButtonClicked(_ sender: Any) {
-        // MARK: Naciśnięcie przycisku NOTE
-        // TODO: Zmiana na opis wyruzniającego się zawodnika przeciwnej drużyny
+    @IBAction func playerNoteButtonClicked(_ sender: Any) {
+        // MARK: Naciśnięcie przycisku Player Enemy
         
-        let note = jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote
+        let note: String
+        if (jsonGame?.gamesObject?.games[Tmp.tmpGame].other.count)! < 2{
+            note = ""
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].other.append("")
+        }else{
+            note = (jsonGame?.gamesObject?.games[Tmp.tmpGame].other[1])!
+        }
         let alertController = UIAlertController(title: "Notatka\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
         
         let height:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 0.6, constant: 250)
@@ -745,7 +752,7 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         alertController.view.addSubview(customView)
         
-        let somethingAction = UIAlertAction(title: "Zapisz", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.noteFunc(note: customView.text)
+        let somethingAction = UIAlertAction(title: "Zapisz", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.playerNoteFunc(note: customView.text)
         })
         
         let cancelAction = UIAlertAction(title: "Anuluj", style: UIAlertAction.Style.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
@@ -756,8 +763,8 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func noteFunc(note: String) {
-        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote = note
+    func playerNoteFunc(note: String) {
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].other[1] = note
         jsonGame?.save()
     }
     
@@ -947,11 +954,11 @@ class MatchViewController: UIViewController, UITableViewDelegate, UITableViewDat
             game?.fullTimeEnemy = Int(enemyState.text!)!
         }
         
-        var noteIndex = IndexPath()
-        noteIndex.section = 2
-        noteIndex.row = 0
-        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote =
-        jsonGame?.gamesObject?.games[Tmp.tmpGame] = game!
+        // zapisywanie szybkiej notatki
+        let index = IndexPath(row: 0, section: 2)
+        let cell: NoteCell = tableV.cellForRow(at: index) as! NoteCell
+        
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote = cell.fastNoteTextView.text
         jsonGame?.save()
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

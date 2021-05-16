@@ -17,6 +17,7 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var fazeAttackMinusLabel: UILabel!
     @IBOutlet weak var fazeDefPlusLabel: UILabel!
     @IBOutlet weak var fazeDefMinusLabel: UILabel!
+    @IBOutlet weak var fastNoteLabel: UITextField!
     
     //TextViews:
     @IBOutlet weak var descriptionOfMatchTV: UITextView!
@@ -24,6 +25,7 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var fazeAttackMinusTV: UITextView!
     @IBOutlet weak var fazeDefPlusTV: UITextView!
     @IBOutlet weak var fazeDefMinusTV: UITextView!
+    @IBOutlet weak var fastNoteTV: UITextView!
     
     //Button's
     @IBOutlet weak var backButtons: UIButton!
@@ -41,6 +43,7 @@ class NoteViewController: UIViewController {
         fazeAttackMinusTV.text = game?.attackFazeMinus
         fazeDefPlusTV.text = game?.defenseFazePlus
         fazeDefMinusTV.text = game?.defenseFazeMinus
+        fastNoteTV.text = game?.fastNote
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
@@ -64,6 +67,7 @@ class NoteViewController: UIViewController {
         game?.attackFazeMinus = fazeAttackMinusTV.text
         game?.defenseFazePlus = fazeDefPlusTV.text
         game?.defenseFazeMinus = fazeDefMinusTV.text
+        game?.fastNote = fastNoteTV.text
         
         jsonGame?.gamesObject?.games[Tmp.tmpGame] = game!
         jsonGame?.save()

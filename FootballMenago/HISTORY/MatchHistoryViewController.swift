@@ -230,6 +230,13 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
         return 60
     }
     @IBAction func excelButtonClicked(_ sender: Any) {
+        // zapisywanie szybkiej notatki
+        let index = IndexPath(row: 0, section: 2)
+        let cell: NoteCell = table.cellForRow(at: index) as! NoteCell
+        
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote = cell.fastNoteTextView.text
+        jsonGame?.save()
+        
         let excel = ExcelController()
         
         excel.printExcel()
@@ -270,6 +277,65 @@ class MatchHistoryViewController: UIViewController, UITableViewDelegate, UITable
         self.addChild(nextViewController)
         nextViewController.view.frame = self.view.frame
         self.view.addSubview(nextViewController.view)
+    }
+    
+    @IBAction func playerNoteButtonClicked(_ sender: Any) {
+        // MARK: Naciśnięcie przycisku Player Enemy
+        
+        let note: String
+        if (jsonGame?.gamesObject?.games[Tmp.tmpGame].other.count)! < 2{
+            note = ""
+            jsonGame?.gamesObject?.games[Tmp.tmpGame].other.append("")
+        }else{
+            note = (jsonGame?.gamesObject?.games[Tmp.tmpGame].other[1])!
+        }
+        
+        let alertController = UIAlertController(title: "Notatka\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
+        
+        let height:NSLayoutConstraint = NSLayoutConstraint(item: alertController.view!, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 0.6, constant: 250)
+        
+        alertController.view.addConstraint(height)
+        
+        let margin:CGFloat = 8.0
+        let rect = CGRect(x: margin, y: 50, width: 250 , height: 150)
+        let customView = UITextView(frame: rect)
+        
+        customView.text = note
+        
+        alertController.view.addSubview(customView)
+        
+        let somethingAction = UIAlertAction(title: "Zapisz", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self.playerNoteFunc(note: customView.text)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Anuluj", style: UIAlertAction.Style.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+        
+        alertController.addAction(somethingAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func playerNoteFunc(note: String) {
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].other[1] = note
+        jsonGame?.save()
+    }
+    
+    
+    @IBAction func noteButtonClicked(_ sender: Any) {
+        fastNoteSave()
+    }
+    
+    @IBAction func backButtonCklicked(_ sender: Any) {
+        fastNoteSave()
+    }
+    
+    func fastNoteSave() {
+        // zapisywanie szybkiej notatki
+        let index = IndexPath(row: 0, section: 2)
+        let cell: NoteCell = table.cellForRow(at: index) as! NoteCell
+        
+        jsonGame?.gamesObject?.games[Tmp.tmpGame].fastNote = cell.fastNoteTextView.text
+        jsonGame?.save()
     }
     
 }

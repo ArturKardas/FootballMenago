@@ -6,6 +6,23 @@
             "attackFazePlus": "",
             "defenseFazeMinus": "",
             "place": "np. Raków Częstochowa",
+            "attackFazeMinus": "",
+            "firstHalfEnemy": 0,
+            "fastNote": "",
+            "typeOfMatch": "MK\/MM",
+            "hour": "23:22",
+            "date": "16.03.2021",
+            "fullTimeEnemy": 0,
+            "timeHalf": 2,
+            "mainTeamSize": 3,
+            "firstHalfAlly": 0,
+            "fullTimeAlly": 0,
+            "age": 2010,
+            "defenseFazePlus": "",
+            "enemyTeam": "Nazwa przeciwnika",
+            "goals": [],
+            "secondTeamSize": 3
+            
             "players": [
                 [
                     "Mateusz",
@@ -59,11 +76,7 @@
                     "0"
                 ]
             ],
-            "attackFazeMinus": "",
-            "firstHalfEnemy": 0,
-            "fastNote": "",
-            "typeOfMatch": "MK\/MM",
-            "hour": "23:22",
+            
             "bench": [
                 [
                     "Alan ",
@@ -116,18 +129,7 @@
                     "Gruszka",
                     "0"
                 ]
-            ],
-            "date": "16.03.2021",
-            "fullTimeEnemy": 0,
-            "timeHalf": 2,
-            "mainTeamSize": 3,
-            "firstHalfAlly": 0,
-            "fullTimeAlly": 0,
-            "age": 2010,
-            "defenseFazePlus": "",
-            "enemyTeam": "Nazwa przeciwnika",
-            "goals": [],
-            "secondTeamSize": 3
+            ]
         },
         {
             "teamName": "Raków",
